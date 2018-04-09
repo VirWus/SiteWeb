@@ -14,8 +14,8 @@ if(!empty($email) && !empty($pass)){
   if($row > 0){
     echo "ok";
 if(isset($_POST['remember'])){
-  $_SESSION['email'] = base64($email);
-  $_SESSION['pass'] = base64($epass);
+  $_SESSION['email'] = base64_encode($email);
+  $_SESSION['pass'] = base64_encode($epass);
 }
   }else {
     echo "Error wrong email or password";
