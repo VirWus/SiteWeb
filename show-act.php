@@ -15,13 +15,13 @@
 <th>contenu</th>
 		</tr>
 		<?php
-		$con = mysqli_connect("localhost", "root", "", "univedu2");
-			if(!$con){
+		include_once("engine/connect/connection.php");
+    	if($connect){
 			echo "site non connecté";
 			}
-		$result =mysqli_query($con, "select * from actuallite");
+		$result =mysqli_query($connect, "select * from actuallite");
 		while($Rs=mysqli_fetch_assoc($result))
-		{   
+		{
 	?>
 		<tr>
 <td><?php echo $Rs['titre'] ?></td>
@@ -30,7 +30,7 @@
 <td><a href="update-act.php?id=<?php echo$Rs['id'] ?>">update</a></td>
 
 <br>
-<?php echo '</tr>' ?> 
+<?php echo '</tr>' ?>
 </tr>
 	<?php
 	}

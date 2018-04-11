@@ -34,14 +34,15 @@
 </body>
 </html>
 
-<?php 
-      $con = mysqli_connect("localhost", "root","","univedu2");
-    	if($con){
+<?php
+//include a script instead of creating each time a mysqli connection
+    include_once("engine/connect/connection.php");
+    	if($connect){
         echo "con</br>";
 
       //$id=$_POST["id"];
-      $titre = $_POST["titre"]; 
-      $date = $_POST["date"]; 
+      $titre = $_POST["titre"];
+      $date = $_POST["date"];
 	    $contenu = $_POST["contenu"];
 
        //$sql = "INSERT INTO actuallite (id,titre,date,contenu) VALUES (NULL,'$titre','$date','$contenu')";
