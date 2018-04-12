@@ -16,7 +16,7 @@
 		</tr>
 		<?php
 		include_once("engine/connect/connection.php");
-    	if($connect){
+    	if(!$connect){
 			echo "site non connecté";
 			}
 		$result =mysqli_query($connect, "select * from actuallite");

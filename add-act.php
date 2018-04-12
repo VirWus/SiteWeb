@@ -38,7 +38,7 @@
 //include a script instead of creating each time a mysqli connection
     include_once("engine/connect/connection.php");
     	if($connect){
-        echo "con</br>";
+    
 
       //$id=$_POST["id"];
       $titre = $_POST["titre"];
