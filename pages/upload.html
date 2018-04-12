@@ -1,6 +1,22 @@
 <html>
-<head></head>
-<body>
+<head>
+<script type="text/javascript" >
+function checkLinkInput(){
+  var g = document.getElementById("link");
+  var h = document.getElementById("linkLabel");
+if (g.type == "hidden") {
+g.type = "text";
+  h.style.visibility = "visible";
+}else {
+  g.type = "hidden";
+  h.style.visibility = "hidden";
+}
+
+  }
+
+</script>
+</head>
+<body >
 <form action="../engine/upload.php" method="post" enctype="multipart/form-data">
   <table>
     <tr> <td> Le titre du support </td>
@@ -18,8 +34,9 @@
 <tr> <td> L'annee du support </td> <td>
   <input type="number" min="1900" max="2099" step="1" value="2018" name="annee" /> </td> </tr>
   <tr> <td> Le fichier du support </td> <td>
-  <input type="file" name="fileto"  accept="image/*,video/*,application/msword,application/pdf,application/msexcel"/> </td> </tr>
-<tr> <td> Le titre du support </td> <td>
+  <input type="file" name="fileto"  accept="image/*,video/*,application/msword,application/pdf,application/msexcel"/> </td> <td> ou un lien internet ? </td> <td> <input type="checkbox" name="linkCheck" id="linkCheck" onclick="checkLinkInput()" /> </td>  </tr>
+<tr> <td> <label id="linkLabel" style="visibility:hidden;" > le lien internet </label> </td>  <td> <input type="hidden" id="link" name="link" /> </td> </tr>
+<tr> <td> Envoyer </td> <td>
   <input type="submit" value="envoyer" name="submit" /> </td> </tr>
 </table>
 </form>

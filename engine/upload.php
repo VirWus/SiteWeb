@@ -5,16 +5,22 @@ $nom = $_POST["nom"];
 $resumer = base64_encode($_POST["resumer"]);
 $annee = $_POST["annee"];
 $type = $_POST["type"];
+$link = base64_encode($_POST["link"]);
 $pathparts = pathinfo($file);
-$ext =  $pathparts["extension"];
-if(!empty($nom) && !empty($resumer) && !empty($annee) && !empty($type)  ) {
-if($ext == "jpg" || $ext == "png" || $ext == "pdf" || $ext == "doc" || $ext == "docx" || $ext == "xls") {
 
+if(!empty($nom) && !empty($resumer) && !empty($annee) && !empty($type)  ) {
+  if(!empty($link)){
+include_once("connect/connection.php");
+$query = mysqli_query($connect,"INSERT INTO support VALUES('','$nom','$annee','$resumer','$type','$link')");
+  }else{
+    $ext =  $pathparts["extension"];
+if($ext == "jpg" || $ext == "png" || $ext == "pdf" || $ext == "doc" || $ext == "docx" || $ext == "xls") {
   move_uploaded_file($_FILES["fileto"]["tmp_name"], $file);
   include_once("connect/connection.php");
   $query = mysqli_query($connect,"INSERT INTO support VALUES('','$nom','$annee','$resumer','$type','$file')");
 }else{
   echo "Your file is not supported";
+}
 }
 }else {
   echo "ERROR ! , try again";
