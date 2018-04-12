@@ -2,8 +2,26 @@
 <head></head>
 <body>
 <form action="../engine/upload.php" method="post" enctype="multipart/form-data">
-  <input type="file" name="fileto"  accept="image/*,video/*,application/msword,application/pdf,application/msexcel"/>
-  <input type="submit" value="envoyer" name="submit" />
+  <table>
+    <tr> <td> Le titre du support </td>
+  <td> <input type="text"    name="nom" /> </td> </tr>
+  <tr> <td> Le resume du support </td>
+<td>  <textarea name="resumer"></textarea> </td> </tr>
+<tr> <td> Le type du support </td>
+  <td> <select name="type">
+    <option value="image"> image </option>
+      <option value="fichier" > fichier</option>
+        <option value="video" > video </option>
+          <option value="lien" > lien </option>
+  </select>
+</td></tr>
+<tr> <td> L'annee du support </td> <td>
+  <input type="number" min="1900" max="2099" step="1" value="2018" name="annee" /> </td> </tr>
+  <tr> <td> Le fichier du support </td> <td>
+  <input type="file" name="fileto"  accept="image/*,video/*,application/msword,application/pdf,application/msexcel"/> </td> </tr>
+<tr> <td> Le titre du support </td> <td>
+  <input type="submit" value="envoyer" name="submit" /> </td> </tr>
+</table>
 </form>
 </body>
 </html>
