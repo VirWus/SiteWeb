@@ -1,0 +1,28 @@
+<html>
+<head>
+  <script type="text/javascript" >
+  function submitForm(oFormElement)
+  {
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+  document.getElementById("leLien").innerHTML = "<a href="+ xhr.responseText + "> download</a>"; } // success case
+  xhr.onerror = function(){ alert (xhr.responseText); } // failure case
+  xhr.open (oFormElement.method, oFormElement.action, true);
+  xhr.send (new FormData (oFormElement));
+
+  return false;
+  }
+  </script></head>
+<body>
+  <form method="POST" action="../engine/search.php" onsubmit="return submitForm(this);" >
+<input type="text" name="q" />
+<input type="submit" name="submit" value="recherche" />
+  </form>
+<table>
+<tr>
+  <td>le lien</td> <td id="leLien"> <td></td>
+</tr>
+</table>
+
+</body>
+</html>
