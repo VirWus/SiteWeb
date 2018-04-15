@@ -1,12 +1,3 @@
-<?php
-/**session_start();
-if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
-
-}else {
-header("Location:../admin/index.php");
-}
-*/
- ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -15,7 +6,7 @@ header("Location:../admin/index.php");
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>Csmi Admin - Moussaoui Boubakeur</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,7 +29,10 @@ header("Location:../admin/index.php");
 
 </head>
 <body>
-
+<?php 
+   $db = mysqli_connect("localhost","root","","univedu"); 
+    $resultat = mysqli_query($db,"SELECT * FROM admin");
+    ?>  
 
         <!-- Left Panel -->
 
@@ -56,20 +50,20 @@ header("Location:../admin/index.php");
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="admin.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="aceuille.html"> <i class="menu-icon fa fa-dashboard"></i>admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
                     </li>
 
                     <li>
-                        <a href="actualite.html"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
                     </li>
 
                     <li>
-                        <a href="support.html"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -99,69 +93,11 @@ header("Location:../admin/index.php");
                         </div>
 
                         <div class="dropdown for-notification">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                            <span class="count bg-danger">5</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="notification">
-                            <p class="red">You have 3 Notification</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <i class="fa fa-check"></i>
-                                <p>Server #1 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <i class="fa fa-info"></i>
-                                <p>Server #2 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <i class="fa fa-warning"></i>
-                                <p>Server #3 overloaded.</p>
-                            </a>
-                          </div>
+                          
                         </div>
 
                         <div class="dropdown for-message">
-                          <button class="btn btn-secondary dropdown-toggle" type="button"
-                                id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-email"></i>
-                            <span class="count bg-primary">9</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="message">
-                            <p class="red">You have 4 Mails</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jonathan Smith</span>
-                                    <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Jack Sanders</span>
-                                    <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Cheryl Wheeler</span>
-                                    <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
-                                </span>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
-                                <span class="message media-body">
-                                    <span class="name float-left">Rachel Santos</span>
-                                    <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
-                                </span>
-                            </a>
-                          </div>
+                         
                         </div>
                     </div>
                 </div>
@@ -239,64 +175,31 @@ header("Location:../admin/index.php");
                 </div>
             </div>
 
-
-           <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+ <?php
+    if($row = mysqli_fetch_assoc($resultat)){ ?>
+           <div class="col-sm-6 col-lg-6">
+                <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title mb-3">Profile Card</strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="mx-auto d-block">
+                                    <img class="rounded-circle mx-auto d-block" src="images/admin.jpg" alt="Card image cap">
+                                    <h5 class="text-sm-center mt-2 mb-1"><?php echo $row["nom"]."   ".$row["prenom"] ;?></h5>
+                                    <div class="location text-sm-center"><i class="fa fa-map-marker"></i> Bordj Bou Arreridj, Algérie</div>
+                                </div>
+                                <hr>
+                                <div class="card-text text-sm-center">
+                                    <a href="https://www.facebook.com/boubakeur.moussaoui"><i class="fa fa-facebook pr-1"></i></a>
+                                 
+                                    <a href="https://www.linkedin.com/in/boubakeur-moussaoui-30192218/"><i class="fa fa-linkedin pr-1"></i></a>
+                
                                 </div>
                             </div>
                         </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Members online</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart1"></canvas>
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
             <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-2">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Members online</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart2"></canvas>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+<?php } ?>
             <!--/.col-->
 
             <div class="col-sm-6 col-lg-3">
@@ -317,7 +220,7 @@ header("Location:../admin/index.php");
                         <h4 class="mb-0">
                             <span class="count">10468</span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">nombre téléchargement</p>
 
                     </div>
 
@@ -376,25 +279,7 @@ header("Location:../admin/index.php");
 
 
             <div class="col-lg-3 col-md-6">
-                <div class="social-box twitter">
-                    <i class="fa fa-twitter"></i>
-                    <ul>
-                        <li>
-                            <strong><span class="count">30</span> k</strong>
-                            <span>friends</span>
-                        </li>
-                        <li>
-                            <strong><span class="count">450</span></strong>
-                            <span>tweets</span>
-                        </li>
-                    </ul>
-                </div>
-                <!--/social-box-->
-            </div><!--/.col-->
-
-
-            <div class="col-lg-3 col-md-6">
-                <div class="social-box linkedin">
+                    <div class="social-box linkedin">
                     <i class="fa fa-linkedin"></i>
                     <ul>
                         <li>
@@ -412,23 +297,17 @@ header("Location:../admin/index.php");
 
 
             <div class="col-lg-3 col-md-6">
-                <div class="social-box google-plus">
-                    <i class="fa fa-google-plus"></i>
-                    <ul>
-                        <li>
-                            <strong><span class="count">94</span> k</strong>
-                            <span>followers</span>
-                        </li>
-                        <li>
-                            <strong><span class="count">92</span></strong>
-                            <span>circles</span>
-                        </li>
-                    </ul>
-                </div>
+          
                 <!--/social-box-->
             </div><!--/.col-->
 
-            <div class="col-xl-6">
+
+            <div class="col-lg-3 col-md-6">
+            
+                <!--/social-box-->
+            </div><!--/.col-->
+
+            <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -504,107 +383,25 @@ header("Location:../admin/index.php");
             </div>
 
            <div class="col-xl-3 col-lg-6">
-                <section class="card">
-                    <div class="twt-feed blue-bg">
-                        <div class="corner-ribon black-ribon">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                        <div class="fa fa-twitter wtt-mark"></div>
-
-                        <div class="media">
-                            <a href="#">
-                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
-                            </a>
-                            <div class="media-body">
-                                <h2 class="text-white display-6">Jim Doe</h2>
-                                <p class="text-light">Project Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weather-category twt-category">
-                        <ul>
-                            <li class="active">
-                                <h5>750</h5>
-                                Tweets
-                            </li>
-                            <li>
-                                <h5>865</h5>
-                                Following
-                            </li>
-                            <li>
-                                <h5>3645</h5>
-                                Followers
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="twt-write col-sm-12">
-                        <textarea placeholder="Write your Tweet and Enter" rows="1" class="form-control t-text-area"></textarea>
-                    </div>
-                    <footer class="twt-footer">
-                        <a href="#"><i class="fa fa-camera"></i></a>
-                        <a href="#"><i class="fa fa-map-marker"></i></a>
-                        New Castle, UK
-                        <span class="pull-right">
-                            32
-                        </span>
-                    </footer>
-                </section>
+               
             </div>
 
 
             <div class="col-xl-3 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Total Profit</div>
-                                <div class="stat-digit">1,012</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
 
             <div class="col-xl-3 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">New Customer</div>
-                                <div class="stat-digit">961</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
 
             <div class="col-xl-3 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Active Projects</div>
-                                <div class="stat-digit">770</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
 
             <div class="col-xl-6">
-                <div class="card" >
-                    <div class="card-header">
-                        <h4>World</h4>
-                    </div>
-                    <div class="Vector-map-js">
-                        <div id="vmap" class="vmap" style="height: 265px;"></div>
-                    </div>
-                </div>
-                <!-- /# card -->
+               
             </div>
 
 
