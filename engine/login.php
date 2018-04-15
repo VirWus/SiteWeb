@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
-header("Location:../admin/admin.html");
+header("Location:../admin/admin.php");
 }else {
 $email = $_POST["email"];
 $pass = $_POST["password"];
@@ -15,9 +15,9 @@ if(!empty($email) && !empty($pass)){
 if(isset($_POST["remember"])){
   $_SESSION["email"] = base64_encode($email);
   $_SESSION["pass"] = base64_encode($epass);
-  
+
 }
-header("Location:../admin/admin.html");
+header("Location:../admin/admin.php");
   }else {
     echo "Error wrong email or password";
   }
