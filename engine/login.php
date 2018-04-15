@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
-header("Location:../index.html");
+header("Location:../admin/admin.html");
 }else {
 $email = $_POST["email"];
 $pass = $_POST["password"];
@@ -11,11 +11,13 @@ if(!empty($email) && !empty($pass)){
   $query = mysqli_query($connect,"SELECT * FROM admin WHERE  email = '$email' AND mdp='$epass'");
   $row = mysqli_num_rows($query);
   if($row > 0){
-    echo "ok";
+
 if(isset($_POST["remember"])){
   $_SESSION["email"] = base64_encode($email);
   $_SESSION["pass"] = base64_encode($epass);
+  
 }
+header("Location:../admin/admin.html");
   }else {
     echo "Error wrong email or password";
   }
