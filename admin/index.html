@@ -39,18 +39,18 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form method="post" action="../engine/login.php">
                         <div class="form-group">
                             <label>Votre adress email</label>
-                            <input type="email" class="form-control" placeholder="votre adress email">
+                            <input type="email" name="email" class="form-control" placeholder="votre adress email">
                         </div>
                         <div class="form-group">
                             <label>Mot de pass</label>
-                            <input type="password" class="form-control" placeholder="votre mot de passe">
+                            <input type="password" name="password" class="form-control" placeholder="votre mot de passe">
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Se souvenir de moi
+                                <input type="checkbox" name="remember"> Se souvenir de moi
                             </label>
                             <label class="pull-right">
                                 <a href="#">Mot de pass oublier?</a>
