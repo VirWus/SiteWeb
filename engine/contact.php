@@ -3,7 +3,10 @@ if (isset($_POST["submit"])) {
   $email = $_POST["email"];
   $text = $_POST["textC"];
   if (!empty($email) && !empty($text)) {
-
+    $recipient="khoudoursofiane75@gmail.com";
+    $subject="Test Email";
+    $mail_body="Nobody is going to get this email but me.";
+    mail($recipient, $subject, $mail_body);
   }else {
     echo "Please enter an email and the discription";
   }
