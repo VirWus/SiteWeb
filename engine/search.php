@@ -39,7 +39,7 @@ function searchFunction() {
   while($row = mysqli_fetch_assoc($query)){
 
   ?>
-    <tr><td> <?php echo $row["nom"];  ?> </td> <td> <?php echo $row["annee"];  ?></td> <td> <?php echo base64_decode($row["resumer"]);  ?></td> <td><?php echo $row["type"];  ?></td> <td> <a href=<?php echo base64_decode($row["lien"]);  ?>> telecharger </a> </td> </tr>
+    <tr><td> <?php echo $row["nom"];  ?> </td> <td> <?php echo $row["annee"];  ?></td> <td> <?php echo base64_decode($row["resumer"]);  ?></td> <td><?php echo $row["type"];  ?></td> <td> <a href=<?php echo "countDownloads.php?q=".$row["lien"];  ?>> telecharger </a> </td> </tr>
 <?php } ?>
 </table>
 </body>
