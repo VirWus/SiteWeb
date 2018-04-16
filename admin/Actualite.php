@@ -53,15 +53,14 @@
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-cogs"></i>Admin </a>
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
-
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -107,13 +106,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                               <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -155,8 +153,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Admin</a></li>
+                            <li><a href="Admin.php">Dashboard</a></li>
+                            <li><a href="Accueil.php">Admin</a></li>
                             <li class="active">Actualite</li>
                         </ol>
                     </div>
@@ -168,7 +166,52 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
-                <div class="row">
+                   <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">Modifier Les actualite</div>
+                      <div class="card-body card-block">
+                        <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="username2" name="nom" value="<?php echo $l['nom'];?>" placeholder="Username" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="email" id="email2" name="email" value="<?php echo $l['email'];  ?> " placeholder="Email" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="password" id="password2" name="password2" placeholder="Password" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                            </div>
+                          </div>
+                           <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="university2" name="university2" placeholder="University" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+                          </div>
+                           <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="grade2" name="grade2" placeholder="Grade" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+
+                            </div>
+
+                                  <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
+                          </div>
+                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Submit</button></div>
+                        </form>
+                      </div>
+                            </div>
+                          </div>
 
                 <div class="col-md-12">
                     <div class="card">
