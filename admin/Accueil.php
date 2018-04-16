@@ -165,9 +165,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Admin</a></li>
-                            <li class="active">Aceuile</li>
+                            <li><a href="Admin.php">Dashboard</a></li>
+                            <li><a href="Accueil.php">Admin</a></li>
+                            <li class="active">Accueil</li>
                         </ol>
                     </div>
                 </div>
@@ -211,15 +211,21 @@
                               <input type="text" id="grade2" name="grade2" placeholder="Grade" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
-                          </div>
-                            <div class="row form-group">
+
+                            </div>
+
+                                  <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
                             <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
                           </div>
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Submit</button></div>
                         </form>
                       </div>
+                            </div>
+                          </div>
+                      
                     </div>
+                      
                   </div>
                 <div class="col-md-12">
                     <div class="card">
@@ -230,21 +236,36 @@
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>action</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date</th>
+                        <th>Lien_de_n</th>
+                        <th>secteur</th>
+                        <th>University</th>
+                        <th>Grade</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Bio</th>
                       </tr>
                     </thead>
                     <tbody>
-                      
+                                 <?php $i=1 ;
+    while ($row = mysqli_fetch_assoc($resultat)){ ?>             
                       <tr>
-                        <td>Donna Snider</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
+                        <td><?php echo $row["nom"]; ?></td>
+                        <td><?php echo $row["prenom"]; ?></td>
+                        <td><?php echo $row["date"]; ?></td>
+                        <td><?php echo $row["lieu_de_n"]; ?></td>
+                        <td><?php echo $row["secteur"]; ?></td>
+                        <td><?php echo $row["univ"]; ?></td>
+                        <td><?php echo $row["grade"]; ?></td>
+                        <td><?php echo $row["username"]; ?></td>
+                        <td><?php echo $row["email"]; ?></td>
+                        <td><?php echo $row["bio"]; ?></td>
                         <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
                       </tr>
                     </tbody>
+                    <?php } ?>
                   </table>
                         </div>
                     </div>
@@ -278,6 +299,7 @@
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
+   
 
 
     <script type="text/javascript">

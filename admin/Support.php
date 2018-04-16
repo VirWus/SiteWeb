@@ -32,6 +32,10 @@
 
 </head>
 <body>
+    <?php 
+   $db = mysqli_connect("localhost","root","","univedu"); 
+    $resultat = mysqli_query($db,"SELECT * FROM support");
+    ?>  
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -159,8 +163,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Admin</a></li>
+                            <li><a href="Admin.php">Dashboard</a></li>
+                            <li><a href="Accueil.php">Admin</a></li>
                             <li class="active">Support</li>
                         </ol>
                     </div>
@@ -181,20 +185,28 @@
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>action</th>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Année</th>
+                        <th>Résumer</th>
+                        <th>Type</th>
+                        <th>Lien</th>
                       </tr>
                     </thead>
                     <tbody>
-                     
+                     <?php $i=1 ;
+    while ($row = mysqli_fetch_assoc($resultat)){ ?>
                       <tr>
-                        <td>Donna Snider</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
+                        <td><?php   echo $i++;  ?></td>
+                        <td><?php echo $row["nom"] ; ?></td>
+                        <td><?php  echo $row["annee"] ;   ?></td>
+                        <td><?php   echo $row["resumer"] ;  ?></td>
+                        <td><?php   echo $row["type"] ;  ?></td>
+                        <td><?php   echo $row["lien"] ;  ?></td>
                         <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
                       </tr>
+                      <?php  } 
+                   ?>
                     </tbody>
                   </table>
                         </div>
