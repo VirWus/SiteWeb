@@ -29,10 +29,10 @@
 
 </head>
 <body>
-<?php 
-   $db = mysqli_connect("localhost","root","","univedu"); 
-    $resultat = mysqli_query($db,"SELECT * FROM admin");
-    ?>  
+<?php
+  include_once("../engine/connect/connection.php");
+    $resultat = mysqli_query($connect,"SELECT * FROM admin");
+    ?>
 
         <!-- Left Panel -->
 
@@ -93,11 +93,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+
                         </div>
 
                         <div class="dropdown for-message">
-                         
+
                         </div>
                     </div>
                 </div>
@@ -191,9 +191,9 @@
                                 <hr>
                                 <div class="card-text text-sm-center">
                                     <a href="https://www.facebook.com/boubakeur.moussaoui"><i class="fa fa-facebook pr-1"></i></a>
-                                 
+
                                     <a href="https://www.linkedin.com/in/boubakeur-moussaoui-30192218/"><i class="fa fa-linkedin pr-1"></i></a>
-                
+
                                 </div>
                             </div>
                         </div>
@@ -297,13 +297,13 @@
 
 
             <div class="col-lg-3 col-md-6">
-          
+
                 <!--/social-box-->
             </div><!--/.col-->
 
 
             <div class="col-lg-3 col-md-6">
-            
+
                 <!--/social-box-->
             </div><!--/.col-->
 
@@ -383,25 +383,25 @@
             </div>
 
            <div class="col-xl-3 col-lg-6">
-               
+
             </div>
 
 
             <div class="col-xl-3 col-lg-6">
-                
+
             </div>
 
 
             <div class="col-xl-3 col-lg-6">
-               
+
             </div>
 
             <div class="col-xl-3 col-lg-6">
-              
+
             </div>
 
             <div class="col-xl-6">
-               
+
             </div>
 
 

@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -32,10 +32,10 @@
 
 </head>
 <body>
-    <?php 
-   $db = mysqli_connect("localhost","root","","univedu"); 
-    $resultat = mysqli_query($db,"SELECT * FROM support");
-    ?>  
+    <?php
+   include_once("../engine/connect/connection.php");
+    $resultat = mysqli_query($connect,"SELECT * FROM support");
+    ?>
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -45,18 +45,18 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand" href="Admin.php"><img src="images/logo.png" alt="Logo"></a>
                 <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                
+
                       <li>
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
                     </li>
@@ -68,7 +68,7 @@
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
                     </li>
-                    
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -97,13 +97,13 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                         
+
                         </div>
 
                         <div class="dropdown for-message">
-                          
-                          
-                          
+
+
+
                         </div>
                     </div>
                 </div>
@@ -200,12 +200,12 @@
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["nom"] ; ?></td>
                         <td><?php  echo $row["annee"] ;   ?></td>
-                        <td><?php   echo $row["resumer"] ;  ?></td>
+                        <td><?php   echo base64_decode($row["resumer"]);  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
-                        <td><?php   echo $row["lien"] ;  ?></td>
+                        <td><a href=<?php   echo base64_decode($row["lien"]);  ?> > Telecharger </a></td>
                         <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
                       </tr>
-                      <?php  } 
+                      <?php  }
                    ?>
                     </tbody>
                   </table>
@@ -244,7 +244,7 @@
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
