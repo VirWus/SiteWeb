@@ -218,7 +218,14 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">
+<?php
+include_once("../engine/connect/connection.php");
+$query = mysqli_query($connect,"SELECT SUM(count) AS la_somme FROM support  ");
+$row = mysqli_fetch_assoc($query);
+echo $row["la_somme"];
+ ?>
+                            </span>
                         </h4>
                         <p class="text-light">nombre téléchargement</p>
 
@@ -247,9 +254,15 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php
+                            $fp = fopen("../engine/count.txt",'r');
+                            $line = fgets($fp);
+                            echo $line;
+                            fclose($fp);
+
+                              ?></span>
                         </h4>
-                        <p class="text-light">Members online</p>
+                        <p class="text-light">Nombre des visiteurs</p>
 
                         <div class="chart-wrapper px-3" style="height:70px;" height="70">
                             <canvas id="widgetChart4"></canvas>

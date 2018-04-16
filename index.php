@@ -1,11 +1,23 @@
 <?php
 include_once("engine/getIP.php");
-$fp = fopen('engine/ip.txt', 'a');
+$fp = fopen('engine/count.txt', 'c+');
+$fh = file('engine/ip.txt');
+$handler = fopen('engine/ip.txt', 'a');
 $ip = getRealIpAddr();
-fwrite($fp,$ip);
-fclose($fp);
 
- ?>
+       flock($fp, LOCK_EX);
+       $count = (int)fread($fp, filesize('engine/count.txt'));
+       ftruncate($fp, 0);
+       fseek($fp, 0);
+       fwrite($handler,$ip);
+       fwrite($handler, "\n");
+  fwrite($fp, $count + 1);
+  flock($fp, LOCK_UN);
+
+
+fclose($handler);
+fclose($fp);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
