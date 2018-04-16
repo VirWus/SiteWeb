@@ -1,3 +1,12 @@
+<?php
+include_once("engine/getIP.php");
+$fp = fopen('engine/ip.txt', 'a');
+$ip = getRealIpAddr();
+fwrite($fp,$ip);
+fclose($fp);
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
