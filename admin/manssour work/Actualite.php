@@ -54,15 +54,15 @@
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
 
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -108,13 +108,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                        <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+<a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+<a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -238,8 +237,9 @@
                             <td> <?php echo $Rs['contenu']?></td>
                             <td></td>
                             <td>
-                            <div class="btn btn-primary btn-app-sm"> <i class="fa fa-edit"><a href="show-act.php?id=<?php echo$Rs['id'] ?>"></a></i></div>
-                            <div class="btn btn-danger btn-app-sm"> <i class="fa fa-minus-square"></i></div> 
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
                             </td>
                       <?php } ?>
                     </tbody>

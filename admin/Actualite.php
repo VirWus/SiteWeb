@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -53,12 +54,13 @@
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-cogs"></i>Admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
 
                     <li>
                         <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
+
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
@@ -106,12 +108,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                               <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
+                        <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
 
-                                <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
+<a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-                                <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
+<a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -153,8 +155,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="Admin.php">Dashboard</a></li>
-                            <li><a href="Accueil.php">Admin</a></li>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Admin</a></li>
                             <li class="active">Actualite</li>
                         </ol>
                     </div>
@@ -166,52 +168,42 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
+                  <div class="row">
+
                    <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Modifier Les actualite</div>
+                      <div class="card-header">Ajouter votre Support</div>
                       <div class="card-body card-block">
-                        <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>">
+                        <form action="add-act.php" method="post" class="">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="username2" name="nom" value="<?php echo $l['nom'];?>" placeholder="Username" class="form-control">
+                              <input type="text" id="titre" name="titre" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="email" id="email2" name="email" value="<?php echo $l['email'];  ?> " placeholder="Email" class="form-control">
-                              <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                              <input type="date" id="date" name="date" placeholder="Date" class="form-control">
+                                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
+                          
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="password" id="password2" name="password2" placeholder="Password" class="form-control">
-                              <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                            </div>
+                              <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
+                             </div>
+                          
                           </div>
-                           <div class="form-group">
-                            <div class="input-group">
-                              <input type="text" id="university2" name="university2" placeholder="University" class="form-control">
-                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <div class="input-group">
-                              <input type="text" id="grade2" name="grade2" placeholder="Grade" class="form-control">
-                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                            </div>
-
-                            </div>
-
-                                  <div class="row form-group">
-                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
+                            <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
                             <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
                           </div>
-                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Submit</button></div>
+                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
                         </form>
                       </div>
-                            </div>
-                          </div>
+                    </div>
+                  </div>
+               
 
                 <div class="col-md-12">
                     <div class="card">
@@ -222,22 +214,34 @@
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>action</th>
+                        <th>Titre</th>
+                        <th>Date</th>
+                        <th>Contenu</th>
+                        <th>Lien</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Donna Snider</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
-                        <td> <div class="btn btn-primary btn-app-sm"> <i class="fa fa-search"></i></div>
-                             <div class="btn btn-warning btn-app-sm"> <i class="fa fa-search"></i></div>
-                              <div class="btn btn-danger btn-app-sm"> <i class="fa fa-search"></i></div>
-                        </td>
-                      </tr>
+                      <?php
+                            $con = mysqli_connect("localhost", "root", "", "univedu");
+                              if(!$con){
+                                 echo "site non connecté";
+                                     }
+                              $result =mysqli_query($con, "select * from actuallite");
+                                  while($Rs=mysqli_fetch_assoc($result))
+                                     {   
+                             ?>
+                        <tr>
+                            <td><?php echo $Rs['titre'] ?></td>
+                            <td> <?php echo $Rs['date']?></td>
+                            <td> <?php echo $Rs['contenu']?></td>
+                            <td></td>
+                            <td>
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
+                            </td>
+                      <?php } ?>
                     </tbody>
                   </table>
                         </div>

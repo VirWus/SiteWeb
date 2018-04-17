@@ -35,6 +35,7 @@
     <?php 
    $db = mysqli_connect("localhost","root","","univedu"); 
     $resultat = mysqli_query($db,"SELECT * FROM admin");
+    $l = mysqli_fetch_assoc($resultat);
     ?>  
         <!-- Left Panel -->
 
@@ -58,16 +59,18 @@
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
 
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
+
+                    
                   
             
 
@@ -117,13 +120,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -179,18 +181,18 @@
                
                     <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Example Form</div>
+                      <div class="card-header">Modifier Les informations</div>
                       <div class="card-body card-block">
-                        <form action="" method="post" class="">
+                        <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="username2" name="username2" placeholder="Username" class="form-control">
+                              <input type="text" id="username2" name="nom" value="<?php echo $l['nom'];?>" placeholder="Username" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="email" id="email2" name="email2" placeholder="Email" class="form-control">
+                              <input type="email" id="email2" name="email" value="<?php echo $l['email'];  ?> " placeholder="Email" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             </div>
                           </div>
@@ -203,13 +205,13 @@
                            <div class="form-group">
                             <div class="input-group">
                               <input type="text" id="university2" name="university2" placeholder="University" class="form-control">
-                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                              <div class="input-group-addon"><i class="fa fa-university"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <div class="input-group">
                               <input type="text" id="grade2" name="grade2" placeholder="Grade" class="form-control">
-                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                              <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
                             </div>
 
                             </div>
@@ -249,7 +251,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                                 <?php $i=1 ;
+                                 <?php  $resultat = mysqli_query($db,"SELECT * FROM admin");
+                                 $i=1 ;
     while ($row = mysqli_fetch_assoc($resultat)){ ?>             
                       <tr>
                         <td><?php echo $row["nom"]; ?></td>
@@ -262,7 +265,7 @@
                         <td><?php echo $row["username"]; ?></td>
                         <td><?php echo $row["email"]; ?></td>
                         <td><?php echo $row["bio"]; ?></td>
-                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+                        <!--<td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>-->
                       </tr>
                     </tbody>
                     <?php } ?>
