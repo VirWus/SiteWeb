@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -52,7 +52,7 @@
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -92,11 +92,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+
                         </div>
 
                         <div class="dropdown for-message">
-                 
+
                         </div>
                     </div>
                 </div>
@@ -168,16 +168,16 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
-                  <div class="row">
+ <div class="row">
 
                    <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Ajouter votre Support</div>
+                      <div class="card-header">Ajouter votre actualité</div>
                       <div class="card-body card-block">
-                        <form action="add-act.php" method="post" class="">
+                        <form action="add-act.php" method="post" class="" enctype="multipart/form-data">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="titre" name="titre" placeholder="Nom" class="form-control">
+                              <input type="text" id="titre" name="titre" placeholder="Titre" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
@@ -187,23 +187,27 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-                          
+
                           <div class="form-group">
                             <div class="input-group">
                               <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
                              </div>
-                          
+                             <div class="form-group">
+                               <div class="input-group">
+                                <input type="text" id="text" name="lien" placeholder="lien" class="form-control">
+                                </div>
+
                           </div>
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="fileto" class="form-control-file"></div>
                           </div>
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
                         </form>
                       </div>
                     </div>
                   </div>
-               
+
 
                 <div class="col-md-12">
                     <div class="card">
@@ -229,7 +233,7 @@
                                      }
                               $result =mysqli_query($con, "select * from actuallite");
                                   while($Rs=mysqli_fetch_assoc($result))
-                                     {   
+                                     {
                              ?>
                         <tr>
                             <td><?php echo $Rs['titre'] ?></td>
@@ -237,9 +241,9 @@
                             <td> <?php echo $Rs['contenu']?></td>
                             <td></td>
                             <td>
-                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
                             <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
-                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
                             </td>
                       <?php } ?>
                     </tbody>
@@ -279,7 +283,7 @@
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
