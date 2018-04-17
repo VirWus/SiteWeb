@@ -1,24 +1,3 @@
-<?php
-include_once("engine/getIP.php");
-$fp = fopen('engine/count.txt', 'c+');
-$fh = file('engine/ip.txt');
-$handler = fopen('engine/ip.txt', 'a');
-$ip = getRealIpAddr();
-
-       flock($fp, LOCK_EX);
-       $count = (int)fread($fp, filesize('engine/count.txt'));
-       ftruncate($fp, 0);
-       fseek($fp, 0);
-       fwrite($handler,$ip);
-       fwrite($handler, "\n");
-  fwrite($fp, $count + 1);
-  flock($fp, LOCK_UN);
-
-
-fclose($handler);
-fclose($fp);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +8,7 @@ fclose($fp);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Resume - Start Bootstrap Theme</title>
+    <title>Moussaoui Boubaker</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,14 +21,66 @@ fclose($fp);
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
+    <link href="css/resume.css" rel="stylesheet">
+	 <!-- portfolio cv template  -->
+	<link href="common-css/bootstrap.css" rel="stylesheet">
+	
+	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
+	
+
+
+
+    <link rel="stylesheet" href="portf/css/linearicons.css">
+      <link rel="stylesheet" href="portf/css/font-awesome.min.css">
+      <link rel="stylesheet" href="portf/css/bootstrap.css">
+      <link rel="stylesheet" href="portf/css/magnific-popup.css">
+      <link rel="stylesheet" href="portf/css/nice-select.css">          
+      <link rel="stylesheet" href="portf/css/animate.min.css">
+      <link rel="stylesheet" href="portf/css/owl.carousel.css">
+      <link rel="stylesheet" href="portf/css/main.css">
+
+      <link href="css/mdb.min.css" rel="stylesheet">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+      <!--
+      CSS
+      ============================================= -->
+      <link rel="stylesheet" href="cre/css/linearicons.css">
+      <link rel="stylesheet" href="cre/css/font-awesome.min.css">
+      <link rel="stylesheet" href="cre/css/jquery.DonutWidget.min.css">
+      <link rel="stylesheet" href="cre/css/bootstrap.css">
+      <link rel="stylesheet" href="cre/css/owl.carousel.css">
+      <link rel="stylesheet" href="cre/css/main.css">
+ <!-- Actualite Fplus tepmplate  -->
+  <link href="fplus/style.css" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+
+ <!-- engage slider actualite -->
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+   
+    
+  
+
+
   </head>
 
   <body id="page-top">
+    
+ <!--   <div id="preloader">
+        <div class="fplus-load"></div>
+        <img src="img/core-img/h-logo.png" alt="logo">
+    </div>  -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-block d-lg-none">Moussaoui Boubaker</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
         </span>
@@ -63,19 +94,16 @@ fclose($fp);
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            <a class="nav-link js-scroll-trigger" href="#experience">Actualite</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#education">Education</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            <a class="nav-link js-scroll-trigger" href="#skills">Recheche Sientifique</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+            <a class="nav-link js-scroll-trigger" href="#interests">Contact</a>
           </li>
         </ul>
       </div>
@@ -83,139 +111,354 @@ fclose($fp);
 
     <div class="container-fluid p-0">
 
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Moussaoui
-            <span class="text-primary">Boubaker</span>
-          </h1>
-          <div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-            <a href="mailto:name@email.com">name@email.com</a>
-          </div>
-          <p class="mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Web Developer</h3>
-              <div class="subheading mb-3">Intelitec Solutions</div>
-              <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+<header>
+		<div class="container">
+			<div class="heading-wrapper">
+				<div class="row">
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-location-outline"></i>
+							<div class="right-area">
+								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Tél :</h6>
+                <p style="font-size: 16px; font-weight:700 ; color: white;">+213.7.74.59.49.81</p>
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+					
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-telephone-outline"></i>
+							<div class="right-area">
+								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Université Bachir El Ibrahimi</h6>
+                <p style="font-size: 16px; font-weight:700 ; color: white;">Bordj Bou Arreridj</p>
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+					
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="info">
+							<i class="icon ion-ios-chatboxes-outline"></i>
+							<div class="right-area">
+								<h6 style="font-size: 16px; font-weight:700 ; color: white;">Email : </h6>
+                <p style="font-size: 16px; font-weight:700 ; color: white;">b.moussaoui@univ-bba.dz</p>
+							</div><!-- right-area -->
+						</div><!-- info -->
+					</div><!-- col-sm-4 -->
+				</div><!-- row -->
+			</div><!-- heading-wrapper -->
+			
+		
+		</div><!-- container -->
+	</header>
+	
+	<section class="intro-section" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1 col-lg-2"></div>
+				<div class="col-md-10 col-lg-8">
+					<div class="intro">
+						<div class="profile-img"><img src="img/profile.jpg" alt=""></div>
+						<h2><b>Michel SMith</b></h2>
+						<h4 class="font-yellow">Key Account Manager</h4>
+						<ul class="information margin-tb-30">
+							<li><b>BORN : </b>August 25, 1987</li>
+							<li><b>EMAIL : </b>mymith@mywebpage.com</li>
+							<li><b>MARITAL STATUS : </b>Married</li>
+						</ul>
+						<ul class="social-icons">
+							<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+							<li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+							<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+							<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+							<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+						</ul>
+					</div><!-- intro -->
+				</div><!-- col-sm-8 -->
+			</div><!-- row -->
+		</div><!-- container -->
+	</section><!-- intro-section -->
+     
+  <section class="resume-section fplus-about-us-area bg-gray section-padding-120"  id="experience">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h4>About Us</h4>
+                        <div class="section-heading-line"></div>
+                    </div>
+                </div>
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">March 2013 - Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Developer</h3>
-              <div class="subheading mb-3">Intelitec Solutions</div>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">December 2011 - March 2013</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Junior Web Designer</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">July 2010 - December 2011</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Design Intern</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2008 - June 2010</span>
-            </div>
-          </div>
-
         </div>
 
-      </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-        <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">University of Colorado Boulder</h3>
-              <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
+        <div class="container">
+            <div class="about-us-content wow fadeInLeftBig" data-wow-delay="0.5">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="about-us-thumb wow fadeIn" data-wow-delay="1s">
+                            <img src="img/bg-img/about-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="about-us-text wow fadeIn" data-wow-delay="1.5s">
+                            <h4>Who We Are</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus eget purus id felis dignissim convallis. Suspendisse et augue dui. Morbi gravida sed justo vel venenatis. Ut tempor pretium maximus. Donec libero diam, faucibus vitae lectus nec, accumsan gravida dui. Nam interdum mi eget lacus aliquet, sit amet ultricies.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2006 - May 2010</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">James Buchanan High School</h3>
-              <div class="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2002 - May 2006</span>
-            </div>
-          </div>
-
         </div>
+
+
+         <!-- Testimonial Section -->
+   <section class="resume-section testimonial-area relative section-gap">
+     
+        <div class="container">
+          <div class="row">
+            <div class="active-testimonial">
+              <div class="single-testimonial item d-flex flex-row">
+            <div class="col-12 ">
+                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
+                        <div class="feature-title d-flex align-items-center">
+                            <img src="img/icons/wallet.svg" alt="">
+                            <h5>Reasonable pricing</h5>
+                        </div>
+                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                    </div>
+                </div>
+              </div>
+              <div class="single-testimonial item d-flex flex-row">
+                 <div class="col-12">
+                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
+                        <div class="feature-title d-flex align-items-center">
+                            <img src="img/icons/wallet.svg" alt="">
+                            <h5>test</h5>
+                        </div>
+                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                    </div>
+                </div>
+              </div>  
+
+
+    <div class="single-testimonial item d-flex flex-row">
+                 <div class="col-12">
+                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
+                        <div class="feature-title d-flex align-items-center">
+                            <img src="img/icons/wallet.svg" alt="">
+                            <h5> pricing</h5>
+                        </div>
+                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                    </div>
+                </div>
+              </div>  
+
+
+
+    <div class="single-testimonial item d-flex flex-row">
+                 <div class="col-12">
+                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
+                        <div class="feature-title d-flex align-items-center">
+                            <img src="img/icons/wallet.svg" alt="">
+                            <h5>Reasonable </h5>
+                        </div>
+                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
+                    </div>
+                </div>
+              </div>  
+
+
+
+            </div>          
+          </div>
+        </div>  
       </section>
+    <!-- Testimonial Section End --> 
+</section>
+
+
+
+
+
+
+
+
+
+<section class="resume-section portfolio-area section-gap" id="education">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+      <div class="menu-content col-lg-10">
+                <div class="title text-center">
+                  <h1 class="mb-10">This is what we can do for you</h1>
+                  <p>Who are in extremely love with eco friendly system..</p>
+                </div>
+              </div><!-- col-sm-4 -->
+        <div class="col-sm-8 ">
+
+          <div class="filters portfolioFilter clearfix margin-b-80">
+            <a href="#" data-filter="*" class="current"><b>ALL</b></a>
+            <a href="#" data-filter=".web-design"><b>Cours</b></a>
+            <a href="#" data-filter=".branding"><b>TD</b></a>
+            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
+            <a href="#" data-filter=".video"><b>Video</b></a>
+          </div><!-- portfolioFilter -->
+        </div><!-- col-sm-8 -->
+      </div><!-- row -->
+  
+    
+    <div class=" filters-content portfolioContainer row grid">
+      
+   <!--    <div class="single-portfolio col-sm-4 all graphic-design">
+                  <div class="item">
+                    <img src="img/p1.jpg" alt="Work 1">
+                    <div class="p-inner">
+                      <h4>3D Helmet Design</h4>
+                      <div class="cat">Corporate</div>
+                    </div>
+                  </div>
+                </div> --><!-- p-item -->
+    
+  <!--     <div class="single-portfolio col-sm-4 all graphic-design">
+                        <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(img/bg-img/video.jpg);">
+                            <div class="video-play-btn">
+                                <a href="https://youtu.be/ZydsX1qjoBI" class="video--play--btn"><i class="pe-7s-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div> -->
+
+               <div class="single-portfolio col-12 col-md-6 col-lg-4 graphic-design">
+                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Blog Thumbnail -->
+                      
+                        <!-- Blog Content -->
+                        <div class="fplus-blog-content">
+                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <div class="post-meta-data d-flex align-items-center">
+                                <div class="post-author-img">
+                                    <img src="img/blog-img/post-author.jpg" alt="">
+                                </div>
+                                <div class="post-author-name-date">
+                                    <h6>Lora Palmer</h6>
+                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
+                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Blog Thumbnail -->
+                      
+                        <!-- Blog Content -->
+                        <div class="fplus-blog-content">
+                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <div class="post-meta-data d-flex align-items-center">
+                                <div class="post-author-img">
+                                    <img src="img/blog-img/post-author.jpg" alt="">
+                                </div>
+                                <div class="post-author-name-date">
+                                    <h6>Lora Palmer</h6>
+                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
+                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Blog Thumbnail -->
+                      
+                        <!-- Blog Content -->
+                        <div class="fplus-blog-content">
+                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <div class="post-meta-data d-flex align-items-center">
+                                <div class="post-author-img">
+                                    <img src="img/blog-img/post-author.jpg" alt="">
+                                </div>
+                                <div class="post-author-name-date">
+                                    <h6>Lora Palmer</h6>
+                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+   <!--  <div class="single-portfolio col-sm-4 all web-design">
+                  <div class="item">
+                    <img src="img/p2.jpg" alt="Work 1">
+                    <div class="p-inner">
+                      <h4>2D Vinyl Design</h4>
+                      <div class="cat">Personal</div>
+                    </div>
+                  </div>
+                </div> -->
+
+<!-- <div class="single-portfolio col-sm-4 all branding">
+                  <div class="item">
+                    <img src="img/p3.jpg" alt="Work 1">
+                    <div class="p-inner">
+                      <h5>Creative Poster Design</h5>
+                      <div class="cat">Agency</div>
+                    </div>
+                  </div>
+                </div> -->
+
+
+
+    </div><!-- portfolioContainer -->
+      </div><!-- container -->
+  </section><!-- portfolio-section -->
+  
+
+
+
+
+
+     
+   
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
 
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+                                  
+<!-- Button trigger modal-->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
+
+<!--Modal: modalPush-->
+<div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center">
+                <p class="heading">Be always up to date</p>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+
+                <i class="fa fa-bell fa-4x animated rotateIn mb-4"></i>
+
+                <p>Do you want to receive the push notification about the newest posts?</p>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer flex-center">
+                <a href="https://mdbootstrap.com/product/material-design-for-bootstrap-pro/" class="btn btn-primary ">Yes</a>
+                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: modalPush-->
           <ul class="list-inline list-icons">
             <li class="list-inline-item">
               <i class="devicons devicons-html5"></i>
@@ -270,61 +513,125 @@ fclose($fp);
         </div>
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-        <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skiier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
+      <section class="resume-section fplus-contact-area bg-gray" id="interests">
+       <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h4>Contact</h4>
+                        <div class="section-heading-line"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="fplus-contact-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10">
+                        <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
+                            <form action="mail.php" method="post" id="main_contact_form">
+                                <!-- Message Input Area Start -->
+                                <div class="contact_input_area">
+                                    <div id="success_fail_info"></div>
+                                    <div class="row">
+                                        <!-- Single Input Area Start -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+                                            </div>
+                                        </div>
+                                        <!-- Single Input Area Start -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <!-- Single Input Area Start -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                                            </div>
+                                        </div>
+                                        <!-- Single Input Area Start -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="number" id="number" placeholder="Telephone" required>
+                                            </div>
+                                        </div>
+                                        <!-- Single Input Area Start -->
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                                            </div>
+                                        </div>
+                                        <!-- Single Input Area Start -->
+                                        <div class="col-12 text-center">
+                                            <button type="submit" class="btn">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Google Maps -->
+        <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-            <li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005</li>
-          </ul>
-        </div>
-      </section>
+      
+     
 
     </div>
 
+<!--  <div class="bottom"> <a href="#" class="settings"></a> </div> -->
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery-easing.min.js"></script>
 
+     
+  
+      <script src="portf/js/vendor/jquery-2.2.4.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+     <!-- engage js slider actualite -->
+      <script src="cre/js/main.js"></script>  
+      <script src="cre/js/jquery.DonutWidget.min.js"></script>
+      <script src="cre/js/jquery.magnific-popup.min.js"></script>     
+      <script src="cre/js/jquery.sticky.js"></script>
+      <script src="cre/js/owl.carousel.min.js"></script>      
 
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk9KNSL1jTv4MY9Pza6w8DJkpI_nHyCnk"></script>
+      <script src="fplus/js/google-map/map-active.js"></script>
+
+    <!-- Custom scripts for this template -->
+      <script src="js/resume.min.js"></script>
+   	  <script src="assets/js/color-switcher.js"></script>
+      
+  <!-- <script src="common-js/jquery-3.2.1.min.js"></script> -->
+      <script src="portf/js/isotope.pkgd.min.js"></script>  
+       <script src="portf/js/main.js"></script>  
+
+
+
+  
+  <script src="common-js/tether.min.js"></script>
+  
+  <script src="common-js/bootstrap.js"></script>
+  
+  <script src="common-js/isotope.pkgd.min.js"></script>
+  
+  <!-- <script src="common-js/jquery.waypoints.min.js"></script> -->
+  
+  <!-- <script src="common-js/progressbar.min.js"></script> -->
+  
+  <!-- <script src="common-js/jquery.fluidbox.min.js"></script> -->
+   <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="common-js/scripts.js"></script>
   </body>
 
 </html>
