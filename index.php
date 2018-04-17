@@ -1,3 +1,10 @@
+<?php
+include_once("engine/connect/connection.php");
+$query = mysqli_query($connect,"SELECT * FROM support");
+
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,9 +31,9 @@
     <link href="css/resume.css" rel="stylesheet">
 	 <!-- portfolio cv template  -->
 	<link href="common-css/bootstrap.css" rel="stylesheet">
-	
+
 	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
-	
+
 
 
 
@@ -34,7 +41,7 @@
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
       <link rel="stylesheet" href="portf/css/bootstrap.css">
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
-      <link rel="stylesheet" href="portf/css/nice-select.css">          
+      <link rel="stylesheet" href="portf/css/nice-select.css">
       <link rel="stylesheet" href="portf/css/animate.min.css">
       <link rel="stylesheet" href="portf/css/owl.carousel.css">
       <link rel="stylesheet" href="portf/css/main.css">
@@ -45,7 +52,7 @@
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
       <!--
       CSS
       ============================================= -->
@@ -64,15 +71,15 @@
  <!-- engage slider actualite -->
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-   
-    
-  
+
+
+
 
 
   </head>
 
   <body id="page-top">
-    
+
  <!--   <div id="preloader">
         <div class="fplus-load"></div>
         <img src="img/core-img/h-logo.png" alt="logo">
@@ -124,7 +131,7 @@
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-					
+
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i class="icon ion-ios-telephone-outline"></i>
@@ -134,7 +141,7 @@
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-					
+
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i class="icon ion-ios-chatboxes-outline"></i>
@@ -146,11 +153,11 @@
 					</div><!-- col-sm-4 -->
 				</div><!-- row -->
 			</div><!-- heading-wrapper -->
-			
-		
+
+
 		</div><!-- container -->
 	</header>
-	
+
 	<section class="intro-section" id="about">
 		<div class="container">
 			<div class="row">
@@ -177,7 +184,7 @@
 			</div><!-- row -->
 		</div><!-- container -->
 	</section><!-- intro-section -->
-     
+
   <section class="resume-section fplus-about-us-area bg-gray section-padding-120"  id="experience">
         <div class="container">
             <div class="row">
@@ -213,7 +220,7 @@
 
          <!-- Testimonial Section -->
    <section class="resume-section testimonial-area relative section-gap">
-     
+
         <div class="container">
           <div class="row">
             <div class="active-testimonial">
@@ -238,7 +245,7 @@
                         <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
                     </div>
                 </div>
-              </div>  
+              </div>
 
 
     <div class="single-testimonial item d-flex flex-row">
@@ -251,7 +258,7 @@
                         <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
                     </div>
                 </div>
-              </div>  
+              </div>
 
 
 
@@ -265,15 +272,15 @@
                         <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
                     </div>
                 </div>
-              </div>  
+              </div>
 
 
 
-            </div>          
+            </div>
           </div>
-        </div>  
+        </div>
       </section>
-    <!-- Testimonial Section End --> 
+    <!-- Testimonial Section End -->
 </section>
 
 
@@ -296,18 +303,19 @@
         <div class="col-sm-8 ">
 
           <div class="filters portfolioFilter clearfix margin-b-80">
+
             <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-            <a href="#" data-filter=".web-design"><b>Cours</b></a>
-            <a href="#" data-filter=".branding"><b>TD</b></a>
-            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
+            <a href="#" data-filter=".cours"><b>Cours</b></a>
+            <a href="#" data-filter=".td"><b>TD</b></a>
+            <a href="#" data-filter=".tp"><b>TP</b></a>
             <a href="#" data-filter=".video"><b>Video</b></a>
           </div><!-- portfolioFilter -->
         </div><!-- col-sm-8 -->
       </div><!-- row -->
-  
-    
+
+
     <div class=" filters-content portfolioContainer row grid">
-      
+
    <!--    <div class="single-portfolio col-sm-4 all graphic-design">
                   <div class="item">
                     <img src="img/p1.jpg" alt="Work 1">
@@ -317,7 +325,7 @@
                     </div>
                   </div>
                 </div> --><!-- p-item -->
-    
+
   <!--     <div class="single-portfolio col-sm-4 all graphic-design">
                         <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(img/bg-img/video.jpg);">
                             <div class="video-play-btn">
@@ -325,33 +333,44 @@
                             </div>
                         </div>
                     </div> -->
+                        <?php
+while($row=mysqli_fetch_assoc($query)){
 
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 graphic-design">
+     ?>
+               <div class="single-portfolio col-12 col-md-6 col-lg-4 <?php echo $row["type"]; ?>">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+
                         <!-- Blog Thumbnail -->
-                      
+
                         <!-- Blog Content -->
+
+
+
                         <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <h5><?php echo $row["nom"]; ?></h5>
                             <div class="post-meta-data d-flex align-items-center">
                                 <div class="post-author-img">
                                     <img src="img/blog-img/post-author.jpg" alt="">
                                 </div>
                                 <div class="post-author-name-date">
                                     <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                    <p>on <a href="#"><?php echo $row["annee"]; ?></a> at <a href="#">9:48 am</a></p>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-                
+<?php
+}
+ ?>
 
-               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
+               <!-- <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
-                      
+
                         <!-- Blog Content -->
+                        <!--
                         <div class="fplus-blog-content">
                             <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
                             <div class="post-meta-data d-flex align-items-center">
@@ -370,8 +389,9 @@
                <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
-                      
+
                         <!-- Blog Content -->
+                        <!--
                         <div class="fplus-blog-content">
                             <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
                             <div class="post-meta-data d-flex align-items-center">
@@ -408,25 +428,25 @@
                 </div> -->
 
 
-
+<!--
     </div><!-- portfolioContainer -->
-      </div><!-- container -->
-  </section><!-- portfolio-section -->
-  
+  <!--    </div><!-- container -->
+<!--  </section><!-- portfolio-section -->
 
 
 
 
 
-     
-   
+
+
+
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
 
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-                                  
+
 <!-- Button trigger modal-->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
 
@@ -581,8 +601,8 @@
         <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
       </section>
 
-      
-     
+
+
 
     </div>
 
@@ -590,20 +610,20 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery-easing.min.js"></script>
 
-     
-  
+
+
       <script src="portf/js/vendor/jquery-2.2.4.min.js"></script>
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-     
+
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
      <!-- engage js slider actualite -->
-      <script src="cre/js/main.js"></script>  
+      <script src="cre/js/main.js"></script>
       <script src="cre/js/jquery.DonutWidget.min.js"></script>
-      <script src="cre/js/jquery.magnific-popup.min.js"></script>     
+      <script src="cre/js/jquery.magnific-popup.min.js"></script>
       <script src="cre/js/jquery.sticky.js"></script>
-      <script src="cre/js/owl.carousel.min.js"></script>      
+      <script src="cre/js/owl.carousel.min.js"></script>
 
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk9KNSL1jTv4MY9Pza6w8DJkpI_nHyCnk"></script>
       <script src="fplus/js/google-map/map-active.js"></script>
@@ -611,24 +631,24 @@
     <!-- Custom scripts for this template -->
       <script src="js/resume.min.js"></script>
    	  <script src="assets/js/color-switcher.js"></script>
-      
+
   <!-- <script src="common-js/jquery-3.2.1.min.js"></script> -->
-      <script src="portf/js/isotope.pkgd.min.js"></script>  
-       <script src="portf/js/main.js"></script>  
+      <script src="portf/js/isotope.pkgd.min.js"></script>
+       <script src="portf/js/main.js"></script>
 
 
 
-  
+
   <script src="common-js/tether.min.js"></script>
-  
+
   <script src="common-js/bootstrap.js"></script>
-  
+
   <script src="common-js/isotope.pkgd.min.js"></script>
-  
+
   <!-- <script src="common-js/jquery.waypoints.min.js"></script> -->
-  
+
   <!-- <script src="common-js/progressbar.min.js"></script> -->
-  
+
   <!-- <script src="common-js/jquery.fluidbox.min.js"></script> -->
    <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="common-js/scripts.js"></script>
