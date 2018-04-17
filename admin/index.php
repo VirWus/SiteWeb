@@ -39,6 +39,7 @@
                     </a>
                 </div>
                 <div class="login-form">
+                  <!-- Post methode -->
                     <form method="post" action="../engine/login.php">
                         <div class="form-group">
                             <label>Votre adress email</label>
