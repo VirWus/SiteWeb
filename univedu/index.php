@@ -1,3 +1,10 @@
+<?php
+include_once("engine/connect/connection.php");
+$query = mysqli_query($connect,"SELECT * FROM support");
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,6 +80,10 @@
 
   <body id="page-top">
     
+    <?php
+    $resultat = mysqli_query($connect,"SELECT * FROM admin");
+    ?> 
+    
  <!--   <div id="preloader">
         <div class="fplus-load"></div>
         <img src="img/core-img/h-logo.png" alt="logo">
@@ -117,9 +128,9 @@
 				<div class="row">
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
-							<i class="icon ion-ios-location-outline"></i>
+							<i style="color: white;" class="icon ion-ios fa fa-phone"></i>
 							<div class="right-area">
-								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Tél :</h6>
+								<h6 style="font-size: 16px;font-weight:700 ; color: white;"></h6>
                 <p style="font-size: 16px; font-weight:700 ; color: white;">+213.7.74.59.49.81</p>
 							</div><!-- right-area -->
 						</div><!-- info -->
@@ -127,19 +138,19 @@
 					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
-							<i class="icon ion-ios-telephone-outline"></i>
+							<i style="color: white;" class="icon ion-ios fa fa-university"></i>
 							<div class="right-area">
-								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Université Bachir El Ibrahimi</h6>
-                <p style="font-size: 16px; font-weight:700 ; color: white;">Bordj Bou Arreridj</p>
+								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Université Bachir El Ibrahimi,BBA</h6>
+                <p style="font-size: 16px; font-weight:700 ; color: white;"></p>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
 					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
-							<i class="icon ion-ios-chatboxes-outline"></i>
+							<i style="color: white;" class="icon ion-ios fa fa-envelope"></i>
 							<div class="right-area">
-								<h6 style="font-size: 16px; font-weight:700 ; color: white;">Email : </h6>
+								<h6 style="font-size: 16px; font-weight:700 ; color: white;"></h6>
                 <p style="font-size: 16px; font-weight:700 ; color: white;">b.moussaoui@univ-bba.dz</p>
 							</div><!-- right-area -->
 						</div><!-- info -->
@@ -152,30 +163,31 @@
 	</header>
 	
 	<section class="intro-section" id="about">
+    <?php
+    if($row = mysqli_fetch_assoc($resultat)){ ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-1 col-lg-2"></div>
 				<div class="col-md-10 col-lg-8">
 					<div class="intro">
 						<div class="profile-img"><img src="img/profile.jpg" alt=""></div>
-						<h2><b>Michel SMith</b></h2>
-						<h4 class="font-yellow">Key Account Manager</h4>
+						<h2><b><?php echo $row["nom"]."   ".$row["prenom"] ;?></b></h2>
+						<h4 class="font-yellow"><?php echo $row["grade"];?></h4>
 						<ul class="information margin-tb-30">
-							<li><b>BORN : </b>August 25, 1987</li>
-							<li><b>EMAIL : </b>mymith@mywebpage.com</li>
+							<li><b>BORN : </b><?php echo $row["date"];?></li>
+							<li><b>EMAIL : </b><?php echo $row["email"];?></li>
 							<li><b>MARITAL STATUS : </b>Married</li>
 						</ul>
 						<ul class="social-icons">
-							<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-							<li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-							<li><a href="#"><i class="ion-social-instagram"></i></a></li>
-							<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-							<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/boubakeur-moussaoui-30192218/"><i style="color: white;" class="ion fa fa-linkedin"></i></a></li>
+							<li><a href="https://www.facebook.com/boubakeur.moussaoui?ref=br_tf"><i style="color: white;" class="ion fa fa-facebook"></i></a></li>
+
 						</ul>
 					</div><!-- intro -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
 		</div><!-- container -->
+    <?php } ?>
 	</section><!-- intro-section -->
      
   <section class="resume-section fplus-about-us-area bg-gray section-padding-120"  id="experience">
@@ -325,33 +337,38 @@
                             </div>
                         </div>
                     </div> -->
-
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 graphic-design">
+  <?php
+while($row=mysqli_fetch_assoc($query)){
+     ?>
+               <div class="single-portfolio col-12 col-md-6 col-lg-4 <?php echo $row["type"]; ?>">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
                       
                         <!-- Blog Content -->
                         <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <h5><?php echo $row["nom"]; ?></h5>
                             <div class="post-meta-data d-flex align-items-center">
                                 <div class="post-author-img">
                                     <img src="img/blog-img/post-author.jpg" alt="">
                                 </div>
                                 <div class="post-author-name-date">
                                     <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                    <p>on <a href="#"><?php echo $row["annee"]; ?></a> at <a href="#">9:48 am</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-
+                <?php
+}
+ ?>
+<!--
                <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
                       
                         <!-- Blog Content -->
+                        <!--
                         <div class="fplus-blog-content">
                             <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
                             <div class="post-meta-data d-flex align-items-center">
@@ -367,11 +384,12 @@
                     </div>
                 </div>
 
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
+               <!--<div class="single-portfolio col-12 col-md-6 col-lg-4 video">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
-                      
+                      <!--
                         <!-- Blog Content -->
+                        <!--
                         <div class="fplus-blog-content">
                             <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
                             <div class="post-meta-data d-flex align-items-center">

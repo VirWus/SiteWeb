@@ -5,6 +5,7 @@
 a{
 	color: #F60;
 }
+.font-yellow{ color:#F60 !important ;}
 a:hover{
 	color: #d05605;
 }
