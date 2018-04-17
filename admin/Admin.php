@@ -31,7 +31,7 @@
 <body>
 <?php
    include_once("../engine/connect/connection.php");
-    $resultat = mysqli_query($db,"SELECT * FROM admin");
+    $resultat = mysqli_query($connect,"SELECT * FROM admin");
     ?>
 
         <!-- Left Panel -->
