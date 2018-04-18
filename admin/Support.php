@@ -69,8 +69,11 @@
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
 
-
-
+<<<<<<< HEAD
+=======
+                    
+                    
+>>>>>>> 70758c10535779c851ad85c25554f3e2e8574339
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -193,17 +196,22 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-
+                          
                           <div class="form-group">
-                            <div class="input-group">
+                            <div class="input-group ">
                               <input type="text" id="resumer" name="resumer" placeholder="Résumer" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-file"></i></div>
                              </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="type" name="type" placeholder="Type" class="form-control">
-                                  <div class="input-group-addon"><i class="fa-th-list"></i></div>
+                             <select name="selectLg" id="selectLg" class="form-control">
+                               <option value="0">Please select</option>
+                               <option value="1">Cour</option>
+                               <option value="2">Traveaux dériger</option>
+                               <option value="3">Traveaux pratiques</option>
+                             </select>
+                                 <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
@@ -222,7 +230,7 @@
                       </div>
                     </div>
                   </div>
-
+               
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -250,14 +258,19 @@
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["nom"] ; ?></td>
                         <td><?php  echo $row["annee"] ;   ?></td>
-                        <td><?php   echo $row["resumer"] ;  ?></td>
+                        <td><?php   echo base64_decode($row["resumer"]) ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
+<<<<<<< HEAD
+                        <td><?php   echo base64_decode($row["lien"]) ;  ?></td>
+                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+=======
                         <td><?php   echo $row["lien"] ;  ?></td>
-                        <td> <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
+                        <td> <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
                             <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
                            <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
                         </td>
-
+                      
+>>>>>>> 70758c10535779c851ad85c25554f3e2e8574339
                       </tr>
                       <?php  }
                    ?>
