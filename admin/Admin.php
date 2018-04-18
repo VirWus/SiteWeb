@@ -273,7 +273,7 @@ echo $row["la_somme"];
             </div>
             <!--/.col-->
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-sm-6 col-lg-3">
                 <div class="social-box facebook">
                     <i class="fa fa-facebook"></i>
                     <ul>
@@ -291,7 +291,7 @@ echo $row["la_somme"];
             </div><!--/.col-->
 
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-sm-6 col-lg-3">
                     <div class="social-box linkedin">
                     <i class="fa fa-linkedin"></i>
                     <ul>
