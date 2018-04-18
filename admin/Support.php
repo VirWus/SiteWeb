@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-
+    
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
-
+ 
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -32,10 +32,10 @@
 
 </head>
 <body>
-    <?php
-   include_once("../engine/connect/connection.php");
-    $resultat = mysqli_query($connect,"SELECT * FROM support");
-    ?>
+    <?php 
+   $db = mysqli_connect("localhost","root","","univedu"); 
+    $resultat = mysqli_query($db,"SELECT * FROM support");
+    ?>  
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -51,12 +51,12 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-
+                
                       <li>
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-
+                    
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -69,11 +69,8 @@
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
 
-<<<<<<< HEAD
-=======
                     
                     
->>>>>>> 70758c10535779c851ad85c25554f3e2e8574339
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -102,13 +99,13 @@
                         </div>
 
                         <div class="dropdown for-notification">
-
+                         
                         </div>
 
                         <div class="dropdown for-message">
-
-
-
+                          
+                          
+                          
                         </div>
                     </div>
                 </div>
@@ -258,21 +255,16 @@
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["nom"] ; ?></td>
                         <td><?php  echo $row["annee"] ;   ?></td>
-                        <td><?php   echo base64_decode($row["resumer"]) ;  ?></td>
+                        <td><?php   echo $row["resumer"] ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
-<<<<<<< HEAD
-                        <td><?php   echo base64_decode($row["lien"]) ;  ?></td>
-                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
-=======
                         <td><?php   echo $row["lien"] ;  ?></td>
                         <td> <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
                             <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
                            <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
                         </td>
                       
->>>>>>> 70758c10535779c851ad85c25554f3e2e8574339
                       </tr>
-                      <?php  }
+                      <?php  } 
                    ?>
                     </tbody>
                   </table>
@@ -311,7 +303,7 @@
 
 
     <script type="text/javascript">
-
+       
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
