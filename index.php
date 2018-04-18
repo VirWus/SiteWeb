@@ -4,7 +4,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,9 +31,9 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <link href="css/resume.css" rel="stylesheet">
 	 <!-- portfolio cv template  -->
 	<link href="common-css/bootstrap.css" rel="stylesheet">
-
+	
 	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
-
+	
 
 
 
@@ -41,7 +41,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
       <link rel="stylesheet" href="portf/css/bootstrap.css">
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
-      <link rel="stylesheet" href="portf/css/nice-select.css">
+      <link rel="stylesheet" href="portf/css/nice-select.css">          
       <link rel="stylesheet" href="portf/css/animate.min.css">
       <link rel="stylesheet" href="portf/css/owl.carousel.css">
       <link rel="stylesheet" href="portf/css/main.css">
@@ -52,7 +52,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
       <!--
       CSS
       ============================================= -->
@@ -71,15 +71,19 @@ $query = mysqli_query($connect,"SELECT * FROM support");
  <!-- engage slider actualite -->
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-
-
-
+   
+    
+  
 
 
   </head>
 
   <body id="page-top">
-
+    
+    <?php
+    $resultat = mysqli_query($connect,"SELECT * FROM admin");
+    ?> 
+    
  <!--   <div id="preloader">
         <div class="fplus-load"></div>
         <img src="img/core-img/h-logo.png" alt="logo">
@@ -124,67 +128,68 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 				<div class="row">
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
-							<i class="icon ion-ios-location-outline"></i>
+							<i style="color: white;" class="icon ion-ios fa fa-phone"></i>
 							<div class="right-area">
-								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Tél :</h6>
+								<h6 style="font-size: 16px;font-weight:700 ; color: white;"></h6>
                 <p style="font-size: 16px; font-weight:700 ; color: white;">+213.7.74.59.49.81</p>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-
+					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
-							<i class="icon ion-ios-telephone-outline"></i>
+							<i style="color: white;" class="icon ion-ios fa fa-university"></i>
 							<div class="right-area">
-								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Université Bachir El Ibrahimi</h6>
-                <p style="font-size: 16px; font-weight:700 ; color: white;">Bordj Bou Arreridj</p>
+								<h6 style="font-size: 16px;font-weight:700 ; color: white;">Université Bachir El Ibrahimi,BBA</h6>
+                <p style="font-size: 16px; font-weight:700 ; color: white;"></p>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-
+					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
-							<i class="icon ion-ios-chatboxes-outline"></i>
+							<i style="color: white;" class="icon ion-ios fa fa-envelope"></i>
 							<div class="right-area">
-								<h6 style="font-size: 16px; font-weight:700 ; color: white;">Email : </h6>
+								<h6 style="font-size: 16px; font-weight:700 ; color: white;"></h6>
                 <p style="font-size: 16px; font-weight:700 ; color: white;">b.moussaoui@univ-bba.dz</p>
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
 				</div><!-- row -->
 			</div><!-- heading-wrapper -->
-
-
+			
+		
 		</div><!-- container -->
 	</header>
-
+	
 	<section class="intro-section" id="about">
+    <?php
+    if($row = mysqli_fetch_assoc($resultat)){ ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-1 col-lg-2"></div>
 				<div class="col-md-10 col-lg-8">
 					<div class="intro">
 						<div class="profile-img"><img src="img/profile.jpg" alt=""></div>
-						<h2><b>Michel SMith</b></h2>
-						<h4 class="font-yellow">Key Account Manager</h4>
+						<h2><b><?php echo $row["nom"]."   ".$row["prenom"] ;?></b></h2>
+						<h4 class="font-yellow"><?php echo $row["grade"];?></h4>
 						<ul class="information margin-tb-30">
-							<li><b>BORN : </b>August 25, 1987</li>
-							<li><b>EMAIL : </b>mymith@mywebpage.com</li>
+							<li><b>BORN : </b><?php echo $row["date"];?></li>
+							<li><b>EMAIL : </b><?php echo $row["email"];?></li>
 							<li><b>MARITAL STATUS : </b>Married</li>
 						</ul>
 						<ul class="social-icons">
-							<li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-							<li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-							<li><a href="#"><i class="ion-social-instagram"></i></a></li>
-							<li><a href="#"><i class="ion-social-facebook"></i></a></li>
-							<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/boubakeur-moussaoui-30192218/"><i style="color: white;" class="ion fa fa-linkedin"></i></a></li>
+							<li><a href="https://www.facebook.com/boubakeur.moussaoui?ref=br_tf"><i style="color: white;" class="ion fa fa-facebook"></i></a></li>
+
 						</ul>
 					</div><!-- intro -->
 				</div><!-- col-sm-8 -->
 			</div><!-- row -->
 		</div><!-- container -->
+    <?php } ?>
 	</section><!-- intro-section -->
-
+     
   <section class="resume-section fplus-about-us-area bg-gray section-padding-120"  id="experience">
         <div class="container">
             <div class="row">
@@ -196,8 +201,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                 </div>
             </div>
         </div>
-
-
+<!--///////////////////////////////-->
 
         <div class="container">
             <div class="about-us-content wow fadeInLeftBig" data-wow-delay="0.5">
@@ -217,70 +221,45 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             </div>
         </div>
 
-
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p>Condimentum</p>
+            <h3 class="heading">Ligula at fermentum</h3>
+            <p>Sodales sapien donec porttitor dolor nec elit</p>
+            <footer><a class="btn" href="#">Luctus suscipit in</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Laoreet</p>
+            <h3 class="heading">Iaculis interdum</h3>
+            <p>Nulla scelerisque posuere convallis</p>
+            <footer>
+              <form class="group" method="post" action="#">
+                <fieldset>
+                  <legend>Sign-Up:</legend>
+                  <input type="email" value="" placeholder="Email Here&hellip;">
+                  <button class="fa fa-sign-in" type="submit" title="Submit"><em>Submit</em></button>
+                </fieldset>
+              </form>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Phasellus</p>
+            <h3 class="heading">Bibendum blandit</h3>
+            <p>Lacus non tincidunt class aptent taciti sociosqu</p>
+            <footer><a class="btn inverse" href="#">Litora torquent</a></footer>
+          </article>
+        </li>
+      </ul>
+    </div>
          <!-- Testimonial Section -->
-   <section class="resume-section testimonial-area relative section-gap">
 
-        <div class="container">
-          <div class="row">
-            <div class="active-testimonial">
-              <div class="single-testimonial item d-flex flex-row">
-            <div class="col-12 ">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5>Reasonable pricing</h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>
-              <div class="single-testimonial item d-flex flex-row">
-                 <div class="col-12">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5>test</h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>
-
-
-    <div class="single-testimonial item d-flex flex-row">
-                 <div class="col-12">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5> pricing</h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>
-
-
-
-    <div class="single-testimonial item d-flex flex-row">
-                 <div class="col-12">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5>Reasonable </h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>
-
-
-
-            </div>
-          </div>
-        </div>
-      </section>
-    <!-- Testimonial Section End -->
+    <!-- Testimonial Section End --> 
 </section>
 
 
@@ -303,19 +282,18 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div class="col-sm-8 ">
 
           <div class="filters portfolioFilter clearfix margin-b-80">
-
             <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-            <a href="#" data-filter=".cours"><b>Cours</b></a>
-            <a href="#" data-filter=".td"><b>TD</b></a>
-            <a href="#" data-filter=".tp"><b>TP</b></a>
+            <a href="#" data-filter=".web-design"><b>Cours</b></a>
+            <a href="#" data-filter=".branding"><b>TD</b></a>
+            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
             <a href="#" data-filter=".video"><b>Video</b></a>
           </div><!-- portfolioFilter -->
         </div><!-- col-sm-8 -->
       </div><!-- row -->
-
-
+  
+    
     <div class=" filters-content portfolioContainer row grid">
-
+      
    <!--    <div class="single-portfolio col-sm-4 all graphic-design">
                   <div class="item">
                     <img src="img/p1.jpg" alt="Work 1">
@@ -325,7 +303,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                     </div>
                   </div>
                 </div> --><!-- p-item -->
-
+    
   <!--     <div class="single-portfolio col-sm-4 all graphic-design">
                         <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(img/bg-img/video.jpg);">
                             <div class="video-play-btn">
@@ -333,19 +311,14 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                             </div>
                         </div>
                     </div> -->
-                        <?php
+  <?php
 while($row=mysqli_fetch_assoc($query)){
-
      ?>
                <div class="single-portfolio col-12 col-md-6 col-lg-4 <?php echo $row["type"]; ?>">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-
                         <!-- Blog Thumbnail -->
-
+                      
                         <!-- Blog Content -->
-
-
-
                         <div class="fplus-blog-content">
                             <h5><?php echo $row["nom"]; ?></h5>
                             <div class="post-meta-data d-flex align-items-center">
@@ -358,17 +331,16 @@ while($row=mysqli_fetch_assoc($query)){
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-<?php
+                <?php
 }
  ?>
-
-               <!-- <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
+<!--
+               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
-
+                      
                         <!-- Blog Content -->
                         <!--
                         <div class="fplus-blog-content">
@@ -386,10 +358,10 @@ while($row=mysqli_fetch_assoc($query)){
                     </div>
                 </div>
 
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
+               <!--<div class="single-portfolio col-12 col-md-6 col-lg-4 video">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
-
+                      <!--
                         <!-- Blog Content -->
                         <!--
                         <div class="fplus-blog-content">
@@ -428,25 +400,25 @@ while($row=mysqli_fetch_assoc($query)){
                 </div> -->
 
 
-<!--
+
     </div><!-- portfolioContainer -->
-  <!--    </div><!-- container -->
-<!--  </section><!-- portfolio-section -->
+      </div><!-- container -->
+  </section><!-- portfolio-section -->
+  
 
 
 
 
 
-
-
-
+     
+   
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
 
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-
+                                  
 <!-- Button trigger modal-->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
 
@@ -601,19 +573,20 @@ while($row=mysqli_fetch_assoc($query)){
         <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
       </section>
 
-
-
+      
+     
 
     </div>
 
-<!--  <div class="bottom"> <a href="#" class="settings"></a> </div> -->
+   <!--  <script src="assets/js/jquery-min.js"></script>-->
+     <!-- <script src="portf/js/vendor/jquery-2.2.4.min.js"></script> -->
+   <script src="common-js/jquery-3.2.1.min.js"></script> 
+ <div class="bottom"> <a href="" class="settings"></a> </div>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery-easing.min.js"></script>
 
 
 
-      <script src="portf/js/vendor/jquery-2.2.4.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -623,18 +596,18 @@ while($row=mysqli_fetch_assoc($query)){
       <script src="cre/js/jquery.DonutWidget.min.js"></script>
       <script src="cre/js/jquery.magnific-popup.min.js"></script>
       <script src="cre/js/jquery.sticky.js"></script>
-      <script src="cre/js/owl.carousel.min.js"></script>
+      <!-- <script src="cre/js/owl.carousel.min.js"></script>       -->
 
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk9KNSL1jTv4MY9Pza6w8DJkpI_nHyCnk"></script>
       <script src="fplus/js/google-map/map-active.js"></script>
 
     <!-- Custom scripts for this template -->
       <script src="js/resume.min.js"></script>
-   	  <script src="assets/js/color-switcher.js"></script>
+      <script src="assets/js/color-switcher.js"></script>
 
-  <!-- <script src="common-js/jquery-3.2.1.min.js"></script> -->
+
       <script src="portf/js/isotope.pkgd.min.js"></script>
-       <script src="portf/js/main.js"></script>
+      <script src="portf/js/main.js"></script>
 
 
 
@@ -643,7 +616,7 @@ while($row=mysqli_fetch_assoc($query)){
 
   <script src="common-js/bootstrap.js"></script>
 
-  <script src="common-js/isotope.pkgd.min.js"></script>
+  <!-- <script src="common-js/isotope.pkgd.min.js"></script> -->
 
   <!-- <script src="common-js/jquery.waypoints.min.js"></script> -->
 
@@ -652,6 +625,31 @@ while($row=mysqli_fetch_assoc($query)){
   <!-- <script src="common-js/jquery.fluidbox.min.js"></script> -->
    <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="common-js/scripts.js"></script>
+
+
+
+
+  <script src="admin/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/datatables-init.js"></script>
+  <script type="text/javascript">
+
+      $('#bootstrap-data-table-export').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+        }
+    </script>
   </body>
 
 </html>
