@@ -201,8 +201,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                 </div>
             </div>
         </div>
-
-
+<!--///////////////////////////////-->
 
         <div class="container">
             <div class="about-us-content wow fadeInLeftBig" data-wow-delay="0.5">
@@ -222,69 +221,44 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             </div>
         </div>
 
-
+    <div class="flexslider basicslider">
+      <ul class="slides">
+        <li>
+          <article>
+            <p>Condimentum</p>
+            <h3 class="heading">Ligula at fermentum</h3>
+            <p>Sodales sapien donec porttitor dolor nec elit</p>
+            <footer><a class="btn" href="#">Luctus suscipit in</a></footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Laoreet</p>
+            <h3 class="heading">Iaculis interdum</h3>
+            <p>Nulla scelerisque posuere convallis</p>
+            <footer>
+              <form class="group" method="post" action="#">
+                <fieldset>
+                  <legend>Sign-Up:</legend>
+                  <input type="email" value="" placeholder="Email Here&hellip;">
+                  <button class="fa fa-sign-in" type="submit" title="Submit"><em>Submit</em></button>
+                </fieldset>
+              </form>
+            </footer>
+          </article>
+        </li>
+        <li>
+          <article>
+            <p>Phasellus</p>
+            <h3 class="heading">Bibendum blandit</h3>
+            <p>Lacus non tincidunt class aptent taciti sociosqu</p>
+            <footer><a class="btn inverse" href="#">Litora torquent</a></footer>
+          </article>
+        </li>
+      </ul>
+    </div>
          <!-- Testimonial Section -->
-   <section class="resume-section testimonial-area relative section-gap">
-     
-        <div class="container">
-          <div class="row">
-            <div class="active-testimonial">
-              <div class="single-testimonial item d-flex flex-row">
-            <div class="col-12 ">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5>Reasonable pricing</h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>
-              <div class="single-testimonial item d-flex flex-row">
-                 <div class="col-12">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5>test</h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>  
 
-
-    <div class="single-testimonial item d-flex flex-row">
-                 <div class="col-12">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5> pricing</h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>  
-
-
-
-    <div class="single-testimonial item d-flex flex-row">
-                 <div class="col-12">
-                    <div class="fplus-single-feature wow fadeInUp" data-wow-delay="1s">
-                        <div class="feature-title d-flex align-items-center">
-                            <img src="img/icons/wallet.svg" alt="">
-                            <h5>Reasonable </h5>
-                        </div>
-                        <p>Ed consectetur dapibus venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae</p>
-                    </div>
-                </div>
-              </div>  
-
-
-
-            </div>          
-          </div>
-        </div>  
-      </section>
     <!-- Testimonial Section End --> 
 </section>
 
@@ -604,52 +578,78 @@ while($row=mysqli_fetch_assoc($query)){
 
     </div>
 
-<!--  <div class="bottom"> <a href="#" class="settings"></a> </div> -->
+   <!--  <script src="assets/js/jquery-min.js"></script>-->
+     <!-- <script src="portf/js/vendor/jquery-2.2.4.min.js"></script> -->
+   <script src="common-js/jquery-3.2.1.min.js"></script> 
+ <div class="bottom"> <a href="" class="settings"></a> </div>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery-easing.min.js"></script>
 
-     
-  
-      <script src="portf/js/vendor/jquery-2.2.4.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-     
+
+
+     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
      <!-- engage js slider actualite -->
-      <script src="cre/js/main.js"></script>  
+      <script src="cre/js/main.js"></script>
       <script src="cre/js/jquery.DonutWidget.min.js"></script>
-      <script src="cre/js/jquery.magnific-popup.min.js"></script>     
+      <script src="cre/js/jquery.magnific-popup.min.js"></script>
       <script src="cre/js/jquery.sticky.js"></script>
-      <script src="cre/js/owl.carousel.min.js"></script>      
+      <!-- <script src="cre/js/owl.carousel.min.js"></script>       -->
 
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk9KNSL1jTv4MY9Pza6w8DJkpI_nHyCnk"></script>
       <script src="fplus/js/google-map/map-active.js"></script>
 
     <!-- Custom scripts for this template -->
       <script src="js/resume.min.js"></script>
-   	  <script src="assets/js/color-switcher.js"></script>
-      
-  <!-- <script src="common-js/jquery-3.2.1.min.js"></script> -->
-      <script src="portf/js/isotope.pkgd.min.js"></script>  
-       <script src="portf/js/main.js"></script>  
+      <script src="assets/js/color-switcher.js"></script>
+
+
+      <script src="portf/js/isotope.pkgd.min.js"></script>
+      <script src="portf/js/main.js"></script>
 
 
 
-  
+
   <script src="common-js/tether.min.js"></script>
-  
+
   <script src="common-js/bootstrap.js"></script>
-  
-  <script src="common-js/isotope.pkgd.min.js"></script>
-  
+
+  <!-- <script src="common-js/isotope.pkgd.min.js"></script> -->
+
   <!-- <script src="common-js/jquery.waypoints.min.js"></script> -->
-  
+
   <!-- <script src="common-js/progressbar.min.js"></script> -->
-  
+
   <!-- <script src="common-js/jquery.fluidbox.min.js"></script> -->
    <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="common-js/scripts.js"></script>
+
+
+
+
+  <script src="admin/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/datatables-init.js"></script>
+  <script type="text/javascript">
+
+      $('#bootstrap-data-table-export').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+        }
+    </script>
   </body>
 
 </html>
