@@ -29,10 +29,10 @@
 
 </head>
 <body>
-<?php 
-   $db = mysqli_connect("localhost","root","","univedu"); 
-    $resultat = mysqli_query($db,"SELECT * FROM admin");
-    ?>  
+<?php
+   include_once("../engine/connect/connection.php");
+    $resultat = mysqli_query($connect,"SELECT * FROM admin");
+    ?>
 
         <!-- Left Panel -->
 
@@ -55,16 +55,17 @@
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
 
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -93,11 +94,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+
                         </div>
 
                         <div class="dropdown for-message">
-                         
+
                         </div>
                     </div>
                 </div>
@@ -109,11 +110,10 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
                                 <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
@@ -191,9 +191,9 @@
                                 <hr>
                                 <div class="card-text text-sm-center">
                                     <a href="https://www.facebook.com/boubakeur.moussaoui"><i class="fa fa-facebook pr-1"></i></a>
-                                 
+
                                     <a href="https://www.linkedin.com/in/boubakeur-moussaoui-30192218/"><i class="fa fa-linkedin pr-1"></i></a>
-                
+
                                 </div>
                             </div>
                         </div>
@@ -218,7 +218,14 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count">
+                              <?php
+include_once("../engine/connect/connection.php");
+$query = mysqli_query($connect,"SELECT SUM(count) AS la_somme FROM support  ");
+$row = mysqli_fetch_assoc($query);
+echo $row["la_somme"];
+ ?>
+</span>
                         </h4>
                         <p class="text-light">nombre téléchargement</p>
 
@@ -247,7 +254,13 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count"><?php
+                            $fp = fopen("../engine/count.txt",'r');
+                            $line = fgets($fp);
+                            echo $line;
+                            fclose($fp);
+
+                              ?></span>
                         </h4>
                         <p class="text-light">Members online</p>
 
@@ -297,13 +310,13 @@
 
 
             <div class="col-lg-3 col-md-6">
-          
+
                 <!--/social-box-->
             </div><!--/.col-->
 
 
             <div class="col-lg-3 col-md-6">
-            
+
                 <!--/social-box-->
             </div><!--/.col-->
 
@@ -383,25 +396,25 @@
             </div>
 
            <div class="col-xl-3 col-lg-6">
-               
+
             </div>
 
 
             <div class="col-xl-3 col-lg-6">
-                
+
             </div>
 
 
             <div class="col-xl-3 col-lg-6">
-               
+
             </div>
 
             <div class="col-xl-3 col-lg-6">
-              
+
             </div>
 
             <div class="col-xl-6">
-               
+
             </div>
 
 

@@ -58,17 +58,22 @@
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-dashboard"></i>Admin </a>
+                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-dashboard"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
 
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-dashboard"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
 
+<<<<<<< HEAD
+=======
+                    
+                    
+>>>>>>> 70758c10535779c851ad85c25554f3e2e8574339
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -115,13 +120,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
-                                <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -171,11 +175,65 @@
                 </div>
             </div>
         </div>
+<div class="content mt-3">
+            <div class="animated fadeIn">
+                  <div class="row">
 
+                   <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">Ajouter votre Support</div>
+                      <div class="card-body card-block">
+                        <form action="add-act.php" method="post" class="">
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="nome" name="nome" placeholder="Nom" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="annee" name="annee" placeholder="Année" class="form-control">
+                                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            </div>
+                          </div>
+                          
+                          <div class="form-group">
+                            <div class="input-group ">
+                              <input type="text" id="resumer" name="resumer" placeholder="Résumer" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-file"></i></div>
+                             </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                             <select name="selectLg" id="selectLg" class="form-control">
+                               <option value="0">Please select</option>
+                               <option value="1">Cour</option>
+                               <option value="2">Traveaux dériger</option>
+                               <option value="3">Traveaux pratiques</option>
+                             </select>
+                                 <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="lien" name="lien" placeholder="Lien" class="form-control">
+                                  <div class="input-group-addon"><i class="fa fa-link"></i></div>
+                            </div>
+                          </div>
+
+                            <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
+                          </div>
+                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+               
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -202,8 +260,17 @@
                         <td><?php  echo $row["annee"] ;   ?></td>
                         <td><?php   echo base64_decode($row["resumer"]) ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
+<<<<<<< HEAD
                         <td><?php   echo base64_decode($row["lien"]) ;  ?></td>
                         <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+=======
+                        <td><?php   echo $row["lien"] ;  ?></td>
+                        <td> <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
+                            <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
+                           <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
+                        </td>
+                      
+>>>>>>> 70758c10535779c851ad85c25554f3e2e8574339
                       </tr>
                       <?php  }
                    ?>
