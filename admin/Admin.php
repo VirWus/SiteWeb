@@ -227,7 +227,7 @@ echo $row["la_somme"];
  ?>
 </span>
                         </h4>
-                        <p class="text-light">nombre téléchargement</p>
+                        <p class="text-light">téléchargement</p>
 
                     </div>
 
@@ -273,7 +273,7 @@ echo $row["la_somme"];
             </div>
             <!--/.col-->
 
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-md-3">
                 <div class="social-box facebook">
                     <i class="fa fa-facebook"></i>
                     <ul>

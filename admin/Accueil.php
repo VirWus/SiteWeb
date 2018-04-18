@@ -181,39 +181,46 @@
                
                     <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Modifier Les informations</div>
+                     <div class="card-header">Modifier Les informations</div>
                       <div class="card-body card-block">
                         <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="username2" name="nom" value="<?php echo $l['nom'];?>" placeholder="Username" class="form-control">
+                              <input type="text" id="username2" name="username"  placeholder="Username" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="email" id="email2" name="email" value="<?php echo $l['email'];  ?> " placeholder="Email" class="form-control">
+                              <input type="email" id="email2" name="email"  placeholder="Email" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="password" id="password2" name="password2" placeholder="Password" class="form-control">
+                              <input type="password" id="password2" name="mdp"  placeholder="Password"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="university2" name="university2" placeholder="University" class="form-control">
+                              <input type="text" id="university2" name="univ"  placeholder="University"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-university"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="grade2" name="grade2" placeholder="Grade" class="form-control">
+                              <input type="text" id="grade2" name="grade"  placeholder="Grade"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
                             </div>
+                            </div>
 
+                            <div class="form-group">
+                            <div class="input-group">
+                              <textarea type="text" id="bio" name="bio"  placeholder="Bio"  class="form-control"></textarea>
+                              <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+                                  
+                            </div>
                             </div>
 
                                   <div class="row form-group">

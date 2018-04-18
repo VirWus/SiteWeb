@@ -19,7 +19,7 @@ $username=$_POST['username'];
 $mdp=$_POST['mdp'];
 $bio=$_POST['bio'];
 		include_once("../engine/connect/connection.php");
-		$sql = "UPDATE admin  set nom='$nom',prenom='$prenom',date='$date',lieu_de_n='$lieu_de_n',secteur='$secteur',univ='$univ',grade='$grade',email='$email',username='$username',mdp='$mdp',bio='$bio' where id='$id'";
+		$sql = "UPDATE admin  set univ='$univ',grade='$grade',email='$email',username='$username',mdp='$mdp',bio='$bio' where id='$id'";
 			$r=mysqli_query($connect, $sql);
 			if($r){echo "string";}
 			header("location:Accueil.php");
