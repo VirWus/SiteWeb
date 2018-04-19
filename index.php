@@ -352,7 +352,6 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <a href="#">Read more</a>
           </div>
         </div>
-        <div class="filters portfolioFilter clearfix margin-b-80">
             <div class="col-md-2" >
           <div class="about" >
             <i class="fa fa-cogs" data-filter=".branding" id="id_cogs"></i>
@@ -373,26 +372,10 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     
     <div class=" filters-content portfolioContainer row grid">
       
-   <!--    <div class="single-portfolio col-sm-4 all graphic-design">
-                  <div class="item">
-                    <img src="img/p1.jpg" alt="Work 1">
-                    <div class="p-inner">
-                      <h4>3D Helmet Design</h4>
-                      <div class="cat">Corporate</div>
-                    </div>
-                  </div>
-                </div> --><!-- p-item -->
-    
-  <!--     <div class="single-portfolio col-sm-4 all graphic-design">
-                        <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(img/bg-img/video.jpg);">
-                            <div class="video-play-btn">
-                                <a href="https://youtu.be/ZydsX1qjoBI" class="video--play--btn"><i class="pe-7s-play" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div> -->
   <?php
 while($row=mysqli_fetch_assoc($query)){
      ?>
+
      <div class="col-md-4">
           <div class="about">
             <i class="fa fa-cogs" id="id_"></i>
@@ -402,92 +385,9 @@ while($row=mysqli_fetch_assoc($query)){
           </div>
         </div>
       
-        <!--       <div class="single-portfolio col-12 col-md-6 col-lg-4 <?php //echo $row["type"]; ?>">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-                      
-                        <!-- Blog Content --><!--
-                        <div class="fplus-blog-content">
-                            <h5><?php echo $row["nom"]; ?></h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#"><?php echo $row["annee"]; ?></a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
                 <?php
 }
  ?>
-<!--
-               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-                      
-                        <!-- Blog Content -->
-                        <!--
-                        <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-               <!--<div class="single-portfolio col-12 col-md-6 col-lg-4 video">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-                      <!--
-                        <!-- Blog Content -->
-                        <!--
-                        <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-   <!--  <div class="single-portfolio col-sm-4 all web-design">
-                  <div class="item">
-                    <img src="img/p2.jpg" alt="Work 1">
-                    <div class="p-inner">
-                      <h4>2D Vinyl Design</h4>
-                      <div class="cat">Personal</div>
-                    </div>
-                  </div>
-                </div> -->
-
-<!-- <div class="single-portfolio col-sm-4 all branding">
-                  <div class="item">
-                    <img src="img/p3.jpg" alt="Work 1">
-                    <div class="p-inner">
-                      <h5>Creative Poster Design</h5>
-                      <div class="cat">Agency</div>
-                    </div>
-                  </div>
-                </div> -->
-
-
 
     </div><!-- portfolioContainer -->
       </div><!-- container -->
