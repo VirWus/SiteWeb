@@ -164,7 +164,15 @@
             </div>
         </div>
 
-
+        <?php
+        if($_GET){
+        $id = $_GET['id'];
+        $con = mysqli_connect("localhost", "root", "", "univedu");
+        $sql = "SELECT * FROM actuallite where id=".$id;
+            $r=mysqli_query($con, $sql);
+              $l = mysqli_fetch_assoc($r);         
+            }
+            ?>
 
         <div class="content mt-3">
             <div class="animated fadeIn">
@@ -172,36 +180,36 @@
 
                    <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Ajouter une actualité</div>
+                      <div class="card-header">Modifier votre actualite</div>
                       <div class="card-body card-block">
-                        <form action="Actualite(add).php" method="post" class="" enctype="multipart/form-data">
+                        <form action="Actualite(update-php).php" method="post" class=""enctype="multipart/form-data">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="titre" name="titre" placeholder="Titre" class="form-control">
+                              <input type="text" id="titre" name="titre"  class="form-control" value="<?php echo $l['titre'];?>">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="date" id="date" name="date" placeholder="Date" class="form-control">
+                              <input type="text" id="date" name="date"  class="form-control"value="<?php echo $l['date'];?>">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
                           
                           <div class="form-group">
                             <div class="input-group">
-                              <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
+                              <input type="text" id="contenu" name="contenu"  class="form-control"value="<?php echo $l['contenu'];?>">
                              </div>
-                          </div>
-                          <div class="form-group">
+                           </div>
+                           <div class="form-group">
                             <div class="input-group">
-                              <textarea type="text" id="lien" name="lien" placeholder="Lien ex:www.youtube/cour%POO.com" class="form-control"></textarea>
+                              <input type="text" id="lien" name="lien" class="form-control"value="<?php echo $l['lien'];?>">
                              </div>
                            </div>
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col col-md-3"><label> pour lien</label><input type="checkbox" name="lien"> </div>
-                            <div class="col-12 col-md-9"><input type="file" name="fileto" class="form-control-file"></div>
+                            <div class="col-12 col-md-9"><input type="file"  name="fileto" class="form-control-file"></div>
+
                           </div>
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
                         </form>
@@ -210,58 +218,7 @@
                   </div>
                
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
-                        </div>
-                        <div class="card-body">
-                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Titre</th>
-                        <th>Date</th>
-                        <th>Contenu</th>
-                        <th>Lien</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                            $con = mysqli_connect("localhost", "root", "", "univedu");
-                              if(!$con){
-                                 echo "site non connecté";
-                                     }
-                              $result =mysqli_query($con, "select * from actuallite");
-                                  while($Rs=mysqli_fetch_assoc($result))
-                                     {   
-                             ?>
-                        <tr>
-                            <td><?php echo $Rs['titre'] ?></td>
-                            <td> <?php echo $Rs['date']?></td>
-                            <td> <?php echo $Rs['contenu']?></td>
-                            <td> <?php echo $Rs['lien']?></td>
-                            <td></td>
-                            <td>
-                            <a href="Actualite(update).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
-                            <a href="Actualite(delete).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
-                            <a href="Actualite(previeuw).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
-                            </td>
-                      <?php } ?>
-                    </tbody>
-                  </table>
-                        </div>
-                    </div>
-                </div>
-
-
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-
-
-    </div><!-- /#right-panel -->
-
+               
     <!-- Right Panel -->
 
 

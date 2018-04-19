@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -33,6 +32,10 @@
 
 </head>
 <body>
+    <?php 
+   $db = mysqli_connect("localhost","root","","univedu"); 
+    $resultat = mysqli_query($db,"SELECT * FROM support");
+    ?>  
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -48,7 +51,8 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                   <li>
+                
+                      <li>
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
@@ -64,6 +68,9 @@
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
+
+                    
+                    
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -92,11 +99,13 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+                         
                         </div>
 
                         <div class="dropdown for-message">
-                 
+                          
+                          
+                          
                         </div>
                     </div>
                 </div>
@@ -108,12 +117,12 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
 
-<a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
+                                <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-<a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -155,115 +164,85 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Admin</a></li>
-                            <li class="active">Actualite</li>
+                            <li><a href="Admin.php">Dashboard</a></li>
+                            <li><a href="Accueil.php">Admin</a></li>
+                            <li class="active">Support</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-        <div class="content mt-3">
+        <?php
+        if($_GET){
+        $id = $_GET['id'];
+        $con = mysqli_connect("localhost", "root", "", "univedu");
+        $sql = "SELECT * FROM support where id=".$id;
+            $r=mysqli_query($con, $sql);
+              $l = mysqli_fetch_assoc($r);         
+            }
+            ?>
+<div class="content mt-3">
             <div class="animated fadeIn">
                   <div class="row">
 
                    <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Ajouter une actualité</div>
+                      <div class="card-header">Modifier votre support</div>
                       <div class="card-body card-block">
-                        <form action="Actualite(add).php" method="post" class="" enctype="multipart/form-data">
+                        <form action="Support(update-php).php" method="post" enctype="multipart/form-data"  class="">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="titre" name="titre" placeholder="Titre" class="form-control">
+                              <input type="text" id="nom" name="nom" placeholder="Nom" value="<?php echo $l['nom'];?>" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="date" id="date" name="date" placeholder="Date" class="form-control">
+                              <input type="text" id="annee" name="annee" placeholder="Année" value="<?php echo $l['annee'];?>" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-                          
                           <div class="form-group">
-                            <div class="input-group">
-                              <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
+                            <div class="input-group ">
+                              <input type="text" id="module" name="module" value="<?php echo $l['module'];?>" placeholder="Module" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-file"></i></div>
+                             </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group ">
+                              <input type="text" id="resumer" name="resumer" placeholder="Résumer" value="<?php echo $l['resumer'];?>" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-file"></i></div>
                              </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <textarea type="text" id="lien" name="lien" placeholder="Lien ex:www.youtube/cour%POO.com" class="form-control"></textarea>
-                             </div>
-                           </div>
+                             <select name="selectLg" id="selectLg" name="type" class="form-control">
+                               <option value="<?php echo $l['type'];?>"  >Please select</option>
+                               <option value="1">Cour</option>
+                               <option value="2">Traveaux dériger</option>
+                               <option value="3">Traveaux pratiques</option>
+                             </select>
+                                 <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">
+                              <input type="text" id="lien" name="lien" placeholder="Lien" value="<?php echo $l['lien']  ;  ?>" class="form-control">
+                                  <div class="input-group-addon"><i class="fa fa-link"></i></div>
+                            </div>
+                          </div>
+
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col col-md-3"><label> pour lien</label><input type="checkbox" name="lien"> </div>
-                            <div class="col-12 col-md-9"><input type="file" name="fileto" class="form-control-file"></div>
+                            <div class="col-12 col-md-9"><input type="file" id="fileto" name="fileto" class="form-control-file"></div>
                           </div>
-                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
+                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Modifier</button></div>
                         </form>
                       </div>
                     </div>
                   </div>
                
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
-                        </div>
-                        <div class="card-body">
-                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Titre</th>
-                        <th>Date</th>
-                        <th>Contenu</th>
-                        <th>Lien</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                            $con = mysqli_connect("localhost", "root", "", "univedu");
-                              if(!$con){
-                                 echo "site non connecté";
-                                     }
-                              $result =mysqli_query($con, "select * from actuallite");
-                                  while($Rs=mysqli_fetch_assoc($result))
-                                     {   
-                             ?>
-                        <tr>
-                            <td><?php echo $Rs['titre'] ?></td>
-                            <td> <?php echo $Rs['date']?></td>
-                            <td> <?php echo $Rs['contenu']?></td>
-                            <td> <?php echo $Rs['lien']?></td>
-                            <td></td>
-                            <td>
-                            <a href="Actualite(update).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
-                            <a href="Actualite(delete).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
-                            <a href="Actualite(previeuw).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
-                            </td>
-                      <?php } ?>
-                    </tbody>
-                  </table>
-                        </div>
-                    </div>
-                </div>
-
-
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
-
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
+       
 
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
