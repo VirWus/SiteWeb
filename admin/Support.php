@@ -12,7 +12,7 @@
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-
+<script type="text/javascript" src="../js/checkBoxFunction.js" ></script>
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -236,9 +236,30 @@
 
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file"></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="file-input" class="form-control-file" disabled accept="image/*,video/*,application/msword,application/pdf,application/msexcel"/></div>
                           </div>
+                          <div class="row form-group">
+                                                   <div class="col col-md-3"><label class=" form-control-label">selection</label></div>
+                                                   <div class="col col-md-9">
+                                                     <div class="form-check">
+                                                       <div class="checkbox">
+                                                         <label for="checkbox1" class="form-check-label ">
+                                                           <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input" onclick="checkLinkInput()">Ou un fichier ?
+                                                         </label>
+                                                       </div>
+
+                                                     </div>
+                                                   </div>
+                                                 </div>
+                          <!-- <div class="form-group">
+                            <div class="input-group ">
+                              <label>ou un lien  </label> <input type="checkbox" id="checkBox" name="checkBoxN" onclick="checkLinkInput()"  class="form-control" >
+                              <div class="input-group-addon"><i class="fa fa-check"></i></div>
+                             </div>
+                          </div> -->
+
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
+
                         </form>
                       </div>
                     </div>
@@ -331,7 +352,7 @@
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     });
-        }
+
     </script>
 
 

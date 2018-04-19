@@ -1,12 +1,12 @@
 function checkLinkInput(){
-  var g = document.getElementById("link");
-  var h = document.getElementById("linkLabel");
+  var g = document.getElementById("lien");
+
 if (g.type == "hidden") {
 g.type = "text";
-  h.style.visibility = "visible";
+
 }else {
   g.type = "hidden";
-  h.style.visibility = "hidden";
+
 }
 
   }
