@@ -71,7 +71,35 @@ $query = mysqli_query($connect,"SELECT * FROM support");
  <!-- engage slider actualite -->
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
+   <!--////////////////////////////////////////////////////-->
    
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="html/images/icons/favicon.png"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/fonts/themify/themify-icons.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/animate/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/slick/slick.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/vendor/lightbox2/css/lightbox.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="html/css/util.css">
+  <link rel="stylesheet" type="text/css" href="html/css/main.css">
+<!--===============================================================================================-->
+   <!--//////////////////////////Pato/////////////////////////-->
     
   
 
@@ -190,81 +218,114 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <?php } ?>
 	</section><!-- intro-section -->
      
-  <section class="resume-section fplus-about-us-area bg-gray section-padding-120"  id="experience">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h4>About Us</h4>
-                        <div class="section-heading-line"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-<!--///////////////////////////////-->
+  
 
-        <div class="container">
-            <div class="about-us-content wow fadeInLeftBig" data-wow-delay="0.5">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-12 col-md-6">
-                        <div class="about-us-thumb wow fadeIn" data-wow-delay="1s">
-                            <img src="img/bg-img/about-1.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="about-us-text wow fadeIn" data-wow-delay="1.5s">
-                            <h4>Who We Are</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus eget purus id felis dignissim convallis. Suspendisse et augue dui. Morbi gravida sed justo vel venenatis. Ut tempor pretium maximus. Donec libero diam, faucibus vitae lectus nec, accumsan gravida dui. Nam interdum mi eget lacus aliquet, sit amet ultricies.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    <div class="flexslider basicslider">
-      <ul class="slides">
-        <li>
-          <article>
-            <p>Condimentum</p>
-            <h3 class="heading">Ligula at fermentum</h3>
-            <p>Sodales sapien donec porttitor dolor nec elit</p>
-            <footer><a class="btn" href="#">Luctus suscipit in</a></footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>Laoreet</p>
-            <h3 class="heading">Iaculis interdum</h3>
-            <p>Nulla scelerisque posuere convallis</p>
-            <footer>
-              <form class="group" method="post" action="#">
-                <fieldset>
-                  <legend>Sign-Up:</legend>
-                  <input type="email" value="" placeholder="Email Here&hellip;">
-                  <button class="fa fa-sign-in" type="submit" title="Submit"><em>Submit</em></button>
-                </fieldset>
-              </form>
-            </footer>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p>Phasellus</p>
-            <h3 class="heading">Bibendum blandit</h3>
-            <p>Lacus non tincidunt class aptent taciti sociosqu</p>
-            <footer><a class="btn inverse" href="#">Litora torquent</a></footer>
-          </article>
-        </li>
-      </ul>
+<!-- Review -->
+  <section class="section-review p-t-115">
+    <!-- - -->
+    <div class="title-review t-center m-b-2">
+      <span class="tit2 p-l-15 p-r-15">
+        Customers Say
+      </span>
+
+      <h3 class="tit8 t-center p-l-20 p-r-15 p-t-3">
+        Review
+      </h3>
     </div>
-         <!-- Testimonial Section -->
 
-    <!-- Testimonial Section End --> 
-</section>
+    <!-- - -->
+    <div class="wrap-slick3">
+      <div class="slick3">
+        <div class="item-slick3 item1-slick3">
+          <div class="wrap-content-slide3 p-b-50 p-t-50">
+            <div class="container">
+              <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+                <img src="images/avatar-01.jpg" alt="IGM-AVATAR">
+              </div>
 
+              <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+                <p class="t-center txt12 size15 m-l-r-auto">
+                  “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pre-tium nec, fermentum viverra dui ”
+                </p>
 
+                <div class="star-review fs-18 color0 flex-c-m m-t-12">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                </div>
 
+                <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+                  Marie Simmons ˗ New York
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="item-slick3 item2-slick3">
+          <div class="wrap-content-slide3 p-b-50 p-t-50">
+            <div class="container">
+              <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+                <img src="images/avatar-04.jpg" alt="IGM-AVATAR">
+              </div>
+
+              <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+                <p class="t-center txt12 size15 m-l-r-auto">
+                  “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pre-tium nec, fermentum viverra dui ”
+                </p>
+
+                <div class="star-review fs-18 color0 flex-c-m m-t-12">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                </div>
+
+                <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+                  Marie Simmons ˗ New York
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-slick3 item3-slick3">
+          <div class="wrap-content-slide3 p-b-50 p-t-50">
+            <div class="container">
+              <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+                <img src="images/avatar-05.jpg" alt="IGM-AVATAR">
+              </div>
+
+              <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+                <p class="t-center txt12 size15 m-l-r-auto">
+                  “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pre-tium nec, fermentum viverra dui ”
+                </p>
+
+                <div class="star-review fs-18 color0 flex-c-m m-t-12">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                </div>
+
+                <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+                  Marie Simmons ˗ New York
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="wrap-slick3-dots m-t-30"></div>
+    </div>
+  </section>  
 
 
 
@@ -279,17 +340,35 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   <p>Who are in extremely love with eco friendly system..</p>
                 </div>
               </div><!-- col-sm-4 -->
-        <div class="col-sm-8 ">
+    <div class="col-sm-8 ">
 
-          <div class="filters portfolioFilter clearfix margin-b-80">
-            <a href="#" data-filter="*" class="current"><b>ALL</b></a>
+      <div class="filters portfolioFilter clearfix margin-b-80" class="current">
+        <div class="col-md-12">
+        <div class="col-md-2" >
+          <div class="about"  >
+            <i class="fa fa-cogs" data-filter=".web-design" id="id_cogs"></i>
+            <h3><?php  //echo $row["nom"]; ?></h3>
+            <p></p>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+        <div class="filters portfolioFilter clearfix margin-b-80">
+            <div class="col-md-2" >
+          <div class="about" >
+            <i class="fa fa-cogs" data-filter=".branding" id="id_cogs"></i>
+            <h3><?php //echo $row["nom"]; ?></h3>
+            <p>.</p>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+             <!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
             <a href="#" data-filter=".web-design"><b>Cours</b></a>
             <a href="#" data-filter=".branding"><b>TD</b></a>
             <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-            <a href="#" data-filter=".video"><b>Video</b></a>
-          </div><!-- portfolioFilter -->
-        </div><!-- col-sm-8 -->
-      </div><!-- row -->
+            <a href="#" data-filter=".video"><b>Video</b></a> --> 
+      
+      </div></div><!-- col-sm-8 -->
+    </div><!-- row -->
   
     
     <div class=" filters-content portfolioContainer row grid">
@@ -314,11 +393,20 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <?php
 while($row=mysqli_fetch_assoc($query)){
      ?>
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 <?php echo $row["type"]; ?>">
+     <div class="col-md-4">
+          <div class="about">
+            <i class="fa fa-cogs" id="id_"></i>
+            <h3><?php echo $row["nom"]; ?></h3>
+            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+      
+        <!--       <div class="single-portfolio col-12 col-md-6 col-lg-4 <?php //echo $row["type"]; ?>">
                     <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
                         <!-- Blog Thumbnail -->
                       
-                        <!-- Blog Content -->
+                        <!-- Blog Content --><!--
                         <div class="fplus-blog-content">
                             <h5><?php echo $row["nom"]; ?></h5>
                             <div class="post-meta-data d-flex align-items-center">
@@ -332,7 +420,7 @@ while($row=mysqli_fetch_assoc($query)){
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <?php
 }
  ?>
@@ -559,7 +647,7 @@ while($row=mysqli_fetch_assoc($query)){
                                         </div>
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 text-center">
-                                            <button type="submit" class="btn">Send Message</button>
+                                            <button type="submit" id="btn_send" class="btn">Send Message</button>
                                         </div>
                                     </div>
                                 </div>
@@ -650,6 +738,34 @@ while($row=mysqli_fetch_assoc($query)){
     });
         }
     </script>
+    <!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/bootstrap/js/popper.js"></script>
+  <script type="text/javascript" src="html/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/daterangepicker/moment.min.js"></script>
+  <script type="text/javascript" src="html/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/slick/slick.min.js"></script>
+  <script type="text/javascript" src="html/js/slick-custom.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/parallax100/parallax100.js"></script>
+  <script type="text/javascript">
+        $('.parallax100').parallax100();
+  </script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script type="text/javascript" src="html/vendor/lightbox2/js/lightbox.min.js"></script>
+<!--===============================================================================================-->
+  <script src="html/js/main.js"></script>
+ <!--/////////////////pato/////////////////-->
+ <script type="text/javascript" src="pato/js/main.js"></script>
   </body>
 
 </html>
