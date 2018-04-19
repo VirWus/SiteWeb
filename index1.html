@@ -66,14 +66,28 @@
 
 <script  type="text/javascript">
 function loadDoc() {
-  alert('its working');
+
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var data = JSON.parse(xhttp.responseText);
-      /**document.getElementById("target").innerHTML =
-      data ; */
-      alert('data');
+      alert(data.length);
+      var tab = document.getElementById("gogo");
+      for (var i = 0; i < data.length; i++) {
+
+  var  ro =   tab.insertRow(0);
+  var celll = ro.insertCell(0);
+  var cell1 = ro.insertCell(1);
+  var cell2 = ro.insertCell(2);
+  var cell3 = ro.insertCell(3);
+  celll.innerHTML = data[i]["nom"];
+  cell1.innerHTML = data[i]["module"];
+  cell2.innerHTML = data[i]["annee"];
+  cell3.innerHTML = data[i]["type"];
+}
+
+
+
     }
   };
   xhttp.open("POST", "admin/test.php", true);
@@ -132,7 +146,7 @@ function loadDoc() {
 
 <header>
 		<div class="container">
-			<div class="heading-wrapper wow fadeInUp"">
+			<div class="heading-wrapper wow fadeInUp">
 				<div class="row">
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
@@ -403,16 +417,7 @@ function loadDoc() {
                   <p>Who are in extremely love with eco friendly system..</p>
                 </div>
               </div><!-- col-sm-4 -->
-        <div class="col-sm-8 ">
-
-          <div class="filters portfolioFilter clearfix margin-b-80">
-            <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-            <a href="#" data-filter=".web-design"><b>Cours</b></a>
-            <a href="#" data-filter=".branding"><b>TD</b></a>
-            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-            <a href="#" data-filter=".video"><b>Video</b></a>
-          </div><!-- portfolioFilter -->
-        </div><!-- col-sm-8 -->
+        <!-- col-sm-8 -->
       </div><!-- row -->
 
 
@@ -552,7 +557,7 @@ function loadDoc() {
                         <th>action</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="gogo">
 
                       <tr>
                         <td id="target">Donna Snider</td>
