@@ -1,7 +1,10 @@
 .heading-wrapper{background-color:#9B59B6 !important;}
+
 #sideNav{
   background-color: #9B59B6 !important;
 }
+#btn_send{background-color:#9B59B6 !important ;}
+.font-yellow{ color:#9B59B6 !important ;}
 a{
 	color: #9B59B6;
 }

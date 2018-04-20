@@ -1,8 +1,12 @@
 .heading-wrapper{
-  background-color:#9C3 !important ;
+  background-color:#b2b2b2 !important ;
 }
-
-#sideNav{background-color:#9C3 !important;}
+#btn_send{background-color:#b2b2b2!important ;}
+.font-yellow{ 
+  color:#b2b2b2 !important ;
+}
+#sideNav{background-color: #b2b2b2 !important;}
+#MSactu{color: #b2b2b2 !important; }
 a{
 	color: #9C3;
 }
@@ -21,13 +25,13 @@ a:hover{
 .navbar-engage .navbar-nav > .active > a:hover,
 .navbar-engage .navbar-nav > .active > a:focus,
 .navbar-engage .navbar-nav > .open > a:hover{
-	color: #9C3;
+	color: #b2b2b2;
 }
 .navbar-engage .navbar-nav > li a:hover::before,
 .navbar-engage .navbar-nav > li.active a::before,
 .navbar-engage .navbar-nav > li.open > a::before,
 .navbar-engage .navbar-nav > .active > a:focus::before {
-  background: #9C3;
+  background: #b2b2b2;
 }
 .navbar-engage .dropdown .dropdown-menu{
 	border-color: #9C3;
@@ -44,7 +48,7 @@ a:hover{
 	color: #9C3;
 }
 
-.open>a{color: #9C3 !important;}
+.open>a{color: #b2b2b2 !important;}
 
 .navbar-engage .dropdown .dropdown-menu > li > a:hover, .navbar-engage .dropdown .dropdown-menu > li > a .active{
 	color: #9C3;

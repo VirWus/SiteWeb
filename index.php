@@ -223,7 +223,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <section class="section-review p-t-115" id="experience">
     <!-- - -->
     <div class="title-review t-center m-b-2">
-      <span class="tit2 p-l-15 p-r-15">
+      <span class="tit2 p-l-15 p-r-15" id="MSactu">
         Moussaoui Boubakeur
       </span>
 
@@ -279,123 +279,42 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <div class="row d-flex justify-content-center">
       <div class="menu-content col-lg-10">
                 <div class="title text-center">
-                  <h1 class="mb-10">This is what we can do for you</h1>
+                  <span class="tit2 p-l-15 p-r-15" id="MSactu" style=" font-size: 60px; "> les Education </span>
                   <p>Who are in extremely love with eco friendly system..</p>
                 </div>
-              </div><!-- col-sm-4 -->
-        <!-- col-sm-8 -->
+              </div>
+
       </div><!-- row -->
 
-
-    <div class=" filters-content portfolioContainer row grid">
-
-   <!--    <div class="single-portfolio col-sm-4 all graphic-design">
-                  <div class="item">
-                    <img src="img/p1.jpg" alt="Work 1">
-                    <div class="p-inner">
-                      <h4>3D Helmet Design</h4>
-                      <div class="cat">Corporate</div>
-                    </div>
-                  </div>
-                </div> --><!-- p-item -->
-
-  <!--     <div class="single-portfolio col-sm-4 all graphic-design">
-                        <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(img/bg-img/video.jpg);">
-                            <div class="video-play-btn">
-                                <a href="https://youtu.be/ZydsX1qjoBI" class="video--play--btn"><i class="pe-7s-play" aria-hidden="true"></i></a>
-                            </div>
+<div class="col-md-12 branding">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Data Table</strong>
                         </div>
-                    </div> -->
-                      </div>
-       </a>
-            <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-           <a href="#" data-filter=".web-design"><b>Cours</b></a>
-           <a href="#" data-filter=".branding"><b>TD</b></a>
-           <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-           <a href="#" data-filter=".video"><b>Video</b></a> 
-      </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="gogo">
 
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 graphic-design">
-                   <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-
-                        <!-- Blog Content -->
-                        <div class="fplus-blog-content" data-toggle="modal" data-target="#largeModal" onclick="loadDoc()">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-
-
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
+                      <tr>
+                        <td id="target">Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
                         </div>
                     </div>
                 </div>
-
-               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-
-                        <!-- Blog Content -->
-                        <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-
-                        <!-- Blog Content -->
-                        <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-   <!--  <div class="single-portfolio col-sm-4 all web-design">
-                  <div class="item">
-                    <img src="img/p2.jpg" alt="Work 1">
-                    <div class="p-inner">
-                      <h4>2D Vinyl Design</h4>
-                      <div class="cat">Personal</div>
-                    </div>
-                  </div>
-                </div> -->
-
-<!-- <div class="single-portfolio col-sm-4 all branding">
-                  <div class="item">
-                    <img src="img/p3.jpg" alt="Work 1">
-                    <div class="p-inner">
-                      <h5>Creative Poster Design</h5>
-                      <div class="cat">Agency</div>
-                    </div>
-                  </div>
-                </div> -->
+  
 
 
 
@@ -405,7 +324,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
-
+<!-- 
 <section class="resume-section portfolio-area section-gap" id="education">
    <div class="container">
      <div class="row d-flex justify-content-center">
@@ -445,32 +364,32 @@ $query = mysqli_query($connect,"SELECT * FROM support");
            <a href="#" data-filter=".branding"><b>TD</b></a>
            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
            <a href="#" data-filter=".video"><b>Video</b></a> --> 
-      </div>
+<!--       </div> -->
     <!-- col-sm-8 -->
-   </div><!-- row -->
+   <!-- </div><!-- --> 
  
    
-   <div class=" filters-content portfolioContainer row grid">
+  <!--  <div class=" filters-content portfolioContainer row grid">
  <?php
-while($row=mysqli_fetch_assoc($query)){
+//while($row=mysqli_fetch_assoc($query)){
     ?>
 
     <div class="col-md-4 branding">
          <div class="about">
            <i class="fa fa-cogs" id="id_"></i>
-           <h3><?php echo $row["nom"]; ?></h3>
+           <h3><?php //echo $row["nom"]; ?></h3>
            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
            <a href="#">Read more</a>
          </div>
        </div>
-     
-               <?php
-}
-?>
+      -->
+<!--                <?php
+//}
+?> -->
 
-   </div><!-- portfolioContainer -->
-     </div><!-- container -->
- </section><!-- portfolio-section -->
+   <!-- </div><!-- portfolioContainer -->
+     <!--</div><!-- container -->
+ <!--</section> --><!-- portfolio-section --> 
   
 <!-- ////////////////////////////////////////////////////////////////////////////// -->
 

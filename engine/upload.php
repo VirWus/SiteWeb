@@ -5,7 +5,7 @@ $nom = base64_encode($_POST["nom"]);
 $resumer = base64_encode($_POST["resumer"]);
 $annee = $_POST["annee"];
 $type = $_POST["type"];
-$module = $_POST["module"];
+$module = base64_encode($_POST["module"]);
 $link = base64_encode($_POST["link"]);
 $pathparts = pathinfo($file);
 

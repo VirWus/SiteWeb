@@ -1,15 +1,21 @@
+#btn_send{background-color:#1C1C1C !important ;}
+.font-yellow{ 
+  color:#1C1C1C !important ;
+}
+#MSactu{color: #1C1C1C !important; }
+.social-icons{color:#1C1C1C !important ;}
 .heading-wrapper{
-  background-color:#998675 !important ;
+  background-color:#1C1C1C  !important ;
 }
 a{
   background-color: #998675;
 }
-#sideNav{background-color:#998675 !important ;}
+#sideNav{background-color:#1C1C1C !important ;}
 a:hover{
   color: #795a3f;
 }
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
-  color: #998675;
+  color: #1C1C1C;
 }
 .navbar-engage .navbar-nav > li > a:hover,
 .navbar-engage .navbar-nav > li.active > a,
@@ -17,16 +23,16 @@ a:hover{
 .navbar-engage .navbar-nav > .active > a:hover,
 .navbar-engage .navbar-nav > .active > a:focus,
 .navbar-engage .navbar-nav > .open > a:hover{
-  color: #998675;
+  color: #1C1C1C;
 }
 .navbar-engage .navbar-nav > li a:hover::before,
 .navbar-engage .navbar-nav > li.active a::before,
 .navbar-engage .navbar-nav > li.open > a::before,
 .navbar-engage .navbar-nav > .active > a:focus::before {
-  background: #998675;
+  background: #1C1C1C;
 }
 .navbar-engage .dropdown .dropdown-menu{
-  border-color: #998675;
+  border-color: #1C1C1C;
 }
 #main-menu > li > a:hover,
 #main-menu > li.active > a,
@@ -34,13 +40,13 @@ a:hover{
 #main-menu > .active > a:hover,
 #main-menu > .active > a:focus,
 #main-menu > .open > a:hover{
-  color: #998675;
+  color: #1C1C1C;
 }
 #main-menu .dropdown .dropdown-menu > li.active > a{
   color: #998675;
 }
 
-.open>a{color: #998675 !important;}
+.open>a{color: #1C1C1C !important;}
 
 .navbar-engage .dropdown .dropdown-menu > li > a:hover, .navbar-engage .dropdown .dropdown-menu > li > a .active{
   color: #998675;
@@ -446,6 +452,9 @@ h2.widget-title {
 #main-menu ul .dropdown .dropdown-menu a:hover, #main-menu .dropdown .dropdown-menu a .active {
   color: #998675;
 }
-bg-primary{
-  background-color: black !important;
+.bg-primary{
+  background-color: #1C1C1C !important;
+}
+#navbarSupportedContent{
+  background-color: #1C1C1C !important;
 }

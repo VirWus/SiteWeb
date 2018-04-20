@@ -94,7 +94,7 @@ ul.colors li a.color1.active:after, ul.colors li a.color8.active:after{
 
 /* light-version */
 ul.colors .color1 {
-    background: #9C3 ; /* default black */
+    background: #b2b2b2 ; /* default black */
 }
 ul.colors .color2 {
     background: #ff5959;  /* blue */
@@ -112,7 +112,7 @@ ul.colors .color6 {
      background: #1ABC9C;  /* red */
 }
 ul.colors .color7 {
-     background: #998675;  /* blue-grey */
+     background: #1C1C1C;  /* blue-grey */
 }
 ul.colors .color8 {
      background: #34495E;  /* default ambar */

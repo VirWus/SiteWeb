@@ -5,6 +5,8 @@
 a{
 	color: #F60;
 }
+#btn_send{background-color:#F60 !important ;}
+.font-yellow{ color:#F60 !important ;}
 a:hover{
 	color: #d05605;
 }

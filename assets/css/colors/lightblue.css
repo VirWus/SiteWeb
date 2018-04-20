@@ -1,9 +1,10 @@
 .heading-wrapper{background-color:#00D3F9 !important;}
-
+.font-yellow{ color:#00D3F9!important ;}
 #sideNav{background-color:#00D3F9 !important;}
 a{
   color: #00D3F9;
 }
+#btn_send{background-color:#00D3F9 !important ;}
 a:hover{
   color: #04a8c6;
 }

@@ -2,9 +2,12 @@
 #sideNav{
   background-color: #ff5959 !important;
 }
+#btn_send{background-color:#ff5959 !important ;}
 a{
   color: #ff5959;
 }
+.social-icons{color:#ff5959 !important ;}
+.font-yellow{ color:#ff5959 !important ;}
 a:hover{
   color: #cc4b4b;
 }
