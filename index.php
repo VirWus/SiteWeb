@@ -71,8 +71,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
    <!--////////////////////////////////////////////////////-->
    
   <!--===============================================================================================-->
-  <link rel="icon" type="image/png" href="html/images/icons/favicon.png"/>
-<!--===============================================================================================-->
+  <link rel="shortcut icon" href="favicon.ico">
+  <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="html/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="html/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -108,6 +108,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <?php
     $resultat = mysqli_query($connect,"SELECT * FROM admin");
     $actu=mysqli_query($connect,"SELECT * FROM actuallite");
+     $supo=mysqli_query($connect,"SELECT * FROM support");
     ?> 
     
  <!--   <div id="preloader">
@@ -219,60 +220,276 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-<!-- Review -->
-  <section class="section-review p-t-115" id="experience">
-    <!-- - -->
-    <div class="title-review t-center m-b-2">
-      <span class="tit2 p-l-15 p-r-15" id="MSactu">
-        Moussaoui Boubakeur
-      </span>
-
-      <h3 class="tit8 t-center p-l-20 p-r-15 p-t-3">
-        Actualite
-      </h3>
-
-    </div>
-
-    <!-- - -->
-    <div class="wrap-slick3">
-      <div class="slick3">
-        <?php
-    while($ker = mysqli_fetch_assoc($actu)){ ?>
-        <div class="item-slick3 item1-slick3">
-          <div class="wrap-content-slide3 p-b-50 p-t-50">
+<!-- Actualite -->
+  <section class="section-event" id="experience">
+    <div class="wrap-slick2">
+      <div class="slick2">
+        <div class="item-slick2 item1-slick2" style="background-image: url(html/images/event4-02.jpg);">
+          <div class="wrap-content-slide2 p-t-115 p-b-208">
             <div class="container">
-              <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-                <img src= "img/icone-actu.png" alt="IGM-AVATAR">
+              <!-- - -->
+              <div class="title-event t-center m-b-52">
+                <span class="tit2 p-l-15 p-r-15">
+                  Moussaoui Boubakeur
+                </span>
+
+                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
+                  Actualité
+                </h3>
               </div>
 
-              <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-                <p class="t-center txt12 size15 m-l-r-auto">
-                  <?php echo $ker["titre"] ?>
-                </p>
+              <!-- Block2 -->
+              <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
+                <!-- Pic block2 -->
+                <a href="#" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(html/images/evento-02.jpg);">
+                  <div class="time-event size10 txt6 effect1">
+                    <span class="txt-effect1 flex-c-m t-center">
+                      08:00 PM Tuesday - 21 November 2018
+                    </span>
+                  </div>
+                </a>
 
-                <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                  <p><?php echo $ker["contenu"] ?></p>
-                </div>
-              <div class="more-review txt4 t-center animated visible-false m-t-32"> 
-                   <p><?php echo $ker["lien"] ?></p> 
-              </div>
-                <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-                   <?php echo $ker["date"] ?>
+                <!-- Text block2 -->
+                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+                  <h4 class="tit7 t-center m-b-10">
+                    Wines during specific nights
+                  </h4>
+
+                  <p class="t-center">
+                    Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
+                  </p>
+
+                  <div class="flex-sa-m flex-w w-full m-t-40">
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 days">
+                        00
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Days
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 hours">
+                       05
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Hours
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 minutes">
+                        00
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Minutes
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 seconds">
+                        50
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Seconds
+                      </span>
+                    </div>
+                  </div>
+
+                  <a href="#" class="txt4 m-t-40">
+                    View Details
+                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-<?php } ?>
+        <div class="item-slick2 item2-slick2" style="background-image: url(html/images/event4-02.jpg);">
+          <div class="wrap-content-slide2 p-t-115 p-b-208">
+            <div class="container">
+              <!-- - -->
+              <div class="title-event t-center m-b-52">
+                <span class="tit2 p-l-15 p-r-15">
+                  Upcomming
+                </span>
+
+                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
+                  Events
+                </h3>
+              </div>
+
+              <!-- Block2 -->
+              <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="fadeInDown">
+                <!-- Pic block2 -->
+                <a href="#" class="wrap-pic-blo2 bg2-blo2" style="background-image: url(html/images/evento-02.jpg);">
+                  <div class="time-event size10 txt6 effect1">
+                    <span class="txt-effect1 flex-c-m">
+                      08:00 PM Tuesday - 21 November 2018
+                    </span>
+                  </div>
+                </a>
+
+                <!-- Text block2 -->
+                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+                  <h4 class="tit7 t-center m-b-10">
+                    Wines during specific nights
+                  </h4>
+
+                  <p class="t-center">
+                    Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
+                  </p>
+
+                  <div class="flex-sa-m flex-w w-full m-t-40">
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 days">
+                        25
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Days
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 hours">
+                        05
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Hours
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 minutes">
+                        59
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Minutes
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 seconds">
+                        56
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Seconds
+                      </span>
+                    </div>
+                  </div>
+
+                  <a href="#" class="txt4 m-t-40">
+                    View Details
+                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item-slick2 item3-slick2" style="background-image: url(html/images/event4-02.jpg);">
+          <div class="wrap-content-slide2 p-t-115 p-b-208">
+            <div class="container">
+              <!-- - -->
+              <div class="title-event t-center m-b-52">
+                <span class="tit2 p-l-15 p-r-15">
+                  Upcomming
+                </span>
+
+                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
+                  Events
+                </h3>
+              </div>
+
+              <!-- Block2 -->
+              <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="rotateInUpLeft">
+                <!-- Pic block2 -->
+                <a href="#" class="wrap-pic-blo2 bg3-blo2" style="background-image: url(images/event-01.jpg);">
+                  <div class="time-event size10 txt6 effect1">
+                    <span class="txt-effect1 flex-c-m">
+                      08:00 PM Tuesday - 21 November 2018
+                    </span>
+                  </div>
+                </a>
+
+                <!-- Text block2 -->
+                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
+                  <h4 class="tit7 t-center m-b-10">
+                    Wines during specific nights
+                  </h4>
+
+                  <p class="t-center">
+                    Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
+                  </p>
+
+                  <div class="flex-sa-m flex-w w-full m-t-40">
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 days">
+                        25
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Days
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 hours">
+                        05
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Hours
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 minutes">
+                        59
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Minutes
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 seconds">
+                        56
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Seconds
+                      </span>
+                    </div>
+                  </div>
+
+                  <a href="#" class="txt4 m-t-40">
+                    View Details
+                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
 
-      <div class="wrap-slick3-dots m-t-30"></div>
-       
+      <div class="wrap-slick2-dots"></div>
     </div>
-   
-  </section>  
+  </section>
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
 <section class="resume-section portfolio-area section-gap" id="education">
     <div class="container">
@@ -280,39 +497,44 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <div class="menu-content col-lg-10">
                 <div class="title text-center">
                   <span class="tit2 p-l-15 p-r-15" id="MSactu" style=" font-size: 60px; "> les Education </span>
-                  <p>Who are in extremely love with eco friendly system..</p>
+                  
+                  <!-- ********************************************************** -->
+                  
                 </div>
               </div>
 
       </div><!-- row -->
+  
 
-<div class="col-md-12 branding">
+                <?php
+    while($i = mysqli_fetch_assoc($supo)){ ?>
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
+                            <strong class="card-title"><?php echo $i["nom"]; ?></strong>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
+                        <th>Type</th>
+                        <th>Resume</th>
+                        <th>Annee</th>
                         <th>action</th>
                       </tr>
                     </thead>
                     <tbody id="gogo">
 
                       <tr>
-                        <td id="target">Donna Snider</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
-                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+                        <td id="target"><?php echo $i["type"]; ?></td>
+                        <td><?php echo $i["resumer"]; ?></td>
+                        <td><?php echo $i["annee"]; ?></td>
+                        <td> <div class="btn btn-outline-primary fa fa-download"> </div> <div class="btn btn-outline-primary fa fa-play"> </div> </td>
                       </tr>
                     </tbody>
                   </table>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
   
 
@@ -401,41 +623,41 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
+          <span class="tit2 p-l-15 p-r-15" id="MSactu" style=" font-size: 50px; "> Skills </span>
 
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
                                   
 <!-- Button trigger modal-->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
 
 <!--Modal: modalPush-->
-<div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="modalPush" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-notify modal-info" role="document">
         <!--Content-->
-        <div class="modal-content text-center">
+<!--         <div class="modal-content text-center"> -->
             <!--Header-->
-            <div class="modal-header d-flex justify-content-center">
+            <!-- <div class="modal-header d-flex justify-content-center">
                 <p class="heading">Be always up to date</p>
-            </div>
+            </div> -->
 
             <!--Body-->
-            <div class="modal-body">
+            <!-- <div class="modal-body">
 
                 <i class="fa fa-bell fa-4x animated rotateIn mb-4"></i>
 
                 <p>Do you want to receive the push notification about the newest posts?</p>
 
-            </div>
+            </div>  -->
 
             <!--Footer-->
-            <div class="modal-footer flex-center">
+            <!-- <div class="modal-footer flex-center">
                 <a href="https://mdbootstrap.com/product/material-design-for-bootstrap-pro/" class="btn btn-primary ">Yes</a>
                 <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">No</a>
-            </div>
-        </div>
+            </div> -->
+ <!--        </div> -->
         <!--/.Content-->
-    </div>
-</div>
+ <!--    </div>
+</div>  -->
 <!--Modal: modalPush-->
           <ul class="list-inline list-icons">
             <li class="list-inline-item">
@@ -447,22 +669,22 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <li class="list-inline-item">
               <i class="devicons devicons-javascript"></i>
             </li>
-            <li class="list-inline-item">
+            <!-- <li class="list-inline-item">
               <i class="devicons devicons-jquery"></i>
-            </li>
+            </li> -->
             <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
+              <i class="devicons devicons-mysql"></i>
             </li>
-            <li class="list-inline-item">
+           <!--  <li class="list-inline-item">
               <i class="devicons devicons-less"></i>
-            </li>
+            </li> -->
             <li class="list-inline-item">
               <i class="devicons devicons-bootstrap"></i>
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
+            </li> 
+           <!--  <li class="list-inline-item">
               <i class="devicons devicons-grunt"></i>
             </li>
             <li class="list-inline-item">
@@ -470,25 +692,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-npm"></i>
-            </li>
+            </li> -->
           </ul>
-
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
-        </div>
       </section>
 
       <section class="resume-section fplus-contact-area bg-gray" id="interests">
@@ -626,16 +831,16 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <script src="admin/assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="admin/assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="admin/assets/js/lib/data-table/datatables-init.js"></script>
-  <script type="text/javascript">
+   <script type="text/javascript">
 
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });
+         ]
+     });
         }
-    </script>
+    </script> 
     <!--===============================================================================================-->
   <script type="text/javascript" src="html/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

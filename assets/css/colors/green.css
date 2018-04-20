@@ -13,6 +13,9 @@ a{
 a:hover{
 	color: #769e26;
 }
+#lienactu{
+  color: #b2b2b2 !important; 
+}
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
 	color: #9C3;
 }

@@ -13,7 +13,10 @@ a:hover{
 .collapse .navbar-collapse{
   color: #F60;
 }
-
+#MSactu{color: #F60 !important; }
+#lienactu{
+  color:#F60 !important; 
+}
 a{
   color: #F60;
 }
