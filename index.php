@@ -18,7 +18,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <title>Moussaoui Boubaker</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -30,20 +30,17 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <!-- Custom styles for this template -->
     <link href="css/resume.css" rel="stylesheet">
 	 <!-- portfolio cv template  -->
-	<link href="common-css/bootstrap.css" rel="stylesheet">
+	<link href="CSSNew/bootstrap.css" rel="stylesheet">
 	
-	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
 	
-
-
 
     <link rel="stylesheet" href="portf/css/linearicons.css">
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
       <link rel="stylesheet" href="portf/css/bootstrap.css">
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
       <link rel="stylesheet" href="portf/css/nice-select.css">          
-      <link rel="stylesheet" href="portf/css/animate.min.css">
-      <link rel="stylesheet" href="portf/css/owl.carousel.css">
+      <link rel="stylesheet" href="portf/css/animate.min.css"> 
+      <link rel="stylesheet" href="portf/css/owl.carousel.css"> 
       <link rel="stylesheet" href="portf/css/main.css">
 
       <link href="css/mdb.min.css" rel="stylesheet">
@@ -65,7 +62,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
  <!-- Actualite Fplus tepmplate  -->
   <link href="fplus/style.css" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <link rel="stylesheet" href="css/main.css">
 
 
  <!-- engage slider actualite -->
@@ -110,6 +107,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     
     <?php
     $resultat = mysqli_query($connect,"SELECT * FROM admin");
+    $actu=mysqli_query($connect,"SELECT * FROM actuallite");
     ?> 
     
  <!--   <div id="preloader">
@@ -219,118 +217,63 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 	</section><!-- intro-section -->
      
   
-
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <!-- Review -->
   <section class="section-review p-t-115" id="experience">
     <!-- - -->
     <div class="title-review t-center m-b-2">
       <span class="tit2 p-l-15 p-r-15">
-        Customers Say
+        Moussaoui Boubakeur
       </span>
 
       <h3 class="tit8 t-center p-l-20 p-r-15 p-t-3">
-        Review
+        Actualite
       </h3>
+
     </div>
 
     <!-- - -->
     <div class="wrap-slick3">
       <div class="slick3">
+        <?php
+    while($ker = mysqli_fetch_assoc($actu)){ ?>
         <div class="item-slick3 item1-slick3">
           <div class="wrap-content-slide3 p-b-50 p-t-50">
             <div class="container">
               <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-                <img src="images/avatar-01.jpg" alt="IGM-AVATAR">
+                <img src= "img/icone-actu.png" alt="IGM-AVATAR">
               </div>
 
               <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
                 <p class="t-center txt12 size15 m-l-r-auto">
-                  “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pre-tium nec, fermentum viverra dui ”
+                  <?php echo $ker["titre"] ?>
                 </p>
 
                 <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
+                  <p><?php echo $ker["contenu"] ?></p>
                 </div>
-
+              <div class="more-review txt4 t-center animated visible-false m-t-32"> 
+                   <p><?php echo $ker["lien"] ?></p> 
+              </div>
                 <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-                  Marie Simmons ˗ New York
+                   <?php echo $ker["date"] ?>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="item-slick3 item2-slick3">
-          <div class="wrap-content-slide3 p-b-50 p-t-50">
-            <div class="container">
-              <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-                <img src="images/avatar-04.jpg" alt="IGM-AVATAR">
-              </div>
-
-              <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-                <p class="t-center txt12 size15 m-l-r-auto">
-                  “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pre-tium nec, fermentum viverra dui ”
-                </p>
-
-                <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                </div>
-
-                <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-                  Marie Simmons ˗ New York
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-slick3 item3-slick3">
-          <div class="wrap-content-slide3 p-b-50 p-t-50">
-            <div class="container">
-              <div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-                <img src="images/avatar-05.jpg" alt="IGM-AVATAR">
-              </div>
-
-              <div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-                <p class="t-center txt12 size15 m-l-r-auto">
-                  “ We are lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus sem, mattis in pre-tium nec, fermentum viverra dui ”
-                </p>
-
-                <div class="star-review fs-18 color0 flex-c-m m-t-12">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                  <i class="fa fa-star p-l-1" aria-hidden="true"></i>
-                </div>
-
-                <div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-                  Marie Simmons ˗ New York
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<?php } ?>
 
       </div>
 
       <div class="wrap-slick3-dots m-t-30"></div>
+       
     </div>
+   
   </section>  
-
-
-
-
-
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
 <section class="resume-section portfolio-area section-gap" id="education">
     <div class="container">
       <div class="row d-flex justify-content-center">
@@ -340,60 +283,196 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   <p>Who are in extremely love with eco friendly system..</p>
                 </div>
               </div><!-- col-sm-4 -->
-    <div class="col-sm-8 ">
+        <!-- col-sm-8 -->
+      </div><!-- row -->
 
-      <div class="filters portfolioFilter clearfix margin-b-80" class="current">
-        <div class="col-md-12">
-        <div class="col-md-2" >
-          <div class="about"  >
-            <i class="fa fa-cogs" data-filter=".web-design" id="id_cogs"></i>
-            <h3><?php  //echo $row["nom"]; ?></h3>
-            <p></p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-            <div class="col-md-2" >
-          <div class="about" >
-            <i class="fa fa-cogs" data-filter=".branding" id="id_cogs"></i>
-            <h3><?php //echo $row["nom"]; ?></h3>
-            <p>.</p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-             <!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
-            <a href="#" data-filter=".web-design"><b>Cours</b></a>
-            <a href="#" data-filter=".branding"><b>TD</b></a>
-            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-            <a href="#" data-filter=".video"><b>Video</b></a> --> 
-      
-      </div></div><!-- col-sm-8 -->
-    </div><!-- row -->
-  
-    
+
     <div class=" filters-content portfolioContainer row grid">
-      
-  <?php
-while($row=mysqli_fetch_assoc($query)){
-     ?>
 
-     <div class="col-md-4">
-          <div class="about">
-            <i class="fa fa-cogs" id="id_"></i>
-            <h3><?php echo $row["nom"]; ?></h3>
-            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-            <a href="#">Read more</a>
-          </div>
-        </div>
-      
-                <?php
-}
- ?>
+   <!--    <div class="single-portfolio col-sm-4 all graphic-design">
+                  <div class="item">
+                    <img src="img/p1.jpg" alt="Work 1">
+                    <div class="p-inner">
+                      <h4>3D Helmet Design</h4>
+                      <div class="cat">Corporate</div>
+                    </div>
+                  </div>
+                </div> --><!-- p-item -->
+
+  <!--     <div class="single-portfolio col-sm-4 all graphic-design">
+                        <div class="fplus-method-video wow fadeInUp" data-wow-delay="1s" style="background-image: url(img/bg-img/video.jpg);">
+                            <div class="video-play-btn">
+                                <a href="https://youtu.be/ZydsX1qjoBI" class="video--play--btn"><i class="pe-7s-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div> -->
+                      </div>
+       </a>
+            <a href="#" data-filter="*" class="current"><b>ALL</b></a>
+           <a href="#" data-filter=".web-design"><b>Cours</b></a>
+           <a href="#" data-filter=".branding"><b>TD</b></a>
+           <a href="#" data-filter=".graphic-design"><b>TP</b></a>
+           <a href="#" data-filter=".video"><b>Video</b></a> 
+      </div>
+
+               <div class="single-portfolio col-12 col-md-6 col-lg-4 graphic-design">
+                   <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Blog Thumbnail -->
+
+                        <!-- Blog Content -->
+                        <div class="fplus-blog-content" data-toggle="modal" data-target="#largeModal" onclick="loadDoc()">
+                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <div class="post-meta-data d-flex align-items-center">
+                                <div class="post-author-img">
+                                    <img src="img/blog-img/post-author.jpg" alt="">
+                                </div>
+                                <div class="post-author-name-date">
+                                    <h6>Lora Palmer</h6>
+
+
+                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
+                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Blog Thumbnail -->
+
+                        <!-- Blog Content -->
+                        <div class="fplus-blog-content">
+                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <div class="post-meta-data d-flex align-items-center">
+                                <div class="post-author-img">
+                                    <img src="img/blog-img/post-author.jpg" alt="">
+                                </div>
+                                <div class="post-author-name-date">
+                                    <h6>Lora Palmer</h6>
+                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
+                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- Blog Thumbnail -->
+
+                        <!-- Blog Content -->
+                        <div class="fplus-blog-content">
+                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                            <div class="post-meta-data d-flex align-items-center">
+                                <div class="post-author-img">
+                                    <img src="img/blog-img/post-author.jpg" alt="">
+                                </div>
+                                <div class="post-author-name-date">
+                                    <h6>Lora Palmer</h6>
+                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+   <!--  <div class="single-portfolio col-sm-4 all web-design">
+                  <div class="item">
+                    <img src="img/p2.jpg" alt="Work 1">
+                    <div class="p-inner">
+                      <h4>2D Vinyl Design</h4>
+                      <div class="cat">Personal</div>
+                    </div>
+                  </div>
+                </div> -->
+
+<!-- <div class="single-portfolio col-sm-4 all branding">
+                  <div class="item">
+                    <img src="img/p3.jpg" alt="Work 1">
+                    <div class="p-inner">
+                      <h5>Creative Poster Design</h5>
+                      <div class="cat">Agency</div>
+                    </div>
+                  </div>
+                </div> -->
+
+
 
     </div><!-- portfolioContainer -->
       </div><!-- container -->
   </section><!-- portfolio-section -->
-  
 
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<section class="resume-section portfolio-area section-gap" id="education">
+   <div class="container">
+     <div class="row d-flex justify-content-center">
+           
+           <div class="menu-content col-lg-10">
+               <div class="title text-center">
+                 <h1 class="mb-10">This is what we can do for you</h1>
+                 <p>Who are in extremely love with eco friendly system..</p>
+               </div>
+             </div>
+
+   <div class="col-sm-12 row grid ">
+
+
+       <a href="#" data-filter=".branding">
+       
+         <div class="about col-sm-4"  >
+           <i class="fa fa-cogs" data-filter=".web-design" id="id_cogs"></i>
+           <h3><?php  //echo $row["nom"]; ?></h3>
+           <p></p>
+           <a href="#"  class="current">Read more</a>
+         </div>
+     
+       </a>
+       <a href="#" data-filter="*">
+           
+         <div class="about col-sm-4" >
+           <i class="fa fa-cogs"  id="id_cogs"></i>
+           <h3><?php //echo $row["nom"]; ?></h3>
+           <p>.</p>
+           <a href="#" >Read more</a>
+   
+         </div>
+       </a>
+            <!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
+           <a href="#" data-filter=".web-design"><b>Cours</b></a>
+           <a href="#" data-filter=".branding"><b>TD</b></a>
+           <a href="#" data-filter=".graphic-design"><b>TP</b></a>
+           <a href="#" data-filter=".video"><b>Video</b></a> --> 
+      </div>
+    <!-- col-sm-8 -->
+   </div><!-- row -->
+ 
+   
+   <div class=" filters-content portfolioContainer row grid">
+ <?php
+while($row=mysqli_fetch_assoc($query)){
+    ?>
+
+    <div class="col-md-4 branding">
+         <div class="about">
+           <i class="fa fa-cogs" id="id_"></i>
+           <h3><?php echo $row["nom"]; ?></h3>
+           <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
+           <a href="#">Read more</a>
+         </div>
+       </div>
+     
+               <?php
+}
+?>
+
+   </div><!-- portfolioContainer -->
+     </div><!-- container -->
+ </section><!-- portfolio-section -->
+  
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
 
 
 
