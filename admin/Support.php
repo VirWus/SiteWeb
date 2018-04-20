@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -29,13 +29,13 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-
+<script type="text/javascript" src="../js/checkBoxFunction.js"></script>
 </head>
 <body>
-    <?php 
-   $db = mysqli_connect("localhost","root","","univedu"); 
-    $resultat = mysqli_query($db,"SELECT * FROM support");
-    ?>  
+    <?php
+   include_once("connect/connection.php");
+    $resultat = mysqli_query($connect,"SELECT * FROM support");
+    ?>
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -51,12 +51,12 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                
+
                       <li>
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -69,8 +69,8 @@
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
 
-                    
-                    
+
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -99,13 +99,13 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                         
+
                         </div>
 
                         <div class="dropdown for-message">
-                          
-                          
-                          
+
+
+
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-                          
+
                           <div class="form-group">
                             <div class="input-group ">
                               <input type="text" id="resumer" name="resumer" placeholder="Résumer" class="form-control">
@@ -203,7 +203,7 @@
                           <div class="form-group">
                             <div class="input-group">
                              <select name="type" id="type" class="form-control">
-                               <option value="0">Please select TYPE </option>
+                               <option value="0">Selectionner le type </option>
                                <option value="1">Cour</option>
                                <option value="2">Traveaux dériger</option>
                                <option value="3">Traveaux pratiques</option>
@@ -224,10 +224,25 @@
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="lien" name="lien" placeholder="Lien" class="form-control">
+                              <input type="hidden" id="lien" name="lien" placeholder="Lien" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-link"></i></div>
                             </div>
                           </div>
+
+                          <div class="row form-group">
+                                                     <div class="col col-md-3"><label class=" form-control-label"></label></div>
+                                                     <div class="col col-md-9">
+                                                       <div class="form-check">
+                                                         <div class="checkbox">
+                                                           <label for="checkbox1" class="form-check-label ">
+                                                             <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Ou un lien ?
+                                                           </label>
+                                                         </div>
+
+                                                       </div>
+                                                     </div>
+                                                   </div>
+
 
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
@@ -238,7 +253,7 @@
                       </div>
                     </div>
                   </div>
-               
+
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -270,13 +285,13 @@
                         <td><?php   echo $row["resumer"] ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
                         <td><?php   echo $row["lien"] ;  ?></td>
-                        <td> <a href="Edit_Support.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
-                            <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
+                        <td> <a href="Edit_Support.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
+                            <a href="Support(delete).php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
                            <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
                         </td>
-                      
+
                       </tr>
-                      <?php  } 
+                      <?php  }
                    ?>
                     </tbody>
                   </table>
@@ -315,7 +330,7 @@
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [

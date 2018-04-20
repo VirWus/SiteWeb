@@ -1,10 +1,13 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-if (isset($_POST["submit"])) {
+
   $email = $_POST["email"];
-  $text = $_POST["textC"];
-  if (!empty($email) && !empty($text)) {
+  $name = $_POST["name"];
+  $subject = $_POST["subject"];
+  $number = $_POST["number"];
+  $text = $_POST["message"];
+  if (!empty($email) && !empty($text) && !empty($name) && !empty($subject)  && !empty($number) ) {
 
 
   require '../PHPMailer/src/Exception.php';
@@ -34,18 +37,18 @@ $mail->Username = "CSMIFBBA@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "CSMI2018";
 //Set who the message is to be sent from
-$mail->setFrom('CSMIFBBA@gmail.com', 'Contact');
+$mail->setFrom('CSMIFBBA@gmail.com', 'support');
 //Set an alternative reply-to address
-$mail->addReplyTo($email, 'a user');
+$mail->addReplyTo('khoudoursofiane75@gmail.com', 'support');
 //Set who the message is to be sent to
-$mail->addAddress('walidvirwus@gmail.com', 'walid');
+$mail->addAddress('b.moussaoui@univ-bba.dz', 'Moussaoui Boubaker');
 //Set the subject line
-$mail->Subject = 'Contact ';
-$mail->Body = "test test";
+$mail->Subject = $name.' Vous a envoyer un email avec ce sujet ' . $subject;
+$mail->Body = $text;
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
+$mail->AltBody = $text;
 //Attach an image file
 //send the message, check for errors
 if (!$mail->send()) {
@@ -61,22 +64,6 @@ if (!$mail->send()) {
   }else {
     echo "Please enter an email and the discription";
   }
-}
+
 
  ?>
-<html>
-<head>
-  <meta charset="utf-8" />
-</head>
-<body>
-
-  <form action="#" method="post" >
-<table>
-  <th>** Bienvenu **</th>
-  <tr><td>Votre email pour que l'ensegnient peut vous contacter </td> <td><input type="email" name="email" placeholder="votre email" </td></tr>
-  <tr><td><textarea name="textC" placeholder="votre message"> </textarea> </td> </tr>
-  <tr> <td><input type="submit" name="submit" value="envoyer" /> </td></tr>
-</table>
-  </form>
-</body>
-</html>

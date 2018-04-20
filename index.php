@@ -31,16 +31,16 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <link href="css/resume.css" rel="stylesheet">
 	 <!-- portfolio cv template  -->
 	<link href="CSSNew/bootstrap.css" rel="stylesheet">
-	
-	
+
+
 
     <link rel="stylesheet" href="portf/css/linearicons.css">
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
       <!-- <link rel="stylesheet" href="portf/css/bootstrap.css"> -->
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
-      <link rel="stylesheet" href="portf/css/nice-select.css">          
-      <link rel="stylesheet" href="portf/css/animate.min.css"> 
-      <link rel="stylesheet" href="portf/css/owl.carousel.css"> 
+      <link rel="stylesheet" href="portf/css/nice-select.css">
+      <link rel="stylesheet" href="portf/css/animate.min.css">
+      <link rel="stylesheet" href="portf/css/owl.carousel.css">
       <link rel="stylesheet" href="portf/css/main.css">
 
       <link href="css/mdb.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
       <!--
       CSS
       ============================================= -->
@@ -69,7 +69,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
    <!--////////////////////////////////////////////////////-->
-   
+
   <!--===============================================================================================-->
   <link rel="shortcut icon" href="favicon.ico">
   <!--===============================================================================================-->
@@ -97,20 +97,31 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <link rel="stylesheet" type="text/css" href="html/css/main.css">
 <!--===============================================================================================-->
    <!--//////////////////////////Pato/////////////////////////-->
-    
-  
 
+
+   <script type="text/javascript">
+
+   function submitForm(oFormElement)
+   {
+     var xhr = new XMLHttpRequest();
+     xhr.onload = function(){ alert (xhr.responseText); } // success case
+     xhr.onerror = function(){ alert (xhr.responseText); } // failure case
+     xhr.open (oFormElement.method, oFormElement.action, true);
+     xhr.send (new FormData (oFormElement));
+     return false;
+   }
+   </script>
 
   </head>
 
   <body id="page-top">
-    
+
     <?php
     $resultat = mysqli_query($connect,"SELECT * FROM admin");
     $actu=mysqli_query($connect,"SELECT * FROM actuallite");
      $supo=mysqli_query($connect,"SELECT * FROM support");
-    ?> 
-    
+    ?>
+
  <!--   <div id="preloader">
         <div class="fplus-load"></div>
         <img src="img/core-img/h-logo.png" alt="logo">
@@ -162,7 +173,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-					
+
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i style="color: white;" class="icon ion-ios fa fa-university"></i>
@@ -172,7 +183,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-					
+
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i style="color: white;" class="icon ion-ios fa fa-envelope"></i>
@@ -184,11 +195,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 					</div><!-- col-sm-4 -->
 				</div><!-- row -->
 			</div><!-- heading-wrapper -->
-			
-		
+
+
 		</div><!-- container -->
 	</header>
-	
+
 	<section class="intro-section" id="about">
     <?php
     if($row = mysqli_fetch_assoc($resultat)){ ?>
@@ -216,8 +227,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 		</div><!-- container -->
     <?php } ?>
 	</section><!-- intro-section -->
-     
-  
+
+
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <!-- Actualite -->
@@ -228,7 +239,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
           <div class="wrap-content-slide2 p-t-115 p-b-208">
             <div class="container">
               <!-- - -->
-              <div class="title-event t-center m-b-52"> 
+              <div class="title-event t-center m-b-52">
               	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Actualité
                 </h3>
@@ -236,7 +247,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   Moussaoui Boubakeur
                 </span>
 
-               
+
               </div>
 
               <!-- Block2 -->
@@ -324,7 +335,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   Upcomming
                 </span>
 
-                
+
               </div>
 
               <!-- Block2 -->
@@ -497,27 +508,27 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <div class="container">
       <div class="row d-flex justify-content-center">
       <div class="menu-content col-lg-10">
-                 <div class="title-event t-center m-b-52"> 
+                 <div class="title-event t-center m-b-52">
 
                 <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                    Education
                 </h3>
-                
+
                 <span class="tit2 p-l-15 p-r-15">
                  Des fichies a telecharger
                 </span>
 
-               
+
               </div>
               </div>
 
       </div><!-- row -->
-  
+
 <div class="col-sm-12 row grid">
-               
+
                <?php
     while($i = mysqli_fetch_assoc($supo)){ ?>
-     
+
      <div class="col-md-4">
           <div class="about">
             <i class="fa fa-cogs" id=""></i>
@@ -526,10 +537,10 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <a href="#education" data-toggle="modal" data-target="#modalCart">Read more</a>
           </div>
         </div>
-                   
+
             <?php } ?>
 </div>
-  
+
 
 <!-- Modal: modalCart -->
 <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -545,8 +556,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <!--Body-->
             <div class="modal-body">
 
-              
-                
+
+
                         <div class="card-body">
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
@@ -568,8 +579,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                     </tbody>
                   </table>
                         </div>
-                  
-                
+
+
 
             </div>
             <!--Footer-->
@@ -594,11 +605,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- 
+<!--
 <section class="resume-section portfolio-area section-gap" id="education">
    <div class="container">
      <div class="row d-flex justify-content-center">
-           
+
            <div class="menu-content col-lg-10">
                <div class="title text-center">
                  <h1 class="mb-10">This is what we can do for you</h1>
@@ -610,35 +621,35 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
        <a href="#" data-filter=".branding">
-       
+
          <div class="about col-sm-4"  >
            <i class="fa fa-cogs" data-filter=".web-design" id="id_cogs"></i>
            <h3><?php  //echo $row["nom"]; ?></h3>
            <p></p>
            <a href="#"  class="current">Read more</a>
          </div>
-     
+
        </a>
        <a href="#" data-filter="*">
-           
+
          <div class="about col-sm-4" >
            <i class="fa fa-cogs"  id="id_cogs"></i>
            <h3><?php //echo $row["nom"]; ?></h3>
            <p>.</p>
            <a href="#" >Read more</a>
-   
+
          </div>
        </a>
             <!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
            <a href="#" data-filter=".web-design"><b>Cours</b></a>
            <a href="#" data-filter=".branding"><b>TD</b></a>
            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-           <a href="#" data-filter=".video"><b>Video</b></a> --> 
+           <a href="#" data-filter=".video"><b>Video</b></a> -->
 <!--       </div> -->
     <!-- col-sm-8 -->
-   <!-- </div><!-- --> 
- 
-   
+   <!-- </div><!-- -->
+
+
   <!--  <div class=" filters-content portfolioContainer row grid">
  <?php
 //while($row=mysqli_fetch_assoc($query)){
@@ -659,15 +670,15 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
    <!-- </div><!-- portfolioContainer -->
      <!--</div><!-- container -->
- <!--</section> --><!-- portfolio-section --> 
-  
+ <!--</section> --><!-- portfolio-section -->
+
 <!-- ////////////////////////////////////////////////////////////////////////////// -->
 
 
 
 
-     
-   
+
+
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
@@ -679,11 +690,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   Skills
                 </span>
 
-                
+
               </div>
 
-        
-                                  
+
+
 <!-- Button trigger modal-->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
 
@@ -740,7 +751,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-wordpress"></i>
-            </li> 
+            </li>
            <!--  <li class="list-inline-item">
               <i class="devicons devicons-grunt"></i>
             </li>
@@ -755,8 +766,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
       <section class="resume-section fplus-contact-area bg-gray" id="interests">
        <div class="container">
-          
-                 <div class="title-event t-center m-b-52"> 
+
+                 <div class="title-event t-center m-b-52">
                  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Contacts
                 </h3>
@@ -764,9 +775,9 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   Contact
                 </span>
 
-               
+
               </div>
-           
+
         </div>
 
         <div class="fplus-contact-area">
@@ -774,7 +785,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="mail.php" method="post" id="main_contact_form">
+                            <form action="engine/contact.php" method="post" id="main_contact_form"  onsubmit="return submitForm(this);">
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
@@ -825,14 +836,14 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
       </section>
 
-      
-     
+
+
 
     </div>
 
    <!--  <script src="assets/js/jquery-min.js"></script>-->
      <!-- <script src="portf/js/vendor/jquery-2.2.4.min.js"></script> -->
-   <script src="common-js/jquery-3.2.1.min.js"></script> 
+   <script src="common-js/jquery-3.2.1.min.js"></script>
  <div class="bottom"> <a href="" class="settings"></a> </div>
     <!-- Bootstrap core JavaScript -->
 
@@ -901,7 +912,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
          ]
      });
         }
-    </script> 
+    </script>
 
 
 <!--===============================================================================================-->

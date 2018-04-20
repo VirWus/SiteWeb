@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -52,7 +52,7 @@
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -92,11 +92,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+
                         </div>
 
                         <div class="dropdown for-message">
-                 
+
                         </div>
                     </div>
                 </div>
@@ -187,26 +187,26 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-                          
+
                           <div class="form-group">
                             <div class="input-group">
                               <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
                              </div>
-                          
+
                           </div>
-                          
+
                           <div class="form-group">
                             <div class="input-group">
                               <input type="text" id="lien" name="lien" placeholder="lien" class="form-control">
                              </div>
-                          
+
                           </div>
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
                         </form>
                       </div>
                     </div>
                   </div>
-               
+
 
                 <div class="col-md-12">
                     <div class="card">
@@ -234,7 +234,7 @@
                               $result =mysqli_query($con, "select * from actuallite order by id DESC");
                               $i=1;
                                   while($Rs=mysqli_fetch_assoc($result))
-                                     {   
+                                     {
                              ?>
                         <tr>
                              <td><?php   echo $i++;  ?></td>
@@ -243,9 +243,9 @@
                             <td> <?php echo $Rs['contenu']?></td>
                             <td><?php echo $Rs['lien']?></td>
                             <td>
-                            <a href="Edit_Actualite.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
-                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
-                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
+                            <a href="Edit_Actualite.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
+                            <a href="Actualite(delete).php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
+                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
                             </td>
                       <?php } ?>
                     </tbody>
@@ -285,7 +285,7 @@
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
