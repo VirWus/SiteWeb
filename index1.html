@@ -66,28 +66,14 @@
 
 <script  type="text/javascript">
 function loadDoc() {
-
+  alert('its working');
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var data = JSON.parse(xhttp.responseText);
-      alert(data.length);
-      var tab = document.getElementById("gogo");
-      for (var i = 0; i < data.length; i++) {
-
-  var  ro =   tab.insertRow(0);
-  var celll = ro.insertCell(0);
-  var cell1 = ro.insertCell(1);
-  var cell2 = ro.insertCell(2);
-  var cell3 = ro.insertCell(3);
-  celll.innerHTML = data[i]["nom"];
-  cell1.innerHTML = data[i]["module"];
-  cell2.innerHTML = data[i]["annee"];
-  cell3.innerHTML = data[i]["type"];
-}
-
-
-
+      /**document.getElementById("target").innerHTML =
+      data ; */
+      alert('data');
     }
   };
   xhttp.open("POST", "admin/test.php", true);
@@ -146,7 +132,7 @@ function loadDoc() {
 
 <header>
 		<div class="container">
-			<div class="heading-wrapper wow fadeInUp">
+			<div class="heading-wrapper wow fadeInUp"">
 				<div class="row">
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
@@ -417,7 +403,16 @@ function loadDoc() {
                   <p>Who are in extremely love with eco friendly system..</p>
                 </div>
               </div><!-- col-sm-4 -->
-        <!-- col-sm-8 -->
+        <div class="col-sm-8 ">
+
+          <div class="filters portfolioFilter clearfix margin-b-80">
+            <a href="#" data-filter="*" class="current"><b>ALL</b></a>
+            <a href="#" data-filter=".web-design"><b>Cours</b></a>
+            <a href="#" data-filter=".branding"><b>TD</b></a>
+            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
+            <a href="#" data-filter=".video"><b>Video</b></a>
+          </div><!-- portfolioFilter -->
+        </div><!-- col-sm-8 -->
       </div><!-- row -->
 
 
@@ -441,64 +436,62 @@ function loadDoc() {
                         </div>
                     </div> -->
 
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 graphic-design">
-                   <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
 
-                        <!-- Blog Content -->
-                        <div class="fplus-blog-content" data-toggle="modal" data-target="#largeModal" onclick="loadDoc()">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
+<div class="col-md-12 web-design">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Data Table</strong>
+                        </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="gogo">
 
-
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
+                      <tr>
+                        <td id="target">Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
                         </div>
                     </div>
                 </div>
 
-               <div class=" single-portfolio col-12 col-md-6 col-lg-4 branding">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
 
-                        <!-- Blog Content -->
-                        <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
+<div class="col-md-12 branding">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Data Table</strong>
                         </div>
-                    </div>
-                </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="gogo">
 
-               <div class="single-portfolio col-12 col-md-6 col-lg-4 video">
-                    <div class="fplus-single-blog-area wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Blog Thumbnail -->
-
-                        <!-- Blog Content -->
-                        <div class="fplus-blog-content">
-                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                            <div class="post-meta-data d-flex align-items-center">
-                                <div class="post-author-img">
-                                    <img src="img/blog-img/post-author.jpg" alt="">
-                                </div>
-                                <div class="post-author-name-date">
-                                    <h6>Lora Palmer</h6>
-                                    <p>on <a href="#">Sep 29, 2017</a> at <a href="#">9:48 am</a></p>
-                                </div>
-                            </div>
+                      <tr>
+                        <td id="target">Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
                         </div>
                     </div>
                 </div>
@@ -557,7 +550,7 @@ function loadDoc() {
                         <th>action</th>
                       </tr>
                     </thead>
-                    <tbody id="gogo">
+                    <tbody>
 
                       <tr>
                         <td id="target">Donna Snider</td>
