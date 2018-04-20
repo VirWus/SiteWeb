@@ -166,7 +166,14 @@
 
         <div class="content mt-3">
 
-          
+            <div class="col-sm-12">
+                <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                  <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
 
  <?php
     if($row = mysqli_fetch_assoc($resultat)){ ?>
@@ -300,41 +307,6 @@ echo $row["la_somme"];
                 </div>
                 <!--/social-box-->
             </div><!--/.col-->
-
-
-            <div class="col-lg-3 col-md-6">
-
-                <!--/social-box-->
-            </div><!--/.col-->
-
-
-            <div class="col-lg-3 col-md-6">
-
-                <!--/social-box-->
-            </div><!--/.col-->
-
-
-           <div class="col-xl-3 col-lg-6">
-
-            </div>
-
-
-            <div class="col-xl-3 col-lg-6">
-
-            </div>
-
-
-            <div class="col-xl-3 col-lg-6">
-
-            </div>
-
-            <div class="col-xl-3 col-lg-6">
-
-            </div>
-
-            <div class="col-xl-6">
-
-            </div>
 
 
         </div> <!-- .content -->

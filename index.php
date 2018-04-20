@@ -18,7 +18,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <title>Moussaoui Boubaker</title>
 
     <!-- Bootstrap core CSS -->
-   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+   <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  -->
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -36,7 +36,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
     <link rel="stylesheet" href="portf/css/linearicons.css">
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
-      <link rel="stylesheet" href="portf/css/bootstrap.css">
+      <!-- <link rel="stylesheet" href="portf/css/bootstrap.css"> -->
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
       <link rel="stylesheet" href="portf/css/nice-select.css">          
       <link rel="stylesheet" href="portf/css/animate.min.css"> 
@@ -56,7 +56,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <link rel="stylesheet" href="cre/css/linearicons.css">
       <link rel="stylesheet" href="cre/css/font-awesome.min.css">
       <link rel="stylesheet" href="cre/css/jquery.DonutWidget.min.css">
-      <link rel="stylesheet" href="cre/css/bootstrap.css">
+      <!-- <link rel="stylesheet" href="cre/css/bootstrap.css"> -->
       <link rel="stylesheet" href="cre/css/owl.carousel.css">
       <link rel="stylesheet" href="cre/css/main.css">
  <!-- Actualite Fplus tepmplate  -->
@@ -73,7 +73,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <!--===============================================================================================-->
   <link rel="shortcut icon" href="favicon.ico">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="html/vendor/bootstrap/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="html/vendor/bootstrap/css/bootstrap.min.css"> -->
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="html/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -228,14 +228,15 @@ $query = mysqli_query($connect,"SELECT * FROM support");
           <div class="wrap-content-slide2 p-t-115 p-b-208">
             <div class="container">
               <!-- - -->
-              <div class="title-event t-center m-b-52">
+              <div class="title-event t-center m-b-52"> 
+              	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
+                  Actualité
+                </h3>
                 <span class="tit2 p-l-15 p-r-15">
                   Moussaoui Boubakeur
                 </span>
 
-                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
-                  Actualité
-                </h3>
+               
               </div>
 
               <!-- Block2 -->
@@ -316,13 +317,14 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <div class="container">
               <!-- - -->
               <div class="title-event t-center m-b-52">
+              	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
+                  Events
+                </h3>
                 <span class="tit2 p-l-15 p-r-15">
                   Upcomming
                 </span>
 
-                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
-                  Events
-                </h3>
+                
               </div>
 
               <!-- Block2 -->
@@ -495,53 +497,99 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <div class="container">
       <div class="row d-flex justify-content-center">
       <div class="menu-content col-lg-10">
-                <div class="title text-center">
-                  <span class="tit2 p-l-15 p-r-15" id="MSactu" style=" font-size: 60px; "> les Education </span>
-                  
-                  <!-- ********************************************************** -->
-                  
-                </div>
+                 <div class="title-event t-center m-b-52"> 
+
+                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
+                   Education
+                </h3>
+                
+                <span class="tit2 p-l-15 p-r-15">
+                 Des fichies a telecharger
+                </span>
+
+               
+              </div>
               </div>
 
       </div><!-- row -->
   
-
-                <?php
+<div class="col-sm-12 row grid">
+               
+               <?php
     while($i = mysqli_fetch_assoc($supo)){ ?>
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title"><?php echo $i["nom"]; ?></strong>
-                        </div>
+     
+     <div class="col-md-4">
+          <div class="about">
+            <i class="fa fa-cogs" id=""></i>
+            <h3><?php echo $i["nom"]; ?></h3>
+            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
+            <a href="#education" data-toggle="modal" data-target="#modalCart">Read more</a>
+          </div>
+        </div>
+                   
+            <?php } ?>
+</div>
+  
+
+<!-- Modal: modalCart -->
+<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+
+              
+                
                         <div class="card-body">
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th>Type</th>
-                        <th>Resume</th>
-                        <th>Annee</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
                         <th>action</th>
                       </tr>
                     </thead>
-                    <tbody id="gogo">
+                    <tbody>
 
                       <tr>
-                        <td id="target"><?php echo $i["type"]; ?></td>
-                        <td><?php echo $i["resumer"]; ?></td>
-                        <td><?php echo $i["annee"]; ?></td>
-                        <td> <div class="btn btn-outline-primary fa fa-download"> </div> <div class="btn btn-outline-primary fa fa-play"> </div> </td>
+                        <td id="target">Donna Snider</td>
+                        <td>Customer Support</td>
+                        <td>New York</td>
+                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
                       </tr>
                     </tbody>
                   </table>
                         </div>
-                    </div>
-                    <?php } ?>
-                </div>
-  
+                  
+                
 
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal: modalCart -->
 
 
     </div><!-- portfolioContainer -->
+
+
+
       </div><!-- container -->
+
+
   </section><!-- portfolio-section -->
 
 
@@ -623,9 +671,18 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
-          <span class="tit2 p-l-15 p-r-15" id="MSactu" style=" font-size: 50px; "> Skills </span>
+        	  <div class="title-event t-center m-b-52">
+        	  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
+                  Recherches Scientifique
+                </h3>
+                <span class="tit2 p-l-15 p-r-15">
+                  Skills
+                </span>
 
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+                
+              </div>
+
+        
                                   
 <!-- Button trigger modal-->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
@@ -698,14 +755,18 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
       <section class="resume-section fplus-contact-area bg-gray" id="interests">
        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h4>Contact</h4>
-                        <div class="section-heading-line"></div>
-                    </div>
-                </div>
-            </div>
+          
+                 <div class="title-event t-center m-b-52"> 
+                 	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
+                  Contacts
+                </h3>
+                <span class="tit2 p-l-15 p-r-15">
+                  Contact
+                </span>
+
+               
+              </div>
+           
         </div>
 
         <div class="fplus-contact-area">
@@ -836,18 +897,17 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+             'excel', 'pdf', 'print'
          ]
      });
         }
     </script> 
-    <!--===============================================================================================-->
-  <script type="text/javascript" src="html/vendor/jquery/jquery-3.2.1.min.js"></script>
+
+
 <!--===============================================================================================-->
   <script type="text/javascript" src="html/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
   <script type="text/javascript" src="html/vendor/bootstrap/js/popper.js"></script>
-  <script type="text/javascript" src="html/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
   <script type="text/javascript" src="html/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
@@ -868,7 +928,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 <!--===============================================================================================-->
   <script src="html/js/main.js"></script>
  <!--/////////////////pato/////////////////-->
- <script type="text/javascript" src="pato/js/main.js"></script>
+ <!-- <script type="text/javascript" src="pato/js/main.js"></script> -->
   </body>
 
 </html>

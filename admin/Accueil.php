@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="logo.ico">
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -69,13 +69,6 @@
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
                     </li>
-
-                    
-                  
-            
-
-                    
-
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -178,12 +171,12 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
-               
+             <div class="row">
                     <div class="col-lg-6">
                     <div class="card">
                      <div class="card-header">Modifier Les informations</div>
                       <div class="card-body card-block">
-                        <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>">
+                        <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>" enctype="multipart/form-data">
                           <div class="form-group">
                             <div class="input-group">
                               <input type="text" id="username2" name="username"  placeholder="Username" class="form-control">
@@ -233,9 +226,8 @@
                             </div>
                           </div>
                       
-                    </div>
                       
-                  </div>
+               
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -245,10 +237,7 @@
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Date</th>
-                        <th>Lien_de_n</th>
+                        <th>#</th>
                         <th>secteur</th>
                         <th>University</th>
                         <th>Grade</th>
@@ -262,10 +251,7 @@
                                  $i=1 ;
     while ($row = mysqli_fetch_assoc($resultat)){ ?>             
                       <tr>
-                        <td><?php echo $row["nom"]; ?></td>
-                        <td><?php echo $row["prenom"]; ?></td>
-                        <td><?php echo $row["date"]; ?></td>
-                        <td><?php echo $row["lieu_de_n"]; ?></td>
+                        <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["secteur"]; ?></td>
                         <td><?php echo $row["univ"]; ?></td>
                         <td><?php echo $row["grade"]; ?></td>
@@ -273,15 +259,13 @@
                         <td><?php echo $row["email"]; ?></td>
                         <td><?php echo $row["bio"]; ?></td>
                         <!--<td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>-->
-                      </tr>
+                      </tr>  <?php } ?>
                     </tbody>
-                    <?php } ?>
                   </table>
                         </div>
                     </div>
                 </div>
-
-
+    
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->

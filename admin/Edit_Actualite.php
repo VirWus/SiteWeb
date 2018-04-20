@@ -169,91 +169,56 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                   <div class="row">
+ <?php
+                            $con = mysqli_connect("localhost", "root", "", "univedu");
+                              if(!$con){
 
+                                 echo "site non connecté";
+                                     }
+
+                                     $id = $_GET['id'];
+
+                              $result =mysqli_query($con, "select * from actuallite where id ='$id'");
+
+                                 if($Rs=mysqli_fetch_assoc($result))
+                                     {   
+                             ?>
                    <div class="col-lg-6">
                     <div class="card">
-                      <div class="card-header">Ajouter votre Actualite</div>
+                      <div class="card-header">Modifier votre Actualite</div>
                       <div class="card-body card-block">
-                        <form action="add-act.php" method="post" class="" enctype="multipart/form-data">
+                        <form action="update-act.php?id=<?php echo $id; ?>" method="post" class="" enctype="multipart/form-data">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="titre" name="titre" placeholder="Nom" class="form-control">
+                              <input type="text" id="titre" value="<?php echo $Rs['titre']; ?>" name="titre" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="date" id="date" name="date" placeholder="Date" class="form-control">
+                              <input type="date" id="date" name="date" value="<?php echo $Rs['date']; ?>" placeholder="Date" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
                           
                           <div class="form-group">
                             <div class="input-group">
-                              <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
+                              <textarea type="text" id="contenu" value="<?php echo $Rs['contenu']; ?>" name="contenu" placeholder="Contenu" class="form-control"></textarea>
                              </div>
                           
                           </div>
-                          
-                          <div class="form-group">
+                            <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="lien" name="lien" placeholder="lien" class="form-control">
+                              <input type="text" id="lien" name="lien" value="<?php echo $Rs['lien']; ?>" placeholder="lien" class="form-control">
                              </div>
                           
                           </div>
-                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
+                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">modofier</button></div>
                         </form>
                       </div>
                     </div>
                   </div>
-               
-
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
-                        </div>
-                        <div class="card-body">
-                  <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Titre</th>
-                        <th>Date</th>
-                        <th>Contenu</th>
-                        <th>Lien</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                            $con = mysqli_connect("localhost", "root", "", "univedu");
-                              if(!$con){
-                                 echo "site non connecté";
-                                     }
-                              $result =mysqli_query($con, "select * from actuallite order by id DESC");
-                              $i=1;
-                                  while($Rs=mysqli_fetch_assoc($result))
-                                     {   
-                             ?>
-                        <tr>
-                             <td><?php   echo $i++;  ?></td>
-                            <td><?php echo $Rs['titre'] ?></td>
-                            <td> <?php echo $Rs['date']?></td>
-                            <td> <?php echo $Rs['contenu']?></td>
-                            <td><?php echo $Rs['lien']?></td>
-                            <td>
-                            <a href="Edit_Actualite.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>    
-                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
-                            <a href="Modifier.php?id=<?php echo $Rs["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a> 
-                            </td>
-                      <?php } ?>
-                    </tbody>
-                  </table>
-                        </div>
-                    </div>
-                </div>
-
+            <?php } ?>
 
                 </div>
             </div><!-- .animated -->
