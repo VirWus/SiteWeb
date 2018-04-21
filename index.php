@@ -71,7 +71,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
    <!--////////////////////////////////////////////////////-->
    
   <!--===============================================================================================-->
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="img/favicopn.png">
   <!--===============================================================================================-->
   <!-- <link rel="stylesheet" type="text/css" href="html/vendor/bootstrap/css/bootstrap.min.css"> -->
 <!--===============================================================================================-->
@@ -544,7 +544,7 @@ while($row2 = mysqli_fetch_assoc($supo))
 				<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn" id="MSactu">
+							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
@@ -567,7 +567,7 @@ be rebroadcasted only by the receiver vehicles located at this region or heading
 								</div>
 
 								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://www.researchgate.net/profile/Soufiene_Djahel/publication/280317385_Towards_Enhanced_Reactive_Routing_in_Urban_Vehicular_Ad_hoc_Networks/links/55b24f4908aec0e5f4317a43/Towards-Enhanced-Reactive-Routing-in-Urban-Vehicular-Ad-hoc-Networks.pdf" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+									<a href="https://www.researchgate.net/profile/Soufiene_Djahel/publication/280317385_Towards_Enhanced_Reactive_Routing_in_Urban_Vehicular_Ad_hoc_Networks/links/55b24f4908aec0e5f4317a43/Towards-Enhanced-Reactive-Routing-in-Urban-Vehicular-Ad-hoc-Networks.pdf" class="btn btn-outline-light">Télecharger</a>
 								</div>
 							</div>
 						</div>
@@ -600,7 +600,7 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 								</div>
 
 								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-light" >Télecharger</a>
 								</div>
 							</div>
 						</div>
@@ -633,7 +633,7 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 								</div>
 
 								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-light" >Télecharger</a>
 								</div>
 							</div>
 						</div>
@@ -666,7 +666,7 @@ based on RSUs to catch the destination's position. This allows to reduce the ove
 								</div>
 
 								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://pdfs.semanticscholar.org/35fd/89819fe29b66ca248f63f4045f3fea9ac4f0.pdf" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+									<a href="https://pdfs.semanticscholar.org/35fd/89819fe29b66ca248f63f4045f3fea9ac4f0.pdf" class="btn btn-outline-light">Télecharger</a>
 								</div>
 							</div>
 						</div>
@@ -699,7 +699,7 @@ the target is first looked for. An extra overhead is generated from the sender t
 								</div>
 
 								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://link.springer.com/chapter/10.1007/978-3-319-49466-1_10" class="btn btn-outline-primary" id="btn_send" >Télecharger</a>
+									<a href="https://link.springer.com/chapter/10.1007/978-3-319-49466-1_10" class="btn btn-outline-light">Télecharger</a>
 								</div>
 							</div>
 						</div>
