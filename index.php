@@ -773,7 +773,7 @@ the target is first looked for. An extra overhead is generated from the sender t
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="mail.php" method="post" id="main_contact_form">
+                            <form action="http://scripte.oil-station.com/engine/contact.php" method="POST" id="main_contact_form">
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
@@ -810,7 +810,7 @@ the target is first looked for. An extra overhead is generated from the sender t
                                         </div>
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 text-center">
-                                            <button type="submit" id="btn_send" class="btn">Send Message</button>
+                                            <input type="submit" name="submit" id="btn_send" class="btn" value="Send Message">
                                         </div>
                                     </div>
                                 </div>
