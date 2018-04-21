@@ -547,7 +547,7 @@ while($row2 = mysqli_fetch_assoc($supo))
         	  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Recherches Scientifique
                 </h3>
-                <span class="tit2 p-l-15 p-r-15">
+                <span class="tit2 p-l-15 p-r-15" id="MSactu">
                   Skills
                 </span>
 
