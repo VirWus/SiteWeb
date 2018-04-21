@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
 
+}else {
+  header("Location:../admin/index.php");
+}
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -200,7 +207,7 @@
 
                           <div class="form-group">
                             <p>Lien :</p>
-                            <div class="input-group"> 
+                            <div class="input-group">
                               <input type="text" id="lien" name="lien" placeholder="lien" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-link"></i></div>
                              </div>

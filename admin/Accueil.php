@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
+
+}else {
+  header("Location:../admin/index.php");
+}
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -19,9 +28,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -32,11 +41,11 @@
 
 </head>
 <body>
-    <?php 
-   $db = mysqli_connect("localhost","root","","univedu"); 
+    <?php
+   $db = mysqli_connect("localhost","root","","univedu");
     $resultat = mysqli_query($db,"SELECT * FROM admin");
     $l = mysqli_fetch_assoc($resultat);
-    ?>  
+    ?>
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -52,12 +61,12 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    
+
                     <li>
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -97,11 +106,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                         
+
                         </div>
 
                         <div class="dropdown for-message">
-                        
+
                         </div>
                     </div>
                 </div>
@@ -218,7 +227,7 @@
                             <div class="input-group">
                               <textarea type="text" id="bio" name="bio"  placeholder="Bio"  class="form-control"></textarea>
                               <div class="input-group-addon"><i class="fa fa-edit"></i></div>
-                                  
+
                             </div>
                             </div>
 
@@ -231,9 +240,9 @@
                       </div>
                             </div>
                           </div>
-                      
-                      
-               
+
+
+
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -255,7 +264,7 @@
                     <tbody>
                                  <?php  $resultat = mysqli_query($db,"SELECT * FROM admin");
                                  $i=1 ;
-    while ($row = mysqli_fetch_assoc($resultat)){ ?>             
+    while ($row = mysqli_fetch_assoc($resultat)){ ?>
                       <tr>
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["secteur"]; ?></td>
@@ -271,7 +280,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
@@ -299,11 +308,11 @@
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
-   
+
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [

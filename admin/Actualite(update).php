@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
 
+}else {
+  header("Location:../admin/index.php");
+}
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -20,9 +27,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -52,7 +59,7 @@
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -92,11 +99,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+
                         </div>
 
                         <div class="dropdown for-message">
-                 
+
                         </div>
                     </div>
                 </div>
@@ -170,7 +177,7 @@
         $con = mysqli_connect("localhost", "root", "", "univedu");
         $sql = "SELECT * FROM actuallite where id=".$id;
             $r=mysqli_query($con, $sql);
-              $l = mysqli_fetch_assoc($r);         
+              $l = mysqli_fetch_assoc($r);
             }
             ?>
 
@@ -195,7 +202,7 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-                          
+
                           <div class="form-group">
                             <div class="input-group">
                               <input type="text" id="contenu" name="contenu"  class="form-control"value="<?php echo $l['contenu'];?>">
@@ -216,9 +223,9 @@
                       </div>
                     </div>
                   </div>
-               
 
-               
+
+
     <!-- Right Panel -->
 
 
@@ -242,7 +249,7 @@
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [

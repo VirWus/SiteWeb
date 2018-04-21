@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
+
+}else {
+  header("Location:../admin/index.php");
+}
+
 if($_GET){
 $id = $_GET['id'];
 	include_once("../engine/connect/connection.php");
@@ -31,7 +39,7 @@ if(!empty($titre) && !empty($contenu) && !empty($date) ) {
                   $query = mysqli_query($connect,"UPDATE actuallite set VALUES(NULL,'$titre','$date','$contenu','$file')");
             }else{
             echo "Your file is not supported";
-            }   
+            }
             }
 }else {
   echo "ERROR ! , try again";

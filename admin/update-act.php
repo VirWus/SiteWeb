@@ -1,4 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
 
+}else {
+  header("Location:../admin/index.php");
+}
+?>
 <?php
 if($_POST){
 	$id = $_GET['id'];
