@@ -62,7 +62,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
  <!-- Actualite Fplus tepmplate  -->
   <link href="fplus/style.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/main.css">
+
 
 
  <!-- engage slider actualite -->
@@ -428,7 +428,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
               <!-- Block2 -->
               <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="rotateInUpLeft">
                 <!-- Pic block2 -->
-                <a href="#" class="wrap-pic-blo2 bg3-blo2" style="background-image: url(images/event-01.jpg);">
+                <a href="#" class="wrap-pic-blo2 bg3-blo2" style="background-image: url(html/images/event-01.jpg);">
                   <div class="time-event size10 txt6 effect1">
                     <span class="txt-effect1 flex-c-m">
                       08:00 PM Tuesday - 21 November 2018
@@ -886,8 +886,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <!-- <script src="common-js/progressbar.min.js"></script> -->
 
   <!-- <script src="common-js/jquery.fluidbox.min.js"></script> -->
-   <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script src="common-js/scripts.js"></script>
+
+  <!-- <script src="common-js/scripts.js"></script> -->
 
 
 

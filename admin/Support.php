@@ -235,7 +235,7 @@
                                                        <div class="form-check">
                                                          <div class="checkbox">
                                                            <label for="checkbox1" class="form-check-label ">
-                                                             <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Ou un lien ?
+                                                             <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input" onclick="checkLinkInput()">Ou un lien ?
                                                            </label>
                                                          </div>
 
@@ -246,7 +246,7 @@
 
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="fileto" class="form-control-file"></div>
+                            <div class="col-12 col-md-9 inputDiv"><input type="file" id="disabledInput" name="fileto" class="form-control-file"></div>
                           </div>
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
                         </form>
@@ -282,7 +282,7 @@
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["nom"] ; ?></td>
                         <td><?php  echo $row["annee"] ;   ?></td>
-                        <td><?php   echo $row["resumer"] ;  ?></td>
+                        <td><?php   echo base64_decode($row["resumer"]) ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
                         <td><?php   echo $row["lien"] ;  ?></td>
                         <td> <a href="Edit_Support.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
