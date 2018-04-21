@@ -98,18 +98,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 <!--===============================================================================================-->
    <!--//////////////////////////Pato/////////////////////////-->
 
-   <script type="text/javascript">
-
-   function submitForm(oFormElement)
-   {
-     var xhr = new XMLHttpRequest();
-     xhr.onload = function(){ alert (xhr.responseText); } // success case
-     xhr.onerror = function(){ alert (xhr.responseText); } // failure case
-     xhr.open (oFormElement.method, oFormElement.action, true);
-     xhr.send (new FormData (oFormElement));
-     return false;
-   }
-   </script>
+  
 
 
   </head>
@@ -784,7 +773,7 @@ the target is first looked for. An extra overhead is generated from the sender t
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="http://scripte.oil-station.com/engine/contact.php" method="POST" id="main_contact_form" onsubmit="return submitForm(this);">
+                            <form action="http://scripte.oil-station.com/engine/contact.php" method="POST" id="main_contact_form" >
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>

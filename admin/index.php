@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
+
+header("Location:../admin/admin.php");
+}
+?>
+
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -40,7 +49,7 @@
                 </div>
                 <div class="login-form">
                   <!-- Post methode -->
-                    <form method="post" action="../engine/login.php">
+                    <form method="post" action="../engine/login.php" >
                         <div class="form-group">
                             <label>Votre adress email</label>
                             <input type="email" name="email" class="form-control " placeholder="votre adress email">
