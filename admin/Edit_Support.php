@@ -210,18 +210,21 @@
                           </div>
 
                           <div class="form-group">
+                          <p>Résumer : </p>
                             <div class="input-group ">
                               <input type="text" id="resumer" name="resumer" value="<?php echo base64_decode($Rs['resumer']); ?>" placeholder="Résumer" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-file"></i></div>
                              </div>
                           </div>
                           <div class="form-group">
+                          <p>Type :</p>
                             <div class="input-group">
                              <select name="type" id="type" class="form-control">
                                <option value="0">Please select</option>
                                <option value="1">Cour</option>
                                <option value="2">Traveaux dériger</option>
                                <option value="3">Traveaux pratiques</option>
+                               <option value="4">vidéo</option>
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>

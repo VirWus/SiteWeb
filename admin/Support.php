@@ -191,8 +191,13 @@
                           <div class="form-group">
                             <p> Niveau :</p>
                             <div class="input-group">
-                              <input type="text" id="annee" name="annee" placeholder="Année" class="form-control">
-                                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            <select  id="annee" name="annee"  placeholder="Année" class="form-control">
+                                <option>deuxième Licence</option>
+                                <option>troisième Licence </option>
+                                <option>Master</option>
+                                <option>autre</option>
+                              </select> 
+                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
                           </div>
 
