@@ -14,9 +14,13 @@ a:hover{
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
   color: #ff5959;
 }
-#MSactu{color: #ff5959 !important; }
+#MSactu{color: #ff5959 !important;
+text-shadow: 1px 1px white ; }
 #lienactu{
   color:#ff5959 !important; 
+}
+.bo4{
+  border: #ff5959 !important ; 
 }
 .navbar-engage .navbar-nav > li > a:hover,
 .navbar-engage .navbar-nav > li.active > a,

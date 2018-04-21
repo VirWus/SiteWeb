@@ -178,30 +178,35 @@
                       <div class="card-body card-block">
                         <form method ="POST" action="update-admin.php?id=<?php echo$l['id']?>" enctype="multipart/form-data">
                           <div class="form-group">
+                            <p> Username :</p>
                             <div class="input-group">
                               <input type="text" id="username2" name="username"  placeholder="Username" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
+                            <p> Email :</p>
                             <div class="input-group">
                               <input type="email" id="email2" name="email"  placeholder="Email" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
+                            <p> Passeword :</p>
                             <div class="input-group">
                               <input type="password" id="password2" name="mdp"  placeholder="Password"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
+                            <p> University : </p>
                             <div class="input-group">
                               <input type="text" id="university2" name="univ"  placeholder="University"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-university"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
+                            <p> Grade :</p>
                             <div class="input-group">
                               <input type="text" id="grade2" name="grade"  placeholder="Grade"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
@@ -209,6 +214,7 @@
                             </div>
 
                             <div class="form-group">
+                                <p> Bio :</p>
                             <div class="input-group">
                               <textarea type="text" id="bio" name="bio"  placeholder="Bio"  class="form-control"></textarea>
                               <div class="input-group-addon"><i class="fa fa-edit"></i></div>

@@ -182,12 +182,14 @@
                       <div class="card-body card-block">
                         <form action="add-sup.php" method="post" enctype="multipart/form-data" class="">
                           <div class="form-group">
+                            <p> Nom :</p>
                             <div class="input-group">
                               <input type="text" id="nom" name="nom" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
+                            <p> Niveau :</p>
                             <div class="input-group">
                               <input type="text" id="annee" name="annee" placeholder="Année" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
@@ -195,23 +197,27 @@
                           </div>
 
                           <div class="form-group">
+                            <p> Resume :</p>
                             <div class="input-group ">
                               <input type="text" id="resumer" name="resumer" placeholder="Résumer" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-file"></i></div>
                              </div>
                           </div>
                           <div class="form-group">
+                            <p> Type :</p>
                             <div class="input-group">
                              <select name="type" id="type" class="form-control">
                                <option value="0">Selectionner le type </option>
                                <option value="1">Cour</option>
                                <option value="2">Traveaux dériger</option>
                                <option value="3">Traveaux pratiques</option>
+                                <option value="4">Traveaux pratiques</option>
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
+                            <p> Module :</p>
                             <div class="input-group">
                              <select name="module" id="module" class="form-control">
                                <option value="0">Please select Module</option>
@@ -224,9 +230,10 @@
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="hidden" id="lien" name="lien" placeholder="Lien" class="form-control">
-                                  <div class="input-group-addon"><i class="fa fa-link"></i></div>
-                            </div>
+                           <p> Lien :</p>
+                              <input type="text" id="lien" name="lien" placeholder="lien" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-link"></i></div>
+                             
                           </div>
 
                           <div class="row form-group">
@@ -235,7 +242,7 @@
                                                        <div class="form-check">
                                                          <div class="checkbox">
                                                            <label for="checkbox1" class="form-check-label ">
-                                                             <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input" onclick="checkLinkInput()">Ou un lien ?
+                                                             <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Ou un lien ?
                                                            </label>
                                                          </div>
 
@@ -246,7 +253,7 @@
 
                             <div class="row form-group">
                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col-12 col-md-9 inputDiv"><input type="file" id="disabledInput" name="fileto" class="form-control-file"></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="fileto" class="form-control-file"></div>
                           </div>
                           <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
                         </form>
@@ -282,7 +289,7 @@
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["nom"] ; ?></td>
                         <td><?php  echo $row["annee"] ;   ?></td>
-                        <td><?php   echo base64_decode($row["resumer"]) ;  ?></td>
+                        <td><?php   echo $row["resumer"] ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
                         <td><?php   echo $row["lien"] ;  ?></td>
                         <td> <a href="Edit_Support.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>

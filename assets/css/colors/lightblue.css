@@ -8,9 +8,13 @@ a{
 a:hover{
   color: #04a8c6;
 }
-#MSactu{color: #00D3F9 !important; }
+#MSactu{color: #00D3F9 !important;
+text-shadow: 1px 1px white ; }
 #lienactu{
   color:#00D3F9!important; 
+}
+.bo4{
+  border: #00D3F9 !important; 
 }
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
   color: #00D3F9;

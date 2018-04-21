@@ -176,12 +176,14 @@
                       <div class="card-body card-block">
                         <form action="add-act.php" method="post" class="" enctype="multipart/form-data">
                           <div class="form-group">
+                            <p>Nom :</p>
                             <div class="input-group">
                               <input type="text" id="titre" name="titre" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
+                            <p>Date :</p>
                             <div class="input-group">
                               <input type="date" id="date" name="date" placeholder="Date" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
@@ -189,6 +191,7 @@
                           </div>
 
                           <div class="form-group">
+                            <p> Contenu :</p>
                             <div class="input-group">
                               <textarea type="text" id="contenu" name="contenu" placeholder="Contenu" class="form-control"></textarea>
                              </div>
@@ -196,8 +199,10 @@
                           </div>
 
                           <div class="form-group">
-                            <div class="input-group">
+                            <p>Lien :</p>
+                            <div class="input-group"> 
                               <input type="text" id="lien" name="lien" placeholder="lien" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-link"></i></div>
                              </div>
 
                           </div>

@@ -7,10 +7,14 @@
 a{
   color: #1ABC9C;
 }
+.bo4{
+  border: #1ABC9C !important ; 
+}
 a:hover{
   color: #0c9d80;
 }
-#MSactu{color: #1ABC9C !important; }
+#MSactu{color: #1ABC9C !important;
+text-shadow: 1px 1px white ; }
 #lienactu{
   color:#1ABC9C!important; 
 }

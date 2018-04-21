@@ -6,9 +6,9 @@ header("Location:../admin/admin.php");
 $email = $_POST["email"];
 $pass = $_POST["password"];
 if(!empty($email) && !empty($pass)){
-  $epass = hash("sha512",$pass).md5("univ_bba");
+  // $epass = hash("sha512",$pass).md5("univ_bba");
   include_once("connect/connection.php");
-  $query = mysqli_query($connect,"SELECT * FROM admin WHERE  email = '$email' AND mdp='$epass'");
+  $query = mysqli_query($connect,"SELECT * FROM admin WHERE  email = '$email' AND mdp='$pass'");
   $row = mysqli_num_rows($query);
   if($row > 0){
 

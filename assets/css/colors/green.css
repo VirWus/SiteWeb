@@ -5,13 +5,17 @@
 .font-yellow{ 
   color:#b2b2b2 !important ;
 }
+.bo4{
+  border: #b2b2b2 !important; 
+}
 #sideNav{background-color: #b2b2b2 !important;}
-#MSactu{color: #b2b2b2 !important; }
+#MSactu{color: #b2b2b2 !important;
+text-shadow: 1px 1px white ; }
 a{
 	color: #9C3;
 }
 a:hover{
-	color: #769e26;
+	color: #9C3 ;
 }
 #lienactu{
   color: #b2b2b2 !important; 
