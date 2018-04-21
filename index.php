@@ -31,16 +31,16 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <link href="css/resume.css" rel="stylesheet">
 	 <!-- portfolio cv template  -->
 	<link href="CSSNew/bootstrap.css" rel="stylesheet">
-
-
+	
+	
 
     <link rel="stylesheet" href="portf/css/linearicons.css">
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
       <!-- <link rel="stylesheet" href="portf/css/bootstrap.css"> -->
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
-      <link rel="stylesheet" href="portf/css/nice-select.css">
-      <link rel="stylesheet" href="portf/css/animate.min.css">
-      <link rel="stylesheet" href="portf/css/owl.carousel.css">
+      <link rel="stylesheet" href="portf/css/nice-select.css">          
+      <link rel="stylesheet" href="portf/css/animate.min.css"> 
+      <link rel="stylesheet" href="portf/css/owl.carousel.css"> 
       <link rel="stylesheet" href="portf/css/main.css">
 
       <link href="css/mdb.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
       <!--
       CSS
       ============================================= -->
@@ -69,7 +69,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
    <!--////////////////////////////////////////////////////-->
-
+   
   <!--===============================================================================================-->
   <link rel="shortcut icon" href="favicon.ico">
   <!--===============================================================================================-->
@@ -97,31 +97,20 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <link rel="stylesheet" type="text/css" href="html/css/main.css">
 <!--===============================================================================================-->
    <!--//////////////////////////Pato/////////////////////////-->
+    
+  
 
-
-   <script type="text/javascript">
-
-   function submitForm(oFormElement)
-   {
-     var xhr = new XMLHttpRequest();
-     xhr.onload = function(){ alert (xhr.responseText); } // success case
-     xhr.onerror = function(){ alert (xhr.responseText); } // failure case
-     xhr.open (oFormElement.method, oFormElement.action, true);
-     xhr.send (new FormData (oFormElement));
-     return false;
-   }
-   </script>
 
   </head>
 
   <body id="page-top">
-
+    
     <?php
     $resultat = mysqli_query($connect,"SELECT * FROM admin");
     $actu=mysqli_query($connect,"SELECT * FROM actuallite");
      $supo=mysqli_query($connect,"SELECT * FROM support");
-    ?>
-
+    ?> 
+    
  <!--   <div id="preloader">
         <div class="fplus-load"></div>
         <img src="img/core-img/h-logo.png" alt="logo">
@@ -131,7 +120,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Moussaoui Boubaker</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="html/images/icons/favicopn.png" alt="">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -173,7 +162,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-
+					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i style="color: white;" class="icon ion-ios fa fa-university"></i>
@@ -183,7 +172,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-
+					
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i style="color: white;" class="icon ion-ios fa fa-envelope"></i>
@@ -195,11 +184,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 					</div><!-- col-sm-4 -->
 				</div><!-- row -->
 			</div><!-- heading-wrapper -->
-
-
+			
+		
 		</div><!-- container -->
 	</header>
-
+	
 	<section class="intro-section" id="about">
     <?php
     if($row = mysqli_fetch_assoc($resultat)){ ?>
@@ -227,29 +216,32 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 		</div><!-- container -->
     <?php } ?>
 	</section><!-- intro-section -->
-
-
+     
+  
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <!-- Actualite -->
   <section class="section-event" id="experience">
     <div class="wrap-slick2">
       <div class="slick2">
+      	      	       	               <?php
+    while($k = mysqli_fetch_assoc($actu)){ ?>
         <div class="item-slick2 item1-slick2" style="background-image: url(html/images/event4-02.jpg);">
+  
           <div class="wrap-content-slide2 p-t-115 p-b-208">
             <div class="container">
-              <!-- - -->
-              <div class="title-event t-center m-b-52">
+           
+              <div class="title-event t-center m-b-52"> 
               	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Actualité
                 </h3>
-                <span class="tit2 p-l-15 p-r-15">
+                <span class="tit2 p-l-15 p-r-15" id="MSactu">
                   Moussaoui Boubakeur
                 </span>
 
-
+           
               </div>
-
+ 
               <!-- Block2 -->
               <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
                 <!-- Pic block2 -->
@@ -264,11 +256,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                 <!-- Text block2 -->
                 <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
                   <h4 class="tit7 t-center m-b-10">
-                    Wines during specific nights
+                    <?php echo $k["titre"]; ?>
                   </h4>
 
                   <p class="t-center">
-                    Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
+                    <?php echo $k["contenu"]; ?>
                   </p>
 
                   <div class="flex-sa-m flex-w w-full m-t-40">
@@ -313,191 +305,19 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                     </div>
                   </div>
 
-                  <a href="#" class="txt4 m-t-40">
+                  <a href="<?php echo $k["lien"] ;?>" class="txt4 m-t-40">
                     View Details
                     <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
+              
             </div>
           </div>
+
         </div>
-
-        <div class="item-slick2 item2-slick2" style="background-image: url(html/images/event4-02.jpg);">
-          <div class="wrap-content-slide2 p-t-115 p-b-208">
-            <div class="container">
-              <!-- - -->
-              <div class="title-event t-center m-b-52">
-              	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
-                  Events
-                </h3>
-                <span class="tit2 p-l-15 p-r-15">
-                  Upcomming
-                </span>
-
-
-              </div>
-
-              <!-- Block2 -->
-              <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="fadeInDown">
-                <!-- Pic block2 -->
-                <a href="#" class="wrap-pic-blo2 bg2-blo2" style="background-image: url(html/images/evento-02.jpg);">
-                  <div class="time-event size10 txt6 effect1">
-                    <span class="txt-effect1 flex-c-m">
-                      08:00 PM Tuesday - 21 November 2018
-                    </span>
-                  </div>
-                </a>
-
-                <!-- Text block2 -->
-                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
-                  <h4 class="tit7 t-center m-b-10">
-                    Wines during specific nights
-                  </h4>
-
-                  <p class="t-center">
-                    Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
-                  </p>
-
-                  <div class="flex-sa-m flex-w w-full m-t-40">
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 days">
-                        25
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Days
-                      </span>
-                    </div>
-
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 hours">
-                        05
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Hours
-                      </span>
-                    </div>
-
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 minutes">
-                        59
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Minutes
-                      </span>
-                    </div>
-
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 seconds">
-                        56
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Seconds
-                      </span>
-                    </div>
-                  </div>
-
-                  <a href="#" class="txt4 m-t-40">
-                    View Details
-                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-slick2 item3-slick2" style="background-image: url(html/images/event4-02.jpg);">
-          <div class="wrap-content-slide2 p-t-115 p-b-208">
-            <div class="container">
-              <!-- - -->
-              <div class="title-event t-center m-b-52">
-                <span class="tit2 p-l-15 p-r-15">
-                  Upcomming
-                </span>
-
-                <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">
-                  Events
-                </h3>
-              </div>
-
-              <!-- Block2 -->
-              <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="rotateInUpLeft">
-                <!-- Pic block2 -->
-                <a href="#" class="wrap-pic-blo2 bg3-blo2" style="background-image: url(images/event-01.jpg);">
-                  <div class="time-event size10 txt6 effect1">
-                    <span class="txt-effect1 flex-c-m">
-                      08:00 PM Tuesday - 21 November 2018
-                    </span>
-                  </div>
-                </a>
-
-                <!-- Text block2 -->
-                <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
-                  <h4 class="tit7 t-center m-b-10">
-                    Wines during specific nights
-                  </h4>
-
-                  <p class="t-center">
-                    Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia
-                  </p>
-
-                  <div class="flex-sa-m flex-w w-full m-t-40">
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 days">
-                        25
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Days
-                      </span>
-                    </div>
-
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 hours">
-                        05
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Hours
-                      </span>
-                    </div>
-
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 minutes">
-                        59
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Minutes
-                      </span>
-                    </div>
-
-                    <div class="size11 flex-col-c-m">
-                      <span class="dis-block t-center txt7 m-b-2 seconds">
-                        56
-                      </span>
-
-                      <span class="dis-block t-center txt8">
-                        Seconds
-                      </span>
-                    </div>
-                  </div>
-
-                  <a href="#" class="txt4 m-t-40">
-                    View Details
-                    <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+<?php } ?>
+      
       </div>
 
       <div class="wrap-slick2-dots"></div>
@@ -508,27 +328,27 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <div class="container">
       <div class="row d-flex justify-content-center">
       <div class="menu-content col-lg-10">
-                 <div class="title-event t-center m-b-52">
+                 <div class="title-event t-center m-b-52"> 
 
                 <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                    Education
                 </h3>
-
-                <span class="tit2 p-l-15 p-r-15">
+                
+                <span class="tit2 p-l-15 p-r-15" id="MSactu">
                  Des fichies a telecharger
                 </span>
 
-
+               
               </div>
               </div>
 
       </div><!-- row -->
-
+  
 <div class="col-sm-12 row grid">
-
+               
                <?php
     while($i = mysqli_fetch_assoc($supo)){ ?>
-
+     
      <div class="col-md-4">
           <div class="about">
             <i class="fa fa-cogs" id=""></i>
@@ -537,18 +357,19 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <a href="#education" data-toggle="modal" data-target="#modalCart">Read more</a>
           </div>
         </div>
-
+                   
             <?php } ?>
 </div>
-
+  
 
 <!-- Modal: modalCart -->
 <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <!--Header-->
+
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                <h4 class="modal-title" id="myModalLabel">Support</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -556,8 +377,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <!--Body-->
             <div class="modal-body">
 
-
-
+              
+                
                         <div class="card-body">
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
@@ -574,19 +395,19 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                         <td id="target">Donna Snider</td>
                         <td>Customer Support</td>
                         <td>New York</td>
-                        <td> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div> <div class="btn btn-success btn-app-sm"> </div></td>
+                        <td> <div class="btn btn-outline-primary fa fa-download"> </div> <div class="btn btn-outline-primary fa fa-play"> </div></td>
                       </tr>
                     </tbody>
                   </table>
                         </div>
-
-
+                  
+                
 
             </div>
             <!--Footer-->
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary">Checkout</button>
+                
             </div>
         </div>
     </div>
@@ -605,11 +426,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
-<!--
+<!-- 
 <section class="resume-section portfolio-area section-gap" id="education">
    <div class="container">
      <div class="row d-flex justify-content-center">
-
+           
            <div class="menu-content col-lg-10">
                <div class="title text-center">
                  <h1 class="mb-10">This is what we can do for you</h1>
@@ -621,35 +442,35 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
        <a href="#" data-filter=".branding">
-
+       
          <div class="about col-sm-4"  >
            <i class="fa fa-cogs" data-filter=".web-design" id="id_cogs"></i>
            <h3><?php  //echo $row["nom"]; ?></h3>
            <p></p>
            <a href="#"  class="current">Read more</a>
          </div>
-
+     
        </a>
        <a href="#" data-filter="*">
-
+           
          <div class="about col-sm-4" >
            <i class="fa fa-cogs"  id="id_cogs"></i>
            <h3><?php //echo $row["nom"]; ?></h3>
            <p>.</p>
            <a href="#" >Read more</a>
-
+   
          </div>
        </a>
             <!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
            <a href="#" data-filter=".web-design"><b>Cours</b></a>
            <a href="#" data-filter=".branding"><b>TD</b></a>
            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-           <a href="#" data-filter=".video"><b>Video</b></a> -->
+           <a href="#" data-filter=".video"><b>Video</b></a> --> 
 <!--       </div> -->
     <!-- col-sm-8 -->
-   <!-- </div><!-- -->
-
-
+   <!-- </div><!-- --> 
+ 
+   
   <!--  <div class=" filters-content portfolioContainer row grid">
  <?php
 //while($row=mysqli_fetch_assoc($query)){
@@ -670,31 +491,206 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
    <!-- </div><!-- portfolioContainer -->
      <!--</div><!-- container -->
- <!--</section> --><!-- portfolio-section -->
-
+ <!--</section> --><!-- portfolio-section --> 
+  
 <!-- ////////////////////////////////////////////////////////////////////////////// -->
 
 
 
 
+     
+   
 
-
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column " id="skills" style="background-image: url(img/computer-cup-desk-434337.jpg); width: 1311px; position: relative;">
         <div class="my-auto">
         	  <div class="title-event t-center m-b-52">
         	  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Recherches Scientifique
                 </h3>
-                <span class="tit2 p-l-15 p-r-15">
+                <span class="tit2 p-l-15 p-r-15" id="MSactu">
                   Skills
                 </span>
 
-
+                
               </div>
 
+        
+ 
+	
 
+		<!-- - -->
+		<div class="wrap-slick3">
+			<div class="slick3">
+				<div class="item-slick3 item1-slick3">
+					<div class="wrap-content-slide3 p-b-50 p-t-50">
+						<div class="container">
+							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn" id="MSactu">
+								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
+							</div>
 
+							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+							<h3 class="tit2 p-l-15 p-b-15 center" id="MSactu">Towards enhanced reactive routing in urban Vehicular Ad hoc Networks</h3>
+                            
+								<div class="star-review fs-18 color0 flex-c-m m-t-12">
+										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+									“ In this paper, we investigate the efficiency of the reactive routing approach in Vehicular Ad
+Hoc Networks (VANETs) with main focus on reducing the incurred overhead by control
+packets used for routes establishment. In AODV, for example, the excessive number of
+RREQs broadcasted in the network, to respond to the rapid change in network topology,
+usually hinders the fast transmission of some important packets carrying critical information.
+Moreover, it may also lead to severe congestion situations causing the loss of some packets,
+and thus reducing the QoS of the corresponding applications. To face this problem, we
+propose a simple yet efficient solution in which each vehicle appends the geographical
+location of the destination to each generated RREQ packet. Thereby, this latter packet will
+be rebroadcasted only by the receiver vehicles located at this region or heading towards … ”
+								</p>
+								</div>
+
+								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+									<a href="https://www.researchgate.net/profile/Soufiene_Djahel/publication/280317385_Towards_Enhanced_Reactive_Routing_in_Urban_Vehicular_Ad_hoc_Networks/links/55b24f4908aec0e5f4317a43/Towards-Enhanced-Reactive-Routing-in-Urban-Vehicular-Ad-hoc-Networks.pdf" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<div class="item-slick3 item1-slick3">
+					<div class="wrap-content-slide3 p-b-50 p-t-50">
+						<div class="container">
+							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
+							</div>
+
+							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
+                            
+								<div class="star-review fs-18 color0 flex-c-m m-t-12">
+										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
+to healthcare and mission-critical scenarios, has incited researchers from different
+disciplines to develop various tools and protocols to support such applications. Many people
+use multimedia data while they travel in different transportation means and thus they need
+various QoS levels based on the type of application they are running. Such data is usually
+transmitted through 3G/LTE networks; however, the unprecedented increase of multimedia
+data volume makes satisfying their requirements in terms of low delay and higher bandwidth
+a challenge. Many experts foresee that Vehicular Ad-hoc Networks (VANETs) technology
+can be an efficient offloading solution for 3G/LTE networks by providing cost-free and robust
+data exchange between cars as well as among their passengers. Although VANETs pave … ”
+								</p>
+								</div>
+
+								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+		        	<div class="item-slick3 item1-slick3">
+					<div class="wrap-content-slide3 p-b-50 p-t-50">
+						<div class="container">
+							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
+							</div>
+
+							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
+                            
+								<div class="star-review fs-18 color0 flex-c-m m-t-12">
+										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
+to healthcare and mission-critical scenarios, has incited researchers from different
+disciplines to develop various tools and protocols to support such applications. Many people
+use multimedia data while they travel in different transportation means and thus they need
+various QoS levels based on the type of application they are running. Such data is usually
+transmitted through 3G/LTE networks; however, the unprecedented increase of multimedia
+data volume makes satisfying their requirements in terms of low delay and higher bandwidth
+a challenge. Many experts foresee that Vehicular Ad-hoc Networks (VANETs) technology
+can be an efficient offloading solution for 3G/LTE networks by providing cost-free and robust
+data exchange between cars as well as among their passengers. Although VANETs pave … ”
+								</p>
+								</div>
+
+								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				  	<div class="item-slick3 item1-slick3">
+					<div class="wrap-content-slide3 p-b-50 p-t-50">
+						<div class="container">
+							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
+							</div>
+
+							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Unicast routing on VANETs</h3>
+                            
+								<div class="star-review fs-18 color0 flex-c-m m-t-12">
+										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+									“ Greedy routing in VANETs requires some geographical informations, such as the source
+location and the destination location. The first one could be obtained using some
+localization devices like GPS receiver. However, the second one is provided by a location
+service. This later has a high overhead especially if it is implemented over V2V (vehicle to
+vehicle) communications. Many location services are well known as HLS, RLS, GLS. This
+paper is interested in reducing this overhead by using some Road Side Units (RSU) already
+deployed along the roads. We propose here a location service called" improved Reactive
+Location Service (iRLS)", which is an extension of the RLS service. The major difference is
+that RLS assumes only V2V communications and iRLS takes profit of a wireless backbone
+based on RSUs to catch the destination's position. This allows to reduce the overhead … ”
+								</p>
+								</div>
+
+								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+									<a href="https://pdfs.semanticscholar.org/35fd/89819fe29b66ca248f63f4045f3fea9ac4f0.pdf" class="btn btn-outline-primary" id="btn_send">Télecharger</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick3 item1-slick3">
+					<div class="wrap-content-slide3 p-b-50 p-t-50">
+						<div class="container">
+							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
+							</div>
+
+							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
+							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Routing over VANET in Urban Environments</h3>
+                            
+								<div class="star-review fs-18 color0 flex-c-m m-t-12">
+										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+									“ Abstract Experimental deployment of Cooperative Intelligent Transport Systems have been
+undertaken these last years. But a real deployment is lower than expected. One of the main
+reasons is the high cost of investments of Road Side Units on roads. Road operators need a
+lot of money in order to achieve this deployment. We suggest to reduce this investment by
+the deployment In this paper, we propose a combination of GPSR (Greedy Perimeter
+Stateless Routing) and an extension of Reactive Location Service denoted eRLS. They used
+to be combined, ie GPRS takes care of routing packets from a source to a destination and
+eRLS is called to get the destination position when the target node position is unknown or is
+not fresh enough. When a destination is not in the area of the sender, the exact position of
+the target is first looked for. An extra overhead is generated from the sender to the …”
+								</p>
+								</div>
+
+								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
+									<a href="https://link.springer.com/chapter/10.1007/978-3-319-49466-1_10" class="btn btn-outline-primary" id="btn_send" >Télecharger</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="wrap-slick3-dots m-t-30"></div>
+		</div>
+	                
 <!-- Button trigger modal-->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPush">Launch modal</button>
 
@@ -727,7 +723,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
  <!--    </div>
 </div>  -->
 <!--Modal: modalPush-->
-          <ul class="list-inline list-icons">
+          <ul class="list-inline list-icons center">
             <li class="list-inline-item">
               <i class="devicons devicons-html5"></i>
             </li>
@@ -751,7 +747,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-wordpress"></i>
-            </li>
+            </li> 
            <!--  <li class="list-inline-item">
               <i class="devicons devicons-grunt"></i>
             </li>
@@ -766,18 +762,18 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
       <section class="resume-section fplus-contact-area bg-gray" id="interests">
        <div class="container">
-
-                 <div class="title-event t-center m-b-52">
+          
+                 <div class="title-event t-center m-b-52"> 
                  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Contacts
                 </h3>
-                <span class="tit2 p-l-15 p-r-15">
+                <span class="tit2 p-l-15 p-r-15" id="MSactu">
                   Contact
                 </span>
 
-
+               
               </div>
-
+           
         </div>
 
         <div class="fplus-contact-area">
@@ -785,7 +781,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="engine/contact.php" method="post" id="main_contact_form"  onsubmit="return submitForm(this);">
+                            <form action="mail.php" method="post" id="main_contact_form">
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
@@ -836,14 +832,14 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
       </section>
 
-
-
+      
+     
 
     </div>
 
    <!--  <script src="assets/js/jquery-min.js"></script>-->
      <!-- <script src="portf/js/vendor/jquery-2.2.4.min.js"></script> -->
-   <script src="common-js/jquery-3.2.1.min.js"></script>
+   <script src="common-js/jquery-3.2.1.min.js"></script> 
  <div class="bottom"> <a href="" class="settings"></a> </div>
     <!-- Bootstrap core JavaScript -->
 
@@ -912,7 +908,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
          ]
      });
         }
-    </script>
+    </script> 
 
 
 <!--===============================================================================================-->
