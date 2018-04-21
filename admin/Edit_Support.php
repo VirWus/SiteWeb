@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    
+
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
- 
+
     <!-- <link rel="stylesheet" href="assets/css/lib/datatable/dataTables.bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="assets/scss/style.css">
@@ -52,7 +52,7 @@
                         <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    
+
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
@@ -92,11 +92,11 @@
                         </div>
 
                         <div class="dropdown for-notification">
-                          
+
                         </div>
 
                         <div class="dropdown for-message">
-                 
+
                         </div>
                     </div>
                 </div>
@@ -181,9 +181,9 @@
                               $result =mysqli_query($con, "select * from support where id ='$id'");
 
                                  if($Rs=mysqli_fetch_assoc($result))
-                                     {   
+                                     {
                              ?>
-                   
+
                    <div class="col-lg-6">
                     <div class="card">
                       <div class="card-header">Modifier votre Support</div>
@@ -191,7 +191,7 @@
                         <form action="update-sup.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" class="">
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="nom" name="nom" value="<?php echo $Rs['nom']; ?>" placeholder="Nom" class="form-control">
+                              <input type="text" id="nom" name="nom" value="<?php echo base64_decode($Rs['nom']); ?>" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
@@ -201,10 +201,10 @@
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                             </div>
                           </div>
-                          
+
                           <div class="form-group">
                             <div class="input-group ">
-                              <input type="text" id="resumer" name="resumer" value="<?php echo $Rs['resumer']; ?>" placeholder="Résumer" class="form-control">
+                              <input type="text" id="resumer" name="resumer" value="<?php echo base64_decode($Rs['resumer']); ?>" placeholder="Résumer" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-file"></i></div>
                              </div>
                           </div>
@@ -232,7 +232,7 @@
                           </div>
                           <div class="form-group">
                             <div class="input-group">
-                              <input type="text" id="lien" name="lien"  value="<?php echo $Rs['lien']; ?>"  placeholder="Lien" class="form-control">
+                              <input type="text" id="lien" name="lien"  value="<?php echo base64_decode($Rs['lien']); ?>"  placeholder="Lien" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-link"></i></div>
                             </div>
                           </div>
@@ -246,7 +246,7 @@
                       </div>
                     </div>
                   </div>
-               
+
             <?php } ?>
 
                 </div>
@@ -279,7 +279,7 @@
 
 
     <script type="text/javascript">
-       
+
       $('#bootstrap-data-table-export').DataTable( {
         dom: 'Bfrtip',
         buttons: [

@@ -14,7 +14,7 @@ $nom = base64_encode($_POST["nom"]);
 $resumer = base64_encode($_POST["resumer"]);
 $annee = $_POST["annee"];
 $type = $_POST["type"];
-$module = base64_encode($_POST["module"]);  
+$module = base64_encode($_POST["module"]);
 $lien = base64_encode($_POST["lien"]);
 $pathparts = pathinfo($file);
 
@@ -27,6 +27,7 @@ $query = mysqli_query($connect,"UPDATE support set  VALUES(NULL,'$nom','$annee',
 if($ext == "jpg" || $ext == "png" || $ext == "pdf" || $ext == "doc" || $ext == "docx" || $ext == "xls") {
   move_uploaded_file($_FILES["fileto"]["tmp_name"], $file);
   include_once("../engine/connect/connection.php");
+	$file = base64_encode($file);
   $query = mysqli_query($connect,"UPDATE  support set VALUES(NULL,'$nom','$annee','$resumer','$type','$file','$module')");
 }else{
   echo "Your file is not supported";

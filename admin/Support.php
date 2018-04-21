@@ -211,7 +211,7 @@
                                <option value="1">Cour</option>
                                <option value="2">Traveaux dériger</option>
                                <option value="3">Traveaux pratiques</option>
-                                <option value="4">Traveaux pratiques</option>
+
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
@@ -220,7 +220,7 @@
                             <p> Module :</p>
                             <div class="input-group">
                              <select name="module" id="module" class="form-control">
-                               <option value="0">Please select Module</option>
+                               <option value="0">Le module</option>
                                <option value="1">POO</option>
                                <option value="2">BDD</option>
                                <option value="3">RS</option>
@@ -231,9 +231,9 @@
                           <div class="form-group">
                             <div class="input-group">
                            <p> Lien :</p>
-                              <input type="text" id="lien" name="lien" placeholder="lien" class="form-control">
+                              <input type="hidden" id="lien" name="lien" placeholder="lien" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-link"></i></div>
-                             
+
                           </div>
 
                           <div class="row form-group">
@@ -242,7 +242,7 @@
                                                        <div class="form-check">
                                                          <div class="checkbox">
                                                            <label for="checkbox1" class="form-check-label ">
-                                                             <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Ou un lien ?
+                                                             <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input" onclick="checkLinkInput()">Ou un lien ?
                                                            </label>
                                                          </div>
 
@@ -287,11 +287,11 @@
     while ($row = mysqli_fetch_assoc($resultat)){ ?>
                       <tr>
                         <td><?php   echo $i++;  ?></td>
-                        <td><?php echo $row["nom"] ; ?></td>
+                        <td><?php echo base64_decode($row["nom"]) ; ?></td>
                         <td><?php  echo $row["annee"] ;   ?></td>
-                        <td><?php   echo $row["resumer"] ;  ?></td>
+                        <td><?php   echo substr(base64_decode($row["resumer"]),0,30)."..."; ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
-                        <td><?php   echo $row["lien"] ;  ?></td>
+                        <td><?php   echo substr(base64_decode($row["lien"]),0,30)."..." ;  ?></td>
                         <td> <a href="Edit_Support.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
                             <a href="Support(delete).php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
                            <a href="Modifier.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
