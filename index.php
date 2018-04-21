@@ -384,7 +384,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php echo $i["module"]; ?>"</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -417,7 +417,9 @@ while($row2 = mysqli_fetch_assoc($supo))
                         <td id="target"><?php echo base64_decode($row2["nom"]); ?>  </td>
                         <td><?php echo $row2["annee"]; ?></td>
                         <td><?php echo base64_decode($row2["resumer"]); ?></td>
-                         <td> <div class="btn btn-outline-primary fa fa-download"> </div> <div class="btn btn-outline-primary fa fa-play"> </div></td>
+                        <?php $liendetelechargment = base64_decode($row2['lien']); $liendetelechargment = substr($liendetelechargment,3); ?>
+                         <td> <a href="<?php echo $liendetelechargment; ?>"
+    download="<?php echo base64_decode($row2["nom"]); ?>"> <div class="btn btn-outline-primary fa fa-download"> </div></a> <div class="btn btn-outline-primary fa fa-play"> </div></td>
                       </tr>
                       <?php
 }
