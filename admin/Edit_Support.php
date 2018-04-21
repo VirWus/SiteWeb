@@ -190,15 +190,22 @@
                       <div class="card-body card-block">
                         <form action="update-sup.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data" class="">
                           <div class="form-group">
+                          <p>Nom :</p>
                             <div class="input-group">
                               <input type="text" id="nom" name="nom" value="<?php echo base64_decode($Rs['nom']); ?>" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
+                          <p>Niveau :</p>
                             <div class="input-group">
-                              <input type="text" id="annee" name="annee" value="<?php echo $Rs['annee']; ?>" placeholder="Année" class="form-control">
-                                  <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            <select  id="annee" name="annee"  placeholder="Année" class="form-control">
+                                <option>deuxième Licence</option>
+                                <option>troisième Licence </option>
+                                <option>Master</option>
+                                <option>autre</option>
+                              </select> 
+                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
                           </div>
 
@@ -220,6 +227,7 @@
                             </div>
                           </div>
                               <div class="form-group">
+                              <p>Module :</p>
                             <div class="input-group">
                              <select name="module" id="module" class="form-control">
                                <option value="0">Please select Module</option>
@@ -231,6 +239,7 @@
                             </div>
                           </div>
                           <div class="form-group">
+                          <p>Lien :</p>
                             <div class="input-group">
                               <input type="text" id="lien" name="lien"  value="<?php echo base64_decode($Rs['lien']); ?>"  placeholder="Lien" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-link"></i></div>

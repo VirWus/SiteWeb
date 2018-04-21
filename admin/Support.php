@@ -211,6 +211,7 @@
                                <option value="1">Cour</option>
                                <option value="2">Traveaux dériger</option>
                                <option value="3">Traveaux pratiques</option>
+                               <option value="4">Vidéo</option>
 
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
@@ -229,8 +230,8 @@
                             </div>
                           </div>
                           <div class="form-group">
-                            <div class="input-group">
-                           <p> Lien :</p>
+                          <p> Lien :</p>
+                            <div class="input-group">              
                               <input type="hidden" id="lien" name="lien" placeholder="lien" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-link"></i></div>
 
@@ -261,7 +262,8 @@
                     </div>
                   </div>
 
-        <div class="content mt-3">
+    </div><!-- /#right-panel -->
+    <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
                 <div class="col-md-12">
@@ -310,10 +312,6 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-
-
-    </div><!-- /#right-panel -->
-
     <!-- Right Panel -->
 
 

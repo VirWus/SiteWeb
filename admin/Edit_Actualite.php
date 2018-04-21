@@ -189,12 +189,14 @@
                       <div class="card-body card-block">
                         <form action="update-act.php?id=<?php echo $id; ?>" method="post" class="" enctype="multipart/form-data">
                           <div class="form-group">
+                          <p>Nom :</p>
                             <div class="input-group">
                               <input type="text" id="titre" value="<?php echo $Rs['titre']; ?>" name="titre" placeholder="Nom" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
+                          <p>Date :</p>
                             <div class="input-group">
                               <input type="date" id="date" name="date" value="<?php echo $Rs['date']; ?>" placeholder="Date" class="form-control">
                                   <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
@@ -202,12 +204,14 @@
                           </div>
                           
                           <div class="form-group">
+                          <p>Contenu :</p>
                             <div class="input-group">
                               <textarea type="text" id="contenu" value="<?php echo $Rs['contenu']; ?>" name="contenu" placeholder="Contenu" class="form-control"></textarea>
                              </div>
                           
                           </div>
                             <div class="form-group">
+                            <p>Lien :</p>
                             <div class="input-group">
                               <input type="text" id="lien" name="lien" value="<?php echo $Rs['lien']; ?>" placeholder="lien" class="form-control">
                              </div>
