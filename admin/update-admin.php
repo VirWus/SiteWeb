@@ -25,9 +25,10 @@ $grade=$_POST['grade'];
 $email=$_POST['email'];
 $username=$_POST['username'];
 $mdp=$_POST['mdp'];
+ $epass = hash("sha512",$mdp).md5("univ_bba");
 $bio=$_POST['bio'];
 		include_once("../engine/connect/connection.php");
-		$sql = "UPDATE admin  set univ='$univ',grade='$grade',email='$email',username='$username',mdp='$mdp',bio='$bio' where id='$id'";
+		$sql = "UPDATE admin  set univ='$univ',grade='$grade',email='$email',username='$username',mdp='$epass',bio='$bio' where id='$id'";
 			$r=mysqli_query($connect, $sql);
 			if($r){echo "string";}
 			header("location:Accueil.php");
