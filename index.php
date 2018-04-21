@@ -98,7 +98,18 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 <!--===============================================================================================-->
    <!--//////////////////////////Pato/////////////////////////-->
 
+   <script type="text/javascript">
 
+   function submitForm(oFormElement)
+   {
+     var xhr = new XMLHttpRequest();
+     xhr.onload = function(){ alert (xhr.responseText); } // success case
+     xhr.onerror = function(){ alert (xhr.responseText); } // failure case
+     xhr.open (oFormElement.method, oFormElement.action, true);
+     xhr.send (new FormData (oFormElement));
+     return false;
+   }
+   </script>
 
 
   </head>
@@ -384,7 +395,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><?php echo $i["module"]; ?>"</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php echo $nomDuModule; ?>"</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -418,7 +429,7 @@ while($row2 = mysqli_fetch_assoc($supo))
                         <td><?php echo $row2["annee"]; ?></td>
                         <td><?php echo base64_decode($row2["resumer"]); ?></td>
                         <?php $liendetelechargment = base64_decode($row2['lien']); $liendetelechargment = substr($liendetelechargment,3); ?>
-                         <td> <a href="<?php echo $liendetelechargment; ?>"
+                         <td> <a href="engine/countDownloads.php?q=<?php echo $liendetelechargment; ?>"
     download="<?php echo base64_decode($row2["nom"]); ?>"> <div class="btn btn-outline-primary fa fa-download"> </div></a> <div class="btn btn-outline-primary fa fa-play"> </div></td>
                       </tr>
                       <?php
@@ -773,7 +784,7 @@ the target is first looked for. An extra overhead is generated from the sender t
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="http://scripte.oil-station.com/engine/contact.php" method="POST" id="main_contact_form">
+                            <form action="http://scripte.oil-station.com/engine/contact.php" method="POST" id="main_contact_form" onsubmit="return submitForm(this);">
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
