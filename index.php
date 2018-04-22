@@ -377,10 +377,12 @@ while($row2 = mysqli_fetch_assoc($supo))
 ?>
 
                       <tr>
-                        <td id="target"><?php echo $row2["nom"]; ?>  </td>
+                        <td id="target"><?php echo base64_decode($row2["nom"]); ?>  </td>
                         <td><?php echo $row2["annee"]; ?></td>
-                        <td><?php echo $row2["resumer"]; ?></td>
-                         <td> <div class="btn btn-outline-primary fa fa-download"> </div> <div class="btn btn-outline-primary fa fa-play"> </div></td>
+                        <td><?php echo base64_decode($row2["resumer"]); ?></td>
+                         <?php $liendetelechargment = base64_decode($row2['lien']); $liendetelechargment = substr($liendetelechargment,3); ?>
+                         <td> <a href="<?php echo $liendetelechargment; ?>"
+    download="<?php echo base64_decode($row2["nom"]); ?>"> <div class="btn btn-outline-primary fa fa-download"> </div></a> <div class="btn btn-outline-primary fa fa-play"> </div></td>
                       </tr>
                       <?php
 }
