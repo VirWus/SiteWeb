@@ -234,6 +234,17 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 
                             </div>
                             </div>
+                            <div style=" margin: 30px 0px;" class="row form-group">
+            <h4>Photo de Profil :</h4>
+            <div class="input-group">
+                <label style="margin: 0;" class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse&hellip; <input  name="fileto" class="form-control-file" type="file" style="display: none;" multiple>
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly>
+            </div>
+                     </div>   
 
                            
                          <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Modifier</button></div>

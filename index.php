@@ -197,7 +197,10 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 				<div class="col-md-1 col-lg-2"></div>
 				<div class="col-md-10 col-lg-8">
 					<div class="intro">
-						<div class="profile-img"><img src="img/profile.jpg" alt=""></div>
+					<?php 
+            $image= base64_decode($row["image"]);
+            $image=substr($image,3);?>
+						<div class="profile-img"><img src="<?php echo $image ;?>" alt=""></div>
 						<h2><b><?php echo $row["nom"]."   ".$row["prenom"] ;?></b></h2>
 						<h4 class="font-yellow"><?php echo $row["grade"];?></h4>
 						<ul class="information margin-tb-30">
