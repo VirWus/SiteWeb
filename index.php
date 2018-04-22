@@ -31,16 +31,16 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <link href="css/resume.css" rel="stylesheet">
 	 <!-- portfolio cv template  -->
 	<link href="CSSNew/bootstrap.css" rel="stylesheet">
-	
-	
+
+
 
     <link rel="stylesheet" href="portf/css/linearicons.css">
       <link rel="stylesheet" href="portf/css/font-awesome.min.css">
       <!-- <link rel="stylesheet" href="portf/css/bootstrap.css"> -->
       <link rel="stylesheet" href="portf/css/magnific-popup.css">
-      <link rel="stylesheet" href="portf/css/nice-select.css">          
-      <link rel="stylesheet" href="portf/css/animate.min.css"> 
-      <link rel="stylesheet" href="portf/css/owl.carousel.css"> 
+      <link rel="stylesheet" href="portf/css/nice-select.css">
+      <link rel="stylesheet" href="portf/css/animate.min.css">
+      <link rel="stylesheet" href="portf/css/owl.carousel.css">
       <link rel="stylesheet" href="portf/css/main.css">
 
       <link href="css/mdb.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 
-<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
       <!--
       CSS
       ============================================= -->
@@ -69,7 +69,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
    <!--////////////////////////////////////////////////////-->
-   
+
   <!--===============================================================================================-->
   <link rel="shortcut icon" href="img/favicopn.png">
   <!--===============================================================================================-->
@@ -97,20 +97,20 @@ $query = mysqli_query($connect,"SELECT * FROM support");
   <link rel="stylesheet" type="text/css" href="html/css/main.css">
 <!--===============================================================================================-->
    <!--//////////////////////////Pato/////////////////////////-->
-    
+
   
 
 
   </head>
 
   <body id="page-top">
-    
+
     <?php
       $resultat = mysqli_query($connect,"SELECT * FROM admin");
     $actu=mysqli_query($connect,"SELECT * FROM actuallite");
     $module = mysqli_query($connect,"SELECT DISTINCT module FROM support");
-    ?> 
-    
+    ?>
+
  <!--   <div id="preloader">
         <div class="fplus-load"></div>
         <img src="img/core-img/h-logo.png" alt="logo">
@@ -120,7 +120,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Moussaoui Boubaker</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/favicopn.png" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="html/images/icons/favicopn.png" alt="">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -162,7 +162,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-					
+
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i style="color: white;" class="icon ion-ios fa fa-university"></i>
@@ -172,7 +172,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 							</div><!-- right-area -->
 						</div><!-- info -->
 					</div><!-- col-sm-4 -->
-					
+
 					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="info">
 							<i style="color: white;" class="icon ion-ios fa fa-envelope"></i>
@@ -184,11 +184,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 					</div><!-- col-sm-4 -->
 				</div><!-- row -->
 			</div><!-- heading-wrapper -->
-			
-		
+
+
 		</div><!-- container -->
 	</header>
-	
+
 	<section class="intro-section" id="about">
     <?php
     if($row = mysqli_fetch_assoc($resultat)){ ?>
@@ -216,8 +216,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 		</div><!-- container -->
     <?php } ?>
 	</section><!-- intro-section -->
-     
-  
+
+
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 <!-- Actualite -->
@@ -226,12 +226,17 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <div class="slick2">
       	      	       	               <?php
     while($k = mysqli_fetch_assoc($actu)){ ?>
+<<<<<<< HEAD
         <div class="item-slick2 item1-slick2" style="background-image: url(img/event4-02.jpg); background-size: cover; /*background-attachment: fixed;*/ background-position: center;">
   
+=======
+        <div class="item-slick2 item1-slick2" style="background-image: url(html/images/event4-02.jpg); background-size: cover; /*background-attachment: fixed;*/ background-position: center;">
+
+>>>>>>> parent of 6fb6cf8... logo reglage
           <div class="wrap-content-slide2 p-t-115 p-b-208">
             <div class="container">
-           
-              <div class="title-event t-center m-b-52"> 
+
+              <div class="title-event t-center m-b-52">
               	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Actualité
                 </h3>
@@ -239,9 +244,9 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   Moussaoui Boubakeur
                 </span>
 
-           
+
               </div>
- 
+
               <!-- Block2 -->
               <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
                 <!-- Pic block2 -->
@@ -271,13 +276,13 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                   </a>
                 </div>
               </div>
-              
+
             </div>
           </div>
 
         </div>
 <?php } ?>
-      
+
       </div>
 
       <div class="wrap-slick2-dots"></div>
@@ -288,24 +293,24 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <div class="container">
       <div class="row d-flex justify-content-center">
       <div class="menu-content col-lg-10">
-                 <div class="title-event t-center m-b-52"> 
+                 <div class="title-event t-center m-b-52">
 
                 <h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                    Education
                 </h3>
-                
+
                 <span class="tit2 p-l-15 p-r-15" id="MSactu">
                  Des fichies a telecharger
                 </span>
 
-               
+
               </div>
               </div>
 
       </div><!-- row -->
-  
+
 <div class="col-sm-12 row grid">
-               
+
                <?php
    while($i = mysqli_fetch_assoc($module)){
       switch ($i["module"]) {
@@ -324,7 +329,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
       }
     ?>
-     
+
      <div class="col-md-4">
           <div class="about">
             <i class="fa fa-cogs" id=""></i>
@@ -332,11 +337,11 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
             <a href="#education" data-toggle="modal" data-target="#modalCart<?php echo $i["module"]; ?>">Read more</a>
           </div>
-      
-                   
-           
+
+
+
 </div>
-  
+
 
 <!-- Modal: modalCart -->
 <div class="modal fade" id="modalCart<?php echo $i["module"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -344,7 +349,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php echo $nomDuModule; ?>"</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -352,8 +357,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
             <!--Body-->
             <div class="modal-body">
 
-              
-                
+
+
                         <div class="card-body">
                   <table id="" class="table table-hover">
                     <thead>
@@ -370,14 +375,16 @@ $var = $i["module"];
 $supo=mysqli_query($connect,"SELECT * FROM support WHERE module = '$var'");
 while($row2 = mysqli_fetch_assoc($supo))
 {
-	
+
 ?>
 
                       <tr>
-                        <td id="target"><?php echo $row2["nom"]; ?>  </td>
+                        <td id="target"><?php echo base64_decode($row2["nom"]); ?>  </td>
                         <td><?php echo $row2["annee"]; ?></td>
-                        <td><?php echo $row2["resumer"]; ?></td>
-                         <td> <div class="btn btn-outline-primary fa fa-download"> </div> <div class="btn btn-outline-primary fa fa-play"> </div></td>
+                        <td><?php echo base64_decode($row2["resumer"]); ?></td>
+                        <?php $liendetelechargment = base64_decode($row2['lien']); $liendetelechargment = substr($liendetelechargment,3); ?>
+                         <td> <a href="engine/countDownloads.php?q=<?php echo $liendetelechargment; ?>"
+    download="<?php echo base64_decode($row2["nom"]); ?>"> <div class="btn btn-outline-primary fa fa-download"> </div></a> <div class="btn btn-outline-primary fa fa-play"> </div></td>
                       </tr>
                       <?php
 }
@@ -385,8 +392,8 @@ while($row2 = mysqli_fetch_assoc($supo))
                     </tbody>
                   </table>
                         </div>
-                  
-                
+
+
 
             </div>
             <!--Footer-->
@@ -413,11 +420,11 @@ while($row2 = mysqli_fetch_assoc($supo))
 
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////// -->
-<!-- 
+<!--
 <section class="resume-section portfolio-area section-gap" id="education">
    <div class="container">
      <div class="row d-flex justify-content-center">
-           
+
            <div class="menu-content col-lg-10">
                <div class="title text-center">
                  <h1 class="mb-10">This is what we can do for you</h1>
@@ -429,35 +436,35 @@ while($row2 = mysqli_fetch_assoc($supo))
 
 
        <a href="#" data-filter=".branding">
-       
+
          <div class="about col-sm-4"  >
            <i class="fa fa-cogs" data-filter=".web-design" id="id_cogs"></i>
            <h3><?php  //echo $row["nom"]; ?></h3>
            <p></p>
            <a href="#"  class="current">Read more</a>
          </div>
-     
+
        </a>
        <a href="#" data-filter="*">
-           
+
          <div class="about col-sm-4" >
            <i class="fa fa-cogs"  id="id_cogs"></i>
            <h3><?php //echo $row["nom"]; ?></h3>
            <p>.</p>
            <a href="#" >Read more</a>
-   
+
          </div>
        </a>
             <!-- <a href="#" data-filter="*" class="current"><b>ALL</b></a>
            <a href="#" data-filter=".web-design"><b>Cours</b></a>
            <a href="#" data-filter=".branding"><b>TD</b></a>
            <a href="#" data-filter=".graphic-design"><b>TP</b></a>
-           <a href="#" data-filter=".video"><b>Video</b></a> --> 
+           <a href="#" data-filter=".video"><b>Video</b></a> -->
 <!--       </div> -->
     <!-- col-sm-8 -->
-   <!-- </div><!-- --> 
- 
-   
+   <!-- </div><!-- -->
+
+
   <!--  <div class=" filters-content portfolioContainer row grid">
  <?php
 //while($row=mysqli_fetch_assoc($query)){
@@ -478,15 +485,15 @@ while($row2 = mysqli_fetch_assoc($supo))
 
    <!-- </div><!-- portfolioContainer -->
      <!--</div><!-- container -->
- <!--</section> --><!-- portfolio-section --> 
-  
+ <!--</section> --><!-- portfolio-section -->
+
 <!-- ////////////////////////////////////////////////////////////////////////////// -->
 
 
 
 
-     
-   
+
+
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills" style="background-image: url(img/apple-computer-desk-374857.jpg); background-size: cover; /*background-attachment: fixed;*/ background-position: center;">
         <div class="my-auto">
@@ -504,15 +511,15 @@ while($row2 = mysqli_fetch_assoc($supo))
 				<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
 							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
 							<h3 class="tit2 p-l-15 p-b-15 center" id="MSactu">Towards enhanced reactive routing in urban Vehicular Ad hoc Networks</h3>
-                            
+
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ In this paper, we investigate the efficiency of the reactive routing approach in Vehicular Ad
 Hoc Networks (VANETs) with main focus on reducing the incurred overhead by control
 packets used for routes establishment. In AODV, for example, the excessive number of
@@ -537,15 +544,15 @@ be rebroadcasted only by the receiver vehicles located at this region or heading
 			<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
 							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
-                            
+
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
 to healthcare and mission-critical scenarios, has incited researchers from different
 disciplines to develop various tools and protocols to support such applications. Many people
@@ -566,19 +573,19 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 						</div>
 					</div>
 				</div>
-		
+
 		        	<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14  wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
 							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
-                            
+
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
 to healthcare and mission-critical scenarios, has incited researchers from different
 disciplines to develop various tools and protocols to support such applications. Many people
@@ -603,15 +610,15 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 				  	<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14  wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
 							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Unicast routing on VANETs</h3>
-                            
+
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ Greedy routing in VANETs requires some geographical informations, such as the source
 location and the destination location. The first one could be obtained using some
 localization devices like GPS receiver. However, the second one is provided by a location
@@ -636,15 +643,15 @@ based on RSUs to catch the destination's position. This allows to reduce the ove
 				<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14  wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
 							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Routing over VANET in Urban Environments</h3>
-                            
+
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ Abstract Experimental deployment of Cooperative Intelligent Transport Systems have been
 undertaken these last years. But a real deployment is lower than expected. One of the main
 reasons is the high cost of investments of Road Side Units on roads. Road operators need a
@@ -669,7 +676,7 @@ the target is first looked for. An extra overhead is generated from the sender t
 			</div>
 
 			<div class="wrap-slick3-dots m-t-30"></div>
-		</div>     
+		</div>
               </div>
 
           <ul class="list-inline list-icons">
@@ -696,7 +703,7 @@ the target is first looked for. An extra overhead is generated from the sender t
             </li>
             <li class="list-inline-item">
               <i class="devicons devicons-wordpress"></i>
-            </li> 
+            </li>
            <!--  <li class="list-inline-item">
               <i class="devicons devicons-grunt"></i>
             </li>
@@ -712,8 +719,8 @@ the target is first looked for. An extra overhead is generated from the sender t
 
       <section class="resume-section fplus-contact-area bg-gray" id="interests">
        <div class="container">
-          
-                 <div class="title-event t-center m-b-52"> 
+
+                 <div class="title-event t-center m-b-52">
                  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Contacts
                 </h3>
@@ -721,9 +728,9 @@ the target is first looked for. An extra overhead is generated from the sender t
                   Contact
                 </span>
 
-               
+
               </div>
-           
+
         </div>
 
         <div class="fplus-contact-area">
@@ -731,7 +738,7 @@ the target is first looked for. An extra overhead is generated from the sender t
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10">
                         <div class="contact_from wow fadeInDown" data-wow-delay="1.5s">
-                            <form action="mail.php" method="post" id="main_contact_form">
+                            <form action="http://scripte.oil-station.com/engine/contact.php" method="POST" id="main_contact_form" >
                                 <!-- Message Input Area Start -->
                                 <div class="contact_input_area">
                                     <div id="success_fail_info"></div>
@@ -768,7 +775,7 @@ the target is first looked for. An extra overhead is generated from the sender t
                                         </div>
                                         <!-- Single Input Area Start -->
                                         <div class="col-12 text-center">
-                                            <button type="submit" id="btn_send" class="btn">Send Message</button>
+                                            <input type="submit" name="submit" id="btn_send" class="btn" value="Send Message">
                                         </div>
                                     </div>
                                 </div>
@@ -782,14 +789,14 @@ the target is first looked for. An extra overhead is generated from the sender t
         <div id="googleMap" class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"></div>
       </section>
 
-      
-     
+
+
 
     </div>
 
    <!--  <script src="assets/js/jquery-min.js"></script>-->
      <!-- <script src="portf/js/vendor/jquery-2.2.4.min.js"></script> -->
-   <script src="common-js/jquery-3.2.1.min.js"></script> 
+   <script src="common-js/jquery-3.2.1.min.js"></script>
  <div class="bottom"> <a href="" class="settings"></a> </div>
     <!-- Bootstrap core JavaScript -->
 
@@ -858,7 +865,7 @@ the target is first looked for. An extra overhead is generated from the sender t
          ]
      });
         }
-    </script> 
+    </script>
 
 
 <!--===============================================================================================-->
