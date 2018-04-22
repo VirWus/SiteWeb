@@ -14,7 +14,7 @@ $id = $_GET['id'];
 			$r=mysqli_query($connect, $sql);
 			}
 
-if($_POST){
+
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
 $date=$_POST['date'];
@@ -32,5 +32,5 @@ $bio=$_POST['bio'];
 			$r=mysqli_query($connect, $sql);
 			if($r){echo "string";}
 			header("location:Accueil.php");
-		}
+		
 			?>
