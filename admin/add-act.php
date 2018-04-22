@@ -11,10 +11,10 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 <?php
   include_once("connect/connection.php");
 	if($connect){
-$titre = $_POST["titre"];
-$contenu = $_POST["contenu"];
+$titre = base64_encode($_POST["titre"]);
+$contenu = base64_encode($_POST["contenu"]);
 $date = $_POST["date"];
-$lien = $_POST["lien"];
+$lien = base64_encode($_POST["lien"]);
 
 if(!empty($titre) && !empty($contenu) && !empty($date) && !empty($lien) ){
 $query = mysqli_query($connect,"INSERT INTO actuallite VALUES(NULL,'$titre','$date','$contenu','$lien')");
