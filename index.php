@@ -226,7 +226,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       <div class="slick2">
       	      	       	               <?php
     while($k = mysqli_fetch_assoc($actu)){ ?>
-        <div class="item-slick2 item1-slick2" style="background-image: url(img/event4-02.jpg); background-size: cover; /*background-attachment: fixed;*/ background-position: center;">
+        <div class="item-slick2 item1-slick2" style="background-image: url(html/images/event4-02.jpg); background-size: cover; /*background-attachment: fixed;*/ background-position: center;">
   
           <div class="wrap-content-slide2 p-t-115 p-b-208">
             <div class="container">
@@ -245,7 +245,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
               <!-- Block2 -->
               <div class="blo2 flex-w flex-str flex-col-c-m-lg animated visible-false" data-appear="zoomIn">
                 <!-- Pic block2 -->
-                <a href="#" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(img/evento-02.jpg);">
+                <a href="#" class="wrap-pic-blo2 bg1-blo2" style="background-image: url(html/images/evento-02.jpg);">
                   <div class="time-event size10 txt6 effect1">
                     <span class="txt-effect1 flex-c-m t-center" id="btn_send">
                      <?php echo $k["date"]; ?>
@@ -255,15 +255,55 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
                 <!-- Text block2 -->
                 <div class="wrap-text-blo2 flex-col-c-m p-l-40 p-r-40 p-t-45 p-b-30">
-                  <span class="tit2 p-l-15 p-r-15" id="MSactu">
+                  <h4 class="tit7 t-center m-b-10">
                     <?php echo $k["titre"]; ?>
-                  </span>
+                  </h4>
 
                   <p class="t-center">
                     <?php echo $k["contenu"]; ?>
                   </p>
 
-                  
+                  <div class="flex-sa-m flex-w w-full m-t-40">
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 days">
+                        00
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Days
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 hours">
+                       05
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Hours
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 minutes">
+                        00
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Minutes
+                      </span>
+                    </div>
+
+                    <div class="size11 flex-col-c-m">
+                      <span class="dis-block t-center txt7 m-b-2 seconds">
+                        50
+                      </span>
+
+                      <span class="dis-block t-center txt8">
+                        Seconds
+                      </span>
+                    </div>
+                  </div>
 
                   <a href="<?php echo $k["lien"] ;?>" class="txt4 m-t-40">
                     View Details
@@ -494,7 +534,7 @@ while($row2 = mysqli_fetch_assoc($supo))
         	  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
                   Recherches Scientifique
                 </h3>
-                <span class="tit2 p-l-15 p-r-15" id="MSactu">
+                <span class="tit2 p-l-15 p-r-15">
                   Skills
                 </span>
 
