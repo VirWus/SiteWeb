@@ -41,7 +41,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 </head>
 <body>
     <?php
-   include_once("connect/connection.php");
+   include_once("../engine/connect/connection.php");
     $resultat = mysqli_query($connect,"SELECT * FROM support");
     ?>
         <!-- Left Panel -->
