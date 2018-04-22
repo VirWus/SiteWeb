@@ -14,7 +14,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Csmi Admin - Moussaoui Boubakeur</title>
+    <title>Admin - Moussaoui Boubakeur</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -74,10 +74,12 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </li>
 
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book" style="color:#e74c3c;"></i>Support </a>
                     </li>
-
-
+                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
+                    <li>
+                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
+                    </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -188,7 +190,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <div class="card">
                       <div class="card-header">Ajouter votre Support</div>
                       <div class="card-body card-block">
-                        <form action="add-sup.php" method="post" enctype="multipart/form-data" class="">
+                        <form action="add-sup.php" method="POST" enctype="multipart/form-data" >
                           <div class="form-group">
                             <p> Nom :</p>
                             <div class="input-group">
@@ -251,25 +253,25 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                           </div>
 
                           <div class="row form-group">
-                                                     <div class="col col-md-3"><label class=" form-control-label"></label></div>
-                                                     <div class="col col-md-9">
-                                                       <div class="form-check">
-                                                         <div class="checkbox">
-                                                           <label for="checkbox1" class="form-check-label ">
-                                                             <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input" onclick="checkLinkInput()">Ou un lien ?
-                                                           </label>
-                                                         </div>
+                           <div class="col col-md-3"><label class=" form-control-label"></label></div>
+                           <div class="col col-md-9">
+                             <div class="form-check">
+                               <div class="checkbox">
+                                 <label for="checkbox1" class="form-check-label ">
+                                   <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input" onclick="checkLinkInput()">Ou un lien ?
+                                 </label>
+                               </div>
 
-                                                       </div>
-                                                     </div>
-                                                   </div>
+                             </div>
+                           </div>
+                         </div>
 
        <div style=" margin: 30px 0px;" class="row form-group">
             <h4>files</h4>
             <div class="input-group">
                 <label style="margin: 0;" class="input-group-btn">
                     <span class="btn btn-primary">
-                        Browse&hellip; <input id="file-input" name="fileto" class="form-control-file" type="file" style="display: none;" multiple>
+                        Browse&hellip; <input  name="fileto" class="form-control-file" type="file" style="display: none;" multiple>
                     </span>
                 </label>
                 <input type="text" class="form-control" readonly>
@@ -288,7 +290,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
+                            <strong class="card-title">Table des supports</strong>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -305,7 +307,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </thead>
                     <tbody>
                      <?php $i=1 ;
-    while ($row = mysqli_fetch_assoc($resultat)){ ?>
+                      while ($row = mysqli_fetch_assoc($resultat)){ ?>
                       <tr>
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo base64_decode($row["nom"]) ; ?></td>

@@ -14,12 +14,7 @@ $id = $_GET['id'];
 			$r=mysqli_query($connect, $sql);
 			}
 
-if($_POST){
-$nom=$_POST['nom'];
-$prenom=$_POST['prenom'];
 $date=$_POST['date'];
-$lieu_de_n=$_POST['lieu_de_n'];
-$secteur=$_POST['secteur'];
 $univ=$_POST['univ'];
 $grade=$_POST['grade'];
 $email=$_POST['email'];
@@ -32,5 +27,5 @@ $bio=$_POST['bio'];
 			$r=mysqli_query($connect, $sql);
 			if($r){echo "string";}
 			header("location:Accueil.php");
-		}
+		
 			?>

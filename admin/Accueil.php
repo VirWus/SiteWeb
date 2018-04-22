@@ -15,7 +15,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Csmi Admin - Moussaoui Boubakeur</title>
+    <title>Admin - Moussaoui Boubakeur</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,7 +68,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
 
                     <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
+                        <a href="Accueil.php"> <i  class="menu-icon fa fa-laptop" style="color:#e74c3c;"></i>Admin </a>
                     </li>
 
                     <li>
@@ -77,6 +77,10 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
+                    </li>
+                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
+                    <li>
+                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -189,35 +193,35 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                           <div class="form-group">
                             <p> Username :</p>
                             <div class="input-group">
-                              <input type="text" id="username2" name="username"  placeholder="Username" class="form-control">
+                              <input type="text" id="username2" name="username"  value="<?php echo$l['username']?>" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <p> Email :</p>
                             <div class="input-group">
-                              <input type="email" id="email2" name="email"  placeholder="Email" class="form-control">
+                              <input type="email" id="email2" name="email"  value="<?php echo$l['email']?>" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <p> Passeword :</p>
                             <div class="input-group">
-                              <input type="password" id="password2" name="mdp"  placeholder="Password"  class="form-control">
+                              <input type="password" id="password2" name="mdp"   placeholder="modifier votre mot de pass"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <p> University : </p>
                             <div class="input-group">
-                              <input type="text" id="university2" name="univ"  placeholder="University"  class="form-control">
+                              <input type="text" id="university2" name="univ"  value="<?php echo$l['univ'];?>"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-university"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <p> Grade :</p>
                             <div class="input-group">
-                              <input type="text" id="grade2" name="grade"  placeholder="Grade"  class="form-control">
+                              <input type="text" id="grade2" name="grade"  value="<?php echo$l['grade'];?>"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
                             </div>
                             </div>
@@ -225,14 +229,14 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             <div class="form-group">
                                 <p> Bio :</p>
                             <div class="input-group">
-                              <textarea type="text" id="bio" name="bio"  placeholder="Bio"  class="form-control"></textarea>
+                              <input type="text" id="bio" name="bio"  value="<?php echo$l['bio'];?>"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-edit"></i></div>
 
                             </div>
                             </div>
 
                            
-                         <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Ajouter</button></div>
+                         <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Modifier</button></div>
                         </form>
                       </div>
                             </div>

@@ -14,7 +14,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Csmi Admin - Moussaoui Boubakeur</title>
+    <title>Admin - Moussaoui Boubakeur</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,11 +65,16 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"style="color:#e74c3c;"></i>Actualite </a>
                     </li>
 
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
+                    </li>
+                    </li>
+                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
+                    <li>
+                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -177,19 +182,19 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
             <div class="animated fadeIn">
                   <div class="row">
  <?php
-                            $con = mysqli_connect("localhost", "root", "", "univedu");
-                              if(!$con){
+  include_once("connect/connection.php");
+    if(!$connect){
 
-                                 echo "site non connecté";
-                                     }
+    echo "site non connecté";
+    }
 
-                                     $id = $_GET['id'];
+    $id = $_GET['id'];
 
-                              $result =mysqli_query($con, "select * from actuallite where id ='$id'");
+    $result =mysqli_query($connect, "select * from actuallite where id ='$id'");
 
-                                 if($Rs=mysqli_fetch_assoc($result))
-                                     {
-                             ?>
+    if($Rs=mysqli_fetch_assoc($result))
+    {
+ ?>
                    <div class="col-lg-6">
                     <div class="card">
                       <div class="card-header">Modifier votre Actualite</div>
@@ -213,7 +218,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                           <div class="form-group">
                           <p>Contenu :</p>
                             <div class="input-group">
-                              <textarea type="text" id="contenu" value="<?php echo $Rs['contenu']; ?>" name="contenu" placeholder="Contenu" class="form-control"></textarea>
+                              <input type="text" name="contenu" value="<?php echo $Rs['contenu']; ?>" name="contenu" placeholder="Contenu" class="form-control">
                              </div>
 
                           </div>

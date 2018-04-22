@@ -14,7 +14,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Csmi Admin - Moussaoui Boubakeur</title>
+    <title>Admin - Moussaoui Boubakeur</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -69,7 +69,12 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </li>
 
                     <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
+                        <a href="Support.php"> <i class="menu-icon fa fa-book" style="color:#e74c3c;"></i>Support </a>
+                    </li>
+                    </li>
+                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
+                    <li>
+                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

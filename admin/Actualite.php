@@ -14,7 +14,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Csmi Admin - Moussaoui Boubakeur</title>
+    <title>Admin - Moussaoui Boubakeur</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,11 +65,15 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </li>
 
                     <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
+                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil" style="color:#e74c3c;"></i>Actualite </a>
                     </li>
 
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
+                    </li>
+                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
+                    <li>
+                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -118,9 +122,9 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                         <a class="nav-link" href="Admin.php"><i class="fa fa- user"></i>My Profile</a>
 
 
-<a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
+                        <a class="nav-link" href="Accueil.php"><i class="fa fa -cog"></i>Settings</a>
 
-<a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
+                        <a class="nav-link" href="../engine/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
@@ -223,7 +227,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Data Table</strong>
+                            <strong class="card-title">Table d'actualité</strong>
                         </div>
                         <div class="card-body">
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -239,11 +243,11 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </thead>
                     <tbody>
                       <?php
-                            $con = mysqli_connect("localhost", "root", "", "univedu");
-                              if(!$con){
+                            include_once("connect/connection.php");
+                              if(!$connect){
                                  echo "site non connecté";
                                      }
-                              $result =mysqli_query($con, "select * from actuallite order by id DESC");
+                              $result =mysqli_query($connect, "select * from actuallite order by id DESC");
                               $i=1;
                                   while($Rs=mysqli_fetch_assoc($result))
                                      {
