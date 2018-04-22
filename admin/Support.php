@@ -41,7 +41,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 </head>
 <body>
     <?php
-   include_once("../engine/connect/connection.php");
+   include_once("connect/connection.php");
     $resultat = mysqli_query($connect,"SELECT * FROM support");
     ?>
         <!-- Left Panel -->
@@ -264,12 +264,18 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                                                      </div>
                                                    </div>
 
-
-                            <div class="row form-group">
-                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Entrée de fichier</label></div>
-                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="fileto" class="form-control-file"></div>
-                          </div>
-                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Ajouter</button></div>
+       <div style=" margin: 30px 0px;" class="row form-group">
+            <h4>files</h4>
+            <div class="input-group">
+                <label style="margin: 0;" class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse&hellip; <input id="file-input" name="fileto" class="form-control-file" type="file" style="display: none;" multiple>
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly>
+            </div>
+                     </div>      
+                          <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Ajouter</button></div>
                         </form>
                       </div>
                     </div>
@@ -345,7 +351,36 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
+<script type="text/javascript">
+  $(function() {
 
+  // We can attach the `fileselect` event to all file inputs on the page
+  $(document).on('change', ':file', function() {
+    var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [numFiles, label]);
+  });
+
+  // We can watch for our custom `fileselect` event like this
+  $(document).ready( function() {
+      $(':file').on('fileselect', function(event, numFiles, label) {
+
+          var input = $(this).parents('.input-group').find(':text'),
+              log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+          if( input.length ) {
+              input.val(log);
+          } else {
+              if( log ) alert(log);
+          }
+
+      });
+  });
+  
+});
+
+</script>
 
     <script type="text/javascript">
 

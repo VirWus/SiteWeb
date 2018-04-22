@@ -189,35 +189,35 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                           <div class="form-group">
                             <p> Username :</p>
                             <div class="input-group">
-                              <input type="text" id="username2" name="username"  value="<?php echo$l['username']?>" class="form-control">
+                              <input type="text" id="username2" name="username"  placeholder="Username" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <p> Email :</p>
                             <div class="input-group">
-                              <input type="email" id="email2" name="email"  value="<?php echo$l['email']?>" class="form-control">
+                              <input type="email" id="email2" name="email"  placeholder="Email" class="form-control">
                               <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                             </div>
                           </div>
                           <div class="form-group">
                             <p> Passeword :</p>
                             <div class="input-group">
-                              <input type="password" id="password2" name="mdp"  placeholder="modifier votre mot de pass"  class="form-control">
+                              <input type="password" id="password2" name="mdp"  placeholder="Password"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <p> University : </p>
                             <div class="input-group">
-                              <input type="text" id="university2" name="univ"  value="<?php echo$l['univ'];?>"  class="form-control">
+                              <input type="text" id="university2" name="univ"  placeholder="University"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-university"></i></div>
                             </div>
                           </div>
                            <div class="form-group">
                             <p> Grade :</p>
                             <div class="input-group">
-                              <input type="text" id="grade2" name="grade"  value="<?php echo$l['grade'];?>"  class="form-control">
+                              <input type="text" id="grade2" name="grade"  placeholder="Grade"  class="form-control">
                               <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
                             </div>
                             </div>
@@ -225,12 +225,14 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             <div class="form-group">
                                 <p> Bio :</p>
                             <div class="input-group">
-                              <input type="text" id="bio" name="bio"  value="<?php echo$l['bio'];?>"  class="form-control">
+                              <textarea type="text" id="bio" name="bio"  placeholder="Bio"  class="form-control"></textarea>
                               <div class="input-group-addon"><i class="fa fa-edit"></i></div>
 
                             </div>
-                           </div>
-                             <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">Modifier</button></div>
+                            </div>
+
+                           
+                         <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Ajouter</button></div>
                         </form>
                       </div>
                             </div>
@@ -259,7 +261,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <tbody>
                                  <?php  $resultat = mysqli_query($db,"SELECT * FROM admin");
                                  $i=1 ;
-                         while ($row = mysqli_fetch_assoc($resultat)){ ?>
+    while ($row = mysqli_fetch_assoc($resultat)){ ?>
                       <tr>
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo $row["secteur"]; ?></td>

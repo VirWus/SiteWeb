@@ -224,7 +224,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                              </div>
 
                           </div>
-                          <div class="form-actions form-group"><button type="submit" class="btn btn-secondary btn-sm">modofier</button></div>
+                           <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Modifier</button></div>
                         </form>
                       </div>
                     </div>
