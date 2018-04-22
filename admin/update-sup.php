@@ -36,6 +36,11 @@ $file = base64_encode($file);
 }else {
   echo "ERROR ! , try again";
 }
+
+
+
+		// $sql = "UPDATE support  set nom='$nom',annee='$annee',resumer='$resumer',type='$type' where id='$id'";
+		// 	$r=mysqli_query($connect, $sql);
 			header("location:Support.php");
 		}
 			?>

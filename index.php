@@ -546,7 +546,7 @@ while($row2 = mysqli_fetch_assoc($supo))
 				<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
@@ -554,7 +554,7 @@ while($row2 = mysqli_fetch_assoc($supo))
 							<h3 class="tit2 p-l-15 p-b-15 center" id="MSactu">Towards enhanced reactive routing in urban Vehicular Ad hoc Networks</h3>
 
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ In this paper, we investigate the efficiency of the reactive routing approach in Vehicular Ad
 Hoc Networks (VANETs) with main focus on reducing the incurred overhead by control
 packets used for routes establishment. In AODV, for example, the excessive number of
@@ -579,7 +579,7 @@ be rebroadcasted only by the receiver vehicles located at this region or heading
 			<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
@@ -587,7 +587,7 @@ be rebroadcasted only by the receiver vehicles located at this region or heading
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
 
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
 to healthcare and mission-critical scenarios, has incited researchers from different
 disciplines to develop various tools and protocols to support such applications. Many people
@@ -612,7 +612,7 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 		        	<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14  wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
@@ -620,7 +620,7 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
 
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
 to healthcare and mission-critical scenarios, has incited researchers from different
 disciplines to develop various tools and protocols to support such applications. Many people
@@ -645,7 +645,7 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 				  	<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14  wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
@@ -653,7 +653,7 @@ data exchange between cars as well as among their passengers. Although VANETs pa
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Unicast routing on VANETs</h3>
 
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ Greedy routing in VANETs requires some geographical informations, such as the source
 location and the destination location. The first one could be obtained using some
 localization devices like GPS receiver. However, the second one is provided by a location
@@ -678,7 +678,7 @@ based on RSUs to catch the destination's position. This allows to reduce the ove
 				<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14  wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
@@ -686,7 +686,7 @@ based on RSUs to catch the destination's position. This allows to reduce the ove
 							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Routing over VANET in Urban Environments</h3>
 
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
+										<p class="t-center txt11 size27 m-l-r-auto" style="color: white ;">
 									“ Abstract Experimental deployment of Cooperative Intelligent Transport Systems have been
 undertaken these last years. But a real deployment is lower than expected. One of the main
 reasons is the high cost of investments of Road Side Units on roads. Road operators need a
