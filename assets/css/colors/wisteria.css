@@ -11,7 +11,9 @@ a{
 a:hover{
 	color: #833da0;
 }
-
+.about:after{
+  background-color:#9B59B6 !important ;
+}
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
   color: #9B59B6;
 }

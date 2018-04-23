@@ -8,6 +8,9 @@
 a{
   color: #34495E;
 }
+.about:after{
+	background-color:#34495E !important ;
+}
 a:hover{
   color: #526b84;
 }

@@ -19,7 +19,9 @@ text-shadow: 1px 1px white ; }
 #lienactu{
   color:#ff5959 !important; 
 }
-
+.about:after{
+  background-color:#ff5959 !important ;
+}
 .navbar-engage .navbar-nav > li > a:hover,
 .navbar-engage .navbar-nav > li.active > a,
 .navbar-engage .navbar-nav > li.open > a,

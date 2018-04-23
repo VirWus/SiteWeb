@@ -12,6 +12,9 @@ text-shadow: 1px 1px white ; }
 a{
   color: #9C3;
 }
+.about:after{
+  background-color:#b2b2b2 !important ;
+}
 a:hover{
   color: #9C3 ;
 }

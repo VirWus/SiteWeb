@@ -7,7 +7,9 @@
 a{
   color: #1ABC9C;
 }
-
+.about:after{
+  background-color:#1ABC9C !important ;
+}
 a:hover{
   color: #0c9d80;
 }

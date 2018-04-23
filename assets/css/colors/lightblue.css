@@ -13,7 +13,9 @@ text-shadow: 1px 1px white ; }
 #lienactu{
   color:#00D3F9!important; 
 }
-
+.about:after{
+  background-color:#00D3F9 !important ;
+}
 .navbar-engage .dropdown .dropdown-menu > li.active > a{
   color: #00D3F9;
 }
