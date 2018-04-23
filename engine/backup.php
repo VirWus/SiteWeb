@@ -7,7 +7,7 @@
 ini_set('max_execution_time', 600);
 ini_set('memory_limit', '1024M');
 // Start the backup!
-zipData($_SERVER['DOCUMENT_ROOT'], '../backups/'.time().'.zip');
+
 echo 'Finished.';
 // Here the magic happens :)
 function zipData($source, $destination) {

@@ -276,7 +276,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 </label>
                 <input type="text" class="form-control" readonly>
             </div>
-                     </div>      
+                     </div>
                           <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Ajouter</button></div>
                         </form>
                       </div>
@@ -379,7 +379,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 
       });
   });
-  
+
 });
 
 </script>
