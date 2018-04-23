@@ -14,6 +14,8 @@ if(!empty($email) && !empty($pass)){
   if($row > 0){
 
 if(isset($_POST["remember"])){
+  include_once("warmup.php");
+  warmup(time());
   $_SESSION["email"] = base64_encode($email);
   $_SESSION["pass"] = base64_encode($epass);
 

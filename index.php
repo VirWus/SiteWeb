@@ -1,6 +1,5 @@
 <?php
 include_once("engine/connect/connection.php");
-include_once("engine/warmup.php");
 $query = mysqli_query($connect,"SELECT * FROM support");
 
 
