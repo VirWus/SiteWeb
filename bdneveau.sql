@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 23 avr. 2018 à 02:38
+-- Généré le :  lun. 23 avr. 2018 à 03:02
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -97,6 +97,19 @@ INSERT INTO `article` (`id`, `id_admin`, `titre`, `date_de_pub`, `description`, 
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `module`
+--
+
+CREATE TABLE `module` (
+  `id` int(11) NOT NULL,
+  `id_admin` int(11) NOT NULL,
+  `nom_module` varchar(10) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `support`
 --
 
@@ -140,6 +153,12 @@ ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `module`
+--
+ALTER TABLE `module`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `support`
 --
 ALTER TABLE `support`
@@ -166,6 +185,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `module`
+--
+ALTER TABLE `module`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `support`
