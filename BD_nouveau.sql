@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 23 avr. 2018 à 01:22
+-- Généré le :  lun. 23 avr. 2018 à 02:38
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -75,6 +75,28 @@ INSERT INTO `admin` (`id`, `nom`, `prenom`, `date`, `lieu_de_n`, `secteur`, `uni
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `article`
+--
+
+CREATE TABLE `article` (
+  `id` int(11) NOT NULL,
+  `id_admin` int(11) NOT NULL,
+  `titre` varchar(255) NOT NULL,
+  `date_de_pub` date NOT NULL,
+  `description` text NOT NULL,
+  `lien` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`id`, `id_admin`, `titre`, `date_de_pub`, `description`, `lien`) VALUES
+(1, 1, 'cGhw', '2018-04-23', 'ZmdmZ3h3ZGZnZGY=', 'Li4vODc0MmYxZmRjMmNiNTliOTY5NT');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `support`
 --
 
@@ -112,6 +134,12 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Index pour la table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `support`
 --
 ALTER TABLE `support`
@@ -131,6 +159,12 @@ ALTER TABLE `actuallite`
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `article`
+--
+ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
