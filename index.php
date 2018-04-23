@@ -109,6 +109,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
       $resultat = mysqli_query($connect,"SELECT * FROM admin");
     $actu=mysqli_query($connect,"SELECT * FROM actuallite");
     $module = mysqli_query($connect,"SELECT DISTINCT module FROM support");
+    $article = mysqli_query($connect,"SELECT * FROM article");
     ?>
 
  <!--   <div id="preloader">
@@ -503,9 +504,11 @@ while($row2 = mysqli_fetch_assoc($supo))
                   Skills
                 </span>
 
-           		<!-- - -->
+   
 		<div class="wrap-slick3">
-			<div class="slick3">
+			<div class="slick3"> 
+        <?php
+    while($row = mysqli_fetch_assoc($article)){ ?>
 				<div class="item-slick3 item1-slick3">
 					<div class="wrap-content-slide3 p-b-50 p-t-50">
 						<div class="container">
@@ -514,23 +517,18 @@ while($row2 = mysqli_fetch_assoc($supo))
 							</div>
 
 							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-							<h3 class="tit2 p-l-15 p-b-15 center" id="MSactu">Towards enhanced reactive routing in urban Vehicular Ad hoc Networks</h3>
+							<h3 class="tit2 p-l-15 p-b-15 center" id="MSactu"> <?php echo base64_decode($row["titre"]) ; ?></h3>
 
 								<div class="star-review fs-18 color0 flex-c-m m-t-12">
 										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
-									“ In this paper, we investigate the efficiency of the reactive routing approach in Vehicular Ad
-Hoc Networks (VANETs) with main focus on reducing the incurred overhead by control
-packets used for routes establishment. In AODV, for example, the excessive number of
-RREQs broadcasted in the network, to respond to the rapid change in network topology,
-usually hinders the fast transmission of some important packets carrying critical information.
-Moreover, it may also lead to severe congestion situations causing the loss of some packets,
-and thus reducing the QoS of the corresponding applications. To face this problem, we
-propose a simple yet efficient solution in which each vehicle appends the geographical
-location of the destination to each generated RREQ packet. Thereby, this latter packet will
-be rebroadcasted only by the receiver vehicles located at this region or heading towards … ”
+									“ <?php echo base64_decode($row["description"]) ?> ...”
 								</p>
 								</div>
-
+                <div class="star-review fs-18 color0 flex-c-m m-t-12">
+                    <p class="t-center txt11 size15 m-l-r-auto" style="color: white ;">
+                  Date De Publication : <?php echo $row["date_de_pub"]; ?>
+                </p>
+                </div>
 								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
 									<a href="https://www.researchgate.net/profile/Soufiene_Djahel/publication/280317385_Towards_Enhanced_Reactive_Routing_in_Urban_Vehicular_Ad_hoc_Networks/links/55b24f4908aec0e5f4317a43/Towards-Enhanced-Reactive-Routing-in-Urban-Vehicular-Ad-hoc-Networks.pdf" class="btn btn-outline-light">Télecharger</a>
 								</div>
@@ -539,137 +537,10 @@ be rebroadcasted only by the receiver vehicles located at this region or heading
 					</div>
 				</div>
 
-			<div class="item-slick3 item1-slick3">
-					<div class="wrap-content-slide3 p-b-50 p-t-50">
-						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
-							</div>
+			<?php
+    } ?>
 
-							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
-
-								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
-									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
-to healthcare and mission-critical scenarios, has incited researchers from different
-disciplines to develop various tools and protocols to support such applications. Many people
-use multimedia data while they travel in different transportation means and thus they need
-various QoS levels based on the type of application they are running. Such data is usually
-transmitted through 3G/LTE networks; however, the unprecedented increase of multimedia
-data volume makes satisfying their requirements in terms of low delay and higher bandwidth
-a challenge. Many experts foresee that Vehicular Ad-hoc Networks (VANETs) technology
-can be an efficient offloading solution for 3G/LTE networks by providing cost-free and robust
-data exchange between cars as well as among their passengers. Although VANETs pave … ”
-								</p>
-								</div>
-
-								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-light" >Télecharger</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-		        	<div class="item-slick3 item1-slick3">
-					<div class="wrap-content-slide3 p-b-50 p-t-50">
-						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
-							</div>
-
-							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">A cross layer approach for efficient multimedia data dissemination in VANETs</h3>
-
-								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
-									“ The recent rapid expansion of multimedia applications spectrum, ranging from infotainment
-to healthcare and mission-critical scenarios, has incited researchers from different
-disciplines to develop various tools and protocols to support such applications. Many people
-use multimedia data while they travel in different transportation means and thus they need
-various QoS levels based on the type of application they are running. Such data is usually
-transmitted through 3G/LTE networks; however, the unprecedented increase of multimedia
-data volume makes satisfying their requirements in terms of low delay and higher bandwidth
-a challenge. Many experts foresee that Vehicular Ad-hoc Networks (VANETs) technology
-can be an efficient offloading solution for 3G/LTE networks by providing cost-free and robust
-data exchange between cars as well as among their passengers. Although VANETs pave … ”
-								</p>
-								</div>
-
-								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://www.sciencedirect.com/science/article/pii/S221420961730030X" class="btn btn-outline-light" >Télecharger</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				  	<div class="item-slick3 item1-slick3">
-					<div class="wrap-content-slide3 p-b-50 p-t-50">
-						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
-							</div>
-
-							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Unicast routing on VANETs</h3>
-
-								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
-									“ Greedy routing in VANETs requires some geographical informations, such as the source
-location and the destination location. The first one could be obtained using some
-localization devices like GPS receiver. However, the second one is provided by a location
-service. This later has a high overhead especially if it is implemented over V2V (vehicle to
-vehicle) communications. Many location services are well known as HLS, RLS, GLS. This
-paper is interested in reducing this overhead by using some Road Side Units (RSU) already
-deployed along the roads. We propose here a location service called" improved Reactive
-Location Service (iRLS)", which is an extension of the RLS service. The major difference is
-that RLS assumes only V2V communications and iRLS takes profit of a wireless backbone
-based on RSUs to catch the destination's position. This allows to reduce the overhead … ”
-								</p>
-								</div>
-
-								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://pdfs.semanticscholar.org/35fd/89819fe29b66ca248f63f4045f3fea9ac4f0.pdf" class="btn btn-outline-light">Télecharger</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick3 item1-slick3">
-					<div class="wrap-content-slide3 p-b-50 p-t-50">
-						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
-								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
-							</div>
-
-							<div class="content-review m-t-33 animated visible-false" data-appear="fadeInUp">
-							<h3 class="tit2 p-l-15 p-b-15 text-center" id="MSactu">Routing over VANET in Urban Environments</h3>
-
-								<div class="star-review fs-18 color0 flex-c-m m-t-12">
-										<p class="t-center txt12 size15 m-l-r-auto" style="color: white ;">
-									“ Abstract Experimental deployment of Cooperative Intelligent Transport Systems have been
-undertaken these last years. But a real deployment is lower than expected. One of the main
-reasons is the high cost of investments of Road Side Units on roads. Road operators need a
-lot of money in order to achieve this deployment. We suggest to reduce this investment by
-the deployment In this paper, we propose a combination of GPSR (Greedy Perimeter
-Stateless Routing) and an extension of Reactive Location Service denoted eRLS. They used
-to be combined, ie GPRS takes care of routing packets from a source to a destination and
-eRLS is called to get the destination position when the target node position is unknown or is
-not fresh enough. When a destination is not in the area of the sender, the exact position of
-the target is first looked for. An extra overhead is generated from the sender to the …”
-								</p>
-								</div>
-
-								<div class="more-review txt4 t-center animated visible-false m-t-32" data-appear="fadeInUp">
-									<a href="https://link.springer.com/chapter/10.1007/978-3-319-49466-1_10" class="btn btn-outline-light">Télecharger</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+		        
 
 			</div>
 
