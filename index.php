@@ -333,8 +333,8 @@ $query = mysqli_query($connect,"SELECT * FROM support");
           <div class="about">
             <i class="fa fa-cogs" id=""></i>
             <h3><?php echo $nomDuModule ?></h3>
-            <p>Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero sit amet.</p>
-            <a href="#education" data-toggle="modal" data-target="#modalCart<?php echo $i["module"]; ?>">Read more</a>
+            <p><?php echo $nomDuModule ?></p>
+            <a href="#education" data-toggle="modal" data-target="#modalCart<?php echo $i["module"]; ?>">Telecharger</a>
           </div>
 
 
