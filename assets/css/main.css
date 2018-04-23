@@ -54,6 +54,12 @@ body {
 .about:hover h3 {
     color: #fff;
 }
+.about:hover a {
+    color: #fff;
+}
+.about:hover p {
+    color: #fff;
+}
 
 
 .form-group .help-block {

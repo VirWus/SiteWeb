@@ -15,7 +15,7 @@ a:hover{
   color: #ff5959;
 }
 #MSactu{color: #ff5959 !important;
-text-shadow: 1px 1px white ; }
+text-shadow: 2px 2px 4px #000000b8 ; }
 #lienactu{
   color:#ff5959 !important; 
 }

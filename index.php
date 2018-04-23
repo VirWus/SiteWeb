@@ -497,7 +497,7 @@ while($row2 = mysqli_fetch_assoc($supo))
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills" style="background-image: url(img/apple-computer-desk-374857.jpg); background-size: cover; /*background-attachment: fixed;*/ background-position: center;">
         <div class="my-auto">
         	  <div class="title-event t-center m-b-52">
-        	  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: black;">
+        	  	<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3" style="color: white;">
                   Recherches Scientifique
                 </h3>
                 <span class="tit2 p-l-15 p-r-15" id="MSactu">
@@ -510,9 +510,9 @@ while($row2 = mysqli_fetch_assoc($supo))
         <?php
     while($row = mysqli_fetch_assoc($article)){ ?>
 				<div class="item-slick3 item1-slick3">
-					<div class="wrap-content-slide3 p-b-50 p-t-50">
+					<div class="wrap-content-slide3 p-b-50">
 						<div class="container">
-							<div class="pic-review size14 bo4 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
+							<div class="pic-review size14 wrap-cir-pic m-l-r-auto animated visible-false" data-appear="zoomIn">
 								<img src="img/discovery-icon.png" alt="IGM-AVATAR">
 							</div>
 
