@@ -63,13 +63,13 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
-                    <li>
-                        <a href="article.php"> <i class="menu-icon fa fa-newspaper" style="color:#e74c3c;"></i>Article </a>
-                    </li>
+                    
                     <li>
                         <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
-
+                    <li>
+                        <a href="article.php"> <i class="menu-icon fa fa-newspaper" style="color:#e74c3c;"></i>Article </a>
+                    </li>
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book" style="color:#e74c3c;"></i>Support </a>
                     </li>
@@ -243,14 +243,17 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
                           </div>
-                              <div class="form-group">
-                              <p>Module :</p>
+                          <div class="form-group">
+                            <?php 
+                             ?>
+                            <p> Module :</p>
                             <div class="input-group">
                              <select name="module" id="module" class="form-control">
-                               <option value="0">Please select Module</option>
-                               <option value="1">POO</option>
-                               <option value="2">BDD</option>
-                               <option value="3">RS</option>
+                               <option value="0">Le module</option>
+                               <?php while ($md=mysqli_fetch_assoc($modulo)) {
+                               ?>
+                               <option value="<?php echo $md["id"]; ?>"><?php echo $md["nom_module"] ;?></option>
+                               <?php } ?>
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
@@ -281,11 +284,52 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                   </div>
 
             <?php } ?>
+            <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">Supprimer votre Module</div>
+                      <div class="card-body card-block">
+                        <form action="add-sup.php" method="POST" enctype="multipart/form-data" >
+                        <div class="form-group">
+                            <?php 
+                             ?>
+                            <p> Module :</p>
+                            <div class="input-group">
+                             <select name="module" id="module" class="form-control">
+                               <option value="0">Le module</option>
+                               <?php while ($md=mysqli_fetch_assoc($modulo)) {
+                               ?>
+                               <option value="<?php echo $md["id"]; ?>"><?php echo $md["nom_module"] ;?></option>
+                               <?php } ?>
+                             </select>
+                                 <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <p> Niveau :</p>
+                            <div class="input-group">
+                            <select  id="annee" name="niveau"  placeholder="Année" class="form-control">
+                                <option>deuxième Licence</option>
+                                <option>troisième Licence </option>
+                                <option>Master</option>
+                                <option>autre</option>
+                              </select>
+                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
+                            </div>
+                          </div>
 
+                          
+                           
+                          <div  class="form-actions form-group"><button  type="submit" name="sub_mod" class="btn btn-danger btn-block">Supprimer</button></div>
+                        </form>
+                      </div>
+                    </div>
                 </div>
+                  </div>
+                  
             </div><!-- .animated -->
+        
         </div><!-- .content -->
-
+     
 
     </div><!-- /#right-panel -->
 
