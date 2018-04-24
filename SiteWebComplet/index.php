@@ -58,7 +58,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <img src="img/core-img/h-logo.png" alt="logo">
     </div>  -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Moussaoui Boubaker</span>
         <span class="d-none d-lg-block">
@@ -279,7 +279,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php echo $i["nom_module"]; ?></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -616,7 +616,7 @@ while($row2 = mysqli_fetch_assoc($supo))
   <script src="assets/asset/portf/js/main.js"></script>
 
   <script src="assets/asset/common-js/tether.min.js"></script>
-  <script src="asset/common-js/bootstrap.js"></script>
+  <script src="assets/asset/common-js/bootstrap.js"></script>
 
   <script type="text/javascript" src="assets/asset/mdb.min.js"></script>
   <script src="assets/asset/common-js/scripts.js"></script>
@@ -624,6 +624,19 @@ while($row2 = mysqli_fetch_assoc($supo))
   <script type="text/javascript" src="assets/asset/html/vendor/slick/slick.min.js"></script>
   <script type="text/javascript" src="assets/asset/html/js/slick-custom.js"></script>
   <script src="assets/asset/html/js/main.js"></script>
+
+
+ <script src="admin/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="admin/assets/js/lib/data-table/datatables-init.js"></script>
 
 <script type="text/javascript">
   
