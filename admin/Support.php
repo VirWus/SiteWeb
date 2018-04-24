@@ -43,6 +43,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
     <?php
    include_once("connect/connection.php");
     $resultat = mysqli_query($connect,"SELECT * FROM support");
+    $modulo = mysqli_query($connect,"SELECT * FROM module WHERE id_admin='1'");
     ?>
         <!-- Left Panel -->
 
@@ -58,30 +59,32 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
 
-                      <li>
-                        <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+<li>
+  <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+</li>
+<h3  class="menu-title">UI elements</h3><!-- /.menu-title -->
 
-                    <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
-                    </li>
+<li>
+  <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
+</li>
 
-                    <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
-                    </li>
+<li>
+  <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
+</li>
+<li>
+  <a href="article.php"> <i class="menu-icon fa fa-newspaper"></i>Article </a>
+</li>
+<li>
+  <a href="Support.php"> <i class="menu-icon fa fa-book" style="color:#e74c3c;"></i>Support </a>
+</li>
+<li><hr style="border: 0.03em solid #e74c3c;" ></li>
+<li>
+  <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
+</li>
 
-                    <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-book" style="color:#e74c3c;"></i>Support </a>
-                    </li>
-                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
-                    <li>
-                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
-                    </li>
-
-                </ul>
+</ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
@@ -182,7 +185,9 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 </div>
             </div>
         </div>
-<div class="content mt-3">
+
+
+         <div class="content mt-3">
             <div class="animated fadeIn">
                   <div class="row">
 
@@ -233,13 +238,16 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             </div>
                           </div>
                            <div class="form-group">
+                            <?php 
+                             ?>
                             <p> Module :</p>
                             <div class="input-group">
                              <select name="module" id="module" class="form-control">
                                <option value="0">Le module</option>
-                               <option value="1">POO</option>
-                               <option value="2">BDD</option>
-                               <option value="3">RS</option>
+                               <?php while ($md=mysqli_fetch_assoc($modulo)) {
+                               ?>
+                               <option value="<?php echo $md["id"]; ?>"><?php echo $md["nom_module"] ;?></option>
+                               <?php } ?>
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
@@ -276,14 +284,57 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 </label>
                 <input type="text" class="form-control" readonly>
             </div>
-                     </div>
-                          <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Ajouter</button></div>
+                     </div>      
+                          <div  class="form-actions form-group"><button  type="submit"  name="sup" class="btn btn-primary btn-block">Ajouter</button></div>
                         </form>
                       </div>
                     </div>
                   </div>
 
-    </div><!-- /#right-panel -->
+    </div>
+           <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">Ajouter votre Module</div>
+                      <div class="card-body card-block">
+                        <form action="add-sup.php" method="POST" enctype="multipart/form-data" >
+                          <div class="form-group">
+                            <p> Nom de Module :</p>
+                            <div class="input-group">
+                              <input type="text" id="nom" name="nom_module" placeholder="Nom de Module" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <p> Niveau :</p>
+                            <div class="input-group">
+                            <select  id="annee" name="niveau"  placeholder="Année" class="form-control">
+                                <option>deuxième Licence</option>
+                                <option>troisième Licence </option>
+                                <option>Master</option>
+                                <option>autre</option>
+                              </select>
+                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <p> Déscription :</p>
+                            <div class="input-group ">
+                              <input type="text" id="resumer" name="description" placeholder="Déscription" class="form-control">
+                              <div class="input-group-addon"><i class="fa fa-file"></i></div>
+                             </div>
+                          </div>
+                          
+                           
+                          <div  class="form-actions form-group"><button  type="submit" name="mod" class="btn btn-primary btn-block">Ajouter</button></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+</div> <!-- /#right-panel -->
+
+
     <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -379,7 +430,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 
       });
   });
-
+  
 });
 
 </script>

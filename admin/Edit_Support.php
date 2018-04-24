@@ -63,7 +63,9 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
-
+                    <li>
+                        <a href="article.php"> <i class="menu-icon fa fa-newspaper" style="color:#e74c3c;"></i>Article </a>
+                    </li>
                     <li>
                         <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>

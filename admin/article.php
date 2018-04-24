@@ -73,7 +73,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                         <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
                     <li>
-                        <a href="article.php"> <i class="menu-icon fa fa-newspaper" style="color:#e74c3c;"></i>Article </a>
+                        <a href="article.php"> <i class="menu-icon fa fa-pencil" style="color:#e74c3c;"></i>Article </a>
                     </li>
                     <li>
                         <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
@@ -284,8 +284,8 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                         <td><?php  echo $row["date_de_pub"] ;   ?></td>
                         <td><?php   echo substr(base64_decode($row["description"]),0,30)."..."; ;  ?></td>
                         <td><?php   echo substr(base64_decode($row["lien"]),0,30)."..." ;  ?></td>
-                        <td> <a href="Edit_Support.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
-                            <a href="Support(delete).php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
+                        <td> <a href="Edit_article.php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-success fa fa-wrench btn-lg"></button></a>
+                            <a href="article(delete).php?id=<?php echo $row["id"];?>"><button type="button" class="btn btn-outline-danger fa fa-trash btn-lg"></button> </a>
                            <a href="../#skills"><button type="button" class="btn btn-outline-warning fa fa-eye btn-lg"></button> </a>
                         </td>
 

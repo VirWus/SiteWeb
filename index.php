@@ -3,6 +3,7 @@ include_once("engine/connect/connection.php");
 $query = mysqli_query($connect,"SELECT * FROM support");
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,7 +108,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
     <?php
       $resultat = mysqli_query($connect,"SELECT * FROM admin");
     $actu=mysqli_query($connect,"SELECT * FROM actuallite");
-    $module = mysqli_query($connect,"SELECT DISTINCT module FROM support");
+    
     $article = mysqli_query($connect,"SELECT * FROM article");
     ?>
 
@@ -191,13 +192,16 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 	<section class="intro-section" id="about">
     <?php
-    if($row = mysqli_fetch_assoc($resultat)){ ?>
+    if($row = mysqli_fetch_assoc($resultat)){ 
+      $id = $row["id"];
+       $module = mysqli_query($connect,"SELECT * FROM module WHERE id_admin='$id'");
+      ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-1 col-lg-2"></div>
 				<div class="col-md-10 col-lg-8">
 					<div class="intro">
-					<?php
+					<?php 
             $image= base64_decode($row["image"]);
             $image=substr($image,3);?>
 						<div class="profile-img"><img src="<?php echo $image ;?>" alt=""></div>
@@ -311,29 +315,16 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
                <?php
    while($i = mysqli_fetch_assoc($module)){
-      switch ($i["module"]) {
-        case '1':
-        $nomDuModule = "POO";
-          break;
-        case '2':
-        $nomDuModule = "BDD";
-          break;
-          case '3':
-            $nomDuModule = "RS";
-            break;
-        default:
-        echo "error";
-          break;
-
-      }
+    
+    
     ?>
 
      <div class="col-md-4">
           <div class="about">
             <i class="fa fa-cogs" id=""></i>
-            <h3><?php echo $nomDuModule ?></h3>
-            <p><?php echo $nomDuModule ?></p>
-            <a href="#education" data-toggle="modal" data-target="#modalCart<?php echo $i["module"]; ?>">Telecharger</a>
+            <h3><?php echo $i["nom_module"]; ?></h3>
+            <p><?php echo $i["description"]; ?></p>
+            <a href="#education" data-toggle="modal" data-target="#modalCart<?php echo $i["id"]; ?>">Read more</a>
           </div>
 
 
@@ -342,12 +333,12 @@ $query = mysqli_query($connect,"SELECT * FROM support");
 
 
 <!-- Modal: modalCart -->
-<div class="modal fade" id="modalCart<?php echo $i["module"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalCart<?php echo $i["id"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><?php echo $nomDuModule; ?></h4>
+                <h4 class="modal-title" id="myModalLabel">Your cart</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -369,7 +360,7 @@ $query = mysqli_query($connect,"SELECT * FROM support");
                     </thead>
                     <tbody>
 <?php
-$var = $i["module"];
+$var = $i["id"];
 $supo=mysqli_query($connect,"SELECT * FROM support WHERE module = '$var'");
 while($row2 = mysqli_fetch_assoc($supo))
 {
@@ -503,9 +494,9 @@ while($row2 = mysqli_fetch_assoc($supo))
                   Skills
                 </span>
 
-
+   
 		<div class="wrap-slick3">
-			<div class="slick3">
+			<div class="slick3"> 
         <?php
     while($row = mysqli_fetch_assoc($article)){ ?>
 				<div class="item-slick3 item1-slick3">
@@ -539,7 +530,7 @@ while($row2 = mysqli_fetch_assoc($supo))
 			<?php
     } ?>
 
-
+		        
 
 			</div>
 

@@ -54,28 +54,32 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                   <li>
-                        <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
+            <ul class="nav navbar-nav">
 
-                    <li>
-                        <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
-                    </li>
+<li>
+  <a href="Admin.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+</li>
+<h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
 
-                    <li>
-                        <a href="Actualite.php"> <i class="menu-icon fa fa-pencil" style="color:#e74c3c;"></i>Actualite </a>
-                    </li>
+<li>
+  <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
+</li>
 
-                    <li>
-                        <a href="Support.php"> <i class="menu-icon fa fa-book"></i>Support </a>
-                    </li>
-                    <li><hr style="border: 0.03em solid #e74c3c;" ></li>
-                    <li>
-                        <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
-                    </li>
-                </ul>
+<li>
+  <a href="Actualite.php"> <i class="menu-icon fa fa-pencil" style="color:#e74c3c;"></i>Actualite </a>
+</li>
+<li>
+  <a href="article.php"> <i class="menu-icon fa fa-newspaper"></i>Article </a>
+</li>
+<li>
+  <a href="Support.php"> <i class="menu-icon fa fa-book" ></i>Support </a>
+</li>
+<li><hr style="border: 0.03em solid #e74c3c;" ></li>
+<li>
+  <a href="../index.php"> <i class="menu-icon fa fa-chevron-circle-left"></i>Retour vers le site </a>
+</li>
+
+</ul>
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
