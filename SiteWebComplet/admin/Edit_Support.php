@@ -191,6 +191,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                                      }
 
                                      $id = $_GET['id'];
+                                     $modulo = mysqli_query($con,"SELECT * FROM module");
 
                               $result =mysqli_query($con, "select * from support where id ='$id'");
 
@@ -288,7 +289,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <div class="card">
                       <div class="card-header">Supprimer votre Module</div>
                       <div class="card-body card-block">
-                        <form action="add-sup.php" method="POST" enctype="multipart/form-data" >
+                        <form action="#" method="POST" enctype="multipart/form-data" >
                         <div class="form-group">
                             <?php
                              ?>
@@ -298,8 +299,8 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                                <option value="0">Le module</option>
                                <?php while ($md=mysqli_fetch_assoc($modulo)) {
                                ?>
-                               <option value="<?php echo $md["id"]; ?>"><?php echo $md["nom_module"] ;?></option>
-                               <?php } ?>
+                               <option value="<?php echo $md["nom_module"]; ?>"><?php echo $md["nom_module"] ;?></option>
+<?php } ?>
                              </select>
                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
@@ -308,10 +309,9 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             <p> Niveau :</p>
                             <div class="input-group">
                             <select  id="annee" name="niveau"  placeholder="Année" class="form-control">
-                                <option>deuxième Licence</option>
-                                <option>troisième Licence </option>
-                                <option>Master</option>
-                                <option>autre</option>
+                              <?php while ($md=mysqli_fetch_assoc($modulo)) { ?>
+                                <option value="<?php echo $md["niveau"]; ?>"><?php echo $md["niveau"] ;?></option>
+<?php } ?>
                               </select>
                                   <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
                             </div>
@@ -325,7 +325,16 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     </div>
                 </div>
                   </div>
-
+                  <?php
+                  if (isset($_POST["sub_mod"]) &&  isset($_POST["module"]) && isset($_POST["niveau"])) {
+                  include_once("../engine/connect/connection.php");
+                  $nom_module = $_POST["module"];
+                  $niveau = $md["niveau"];
+                  $idd =  $md["id"];
+                  echo $niveau;
+                  $qq = mysqli_query($connect,"DELETE FROM module WHERE nom_module = '$nom_module' AND niveau = '$niveau' ");
+                  }
+                   ?>
             </div><!-- .animated -->
 
         </div><!-- .content -->

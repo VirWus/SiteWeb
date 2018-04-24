@@ -15,7 +15,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
          $niveau=$_POST["niveau"];
          $discription= $_POST["description"];
          if(!empty($nom) && !empty($niveau) && !empty($discription) ) {
-        $query = mysqli_query($connect,"INSERT INTO module VALUES('','1','$nom','$niveau','$discription')");}
+        $query = mysqli_query($connect,"INSERT INTO module VALUES('','1','$nom','$discription','$niveau')");}
         header("location:Support.php");
         } else {
 
