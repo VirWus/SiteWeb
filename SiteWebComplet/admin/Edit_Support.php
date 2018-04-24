@@ -63,7 +63,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                     <li>
                         <a href="Accueil.php"> <i class="menu-icon fa fa-laptop"></i>Admin </a>
                     </li>
-                    
+
                     <li>
                         <a href="Actualite.php"> <i class="menu-icon fa fa-pencil"></i>Actualite </a>
                     </li>
@@ -244,7 +244,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             </div>
                           </div>
                           <div class="form-group">
-                            <?php 
+                            <?php
                              ?>
                             <p> Module :</p>
                             <div class="input-group">
@@ -276,7 +276,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 </label>
                 <input type="text" class="form-control" readonly>
             </div>
-                     </div>      
+                     </div>
                           <div  class="form-actions form-group"><button  type="submit" class="btn btn-primary btn-block">Modifier</button></div>
                         </form>
                       </div>
@@ -290,7 +290,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                       <div class="card-body card-block">
                         <form action="add-sup.php" method="POST" enctype="multipart/form-data" >
                         <div class="form-group">
-                            <?php 
+                            <?php
                              ?>
                             <p> Module :</p>
                             <div class="input-group">
@@ -317,19 +317,19 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             </div>
                           </div>
 
-                          
-                           
+
+
                           <div  class="form-actions form-group"><button  type="submit" name="sub_mod" class="btn btn-danger btn-block">Supprimer</button></div>
                         </form>
                       </div>
                     </div>
                 </div>
                   </div>
-                  
+
             </div><!-- .animated -->
-        
+
         </div><!-- .content -->
-     
+
 
     </div><!-- /#right-panel -->
 
@@ -355,7 +355,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
     <script src="assets/js/lib/data-table/datatables-init.js"></script>
 
 <script type="text/javascript">
-  
+
   $(function() {
 
   // We can attach the `fileselect` event to all file inputs on the page
@@ -381,7 +381,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 
       });
   });
-  
+
 });
 
 </script>

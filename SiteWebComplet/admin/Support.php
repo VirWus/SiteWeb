@@ -203,18 +203,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                               <div class="input-group-addon"><i class="fa fa-user"></i></div>
                             </div>
                           </div>
-                          <div class="form-group">
-                            <p> Niveau :</p>
-                            <div class="input-group">
-                            <select  id="annee" name="annee"  placeholder="Année" class="form-control">
-                                <option>deuxième Licence</option>
-                                <option>troisième Licence </option>
-                                <option>Master</option>
-                                <option>autre</option>
-                              </select>
-                                  <div class="input-group-addon"><i class="fa fa-th-list"></i></div>
-                            </div>
-                          </div>
+                          
 
                           <div class="form-group">
                             <p> Resume :</p>
@@ -238,7 +227,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                             </div>
                           </div>
                            <div class="form-group">
-                            <?php 
+                            <?php
                              ?>
                             <p> Module :</p>
                             <div class="input-group">
@@ -284,7 +273,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                 </label>
                 <input type="text" class="form-control" readonly>
             </div>
-                     </div>      
+                     </div>
                           <div  class="form-actions form-group"><button  type="submit"  name="sup" class="btn btn-primary btn-block">Ajouter</button></div>
                         </form>
                       </div>
@@ -324,8 +313,8 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                               <div class="input-group-addon"><i class="fa fa-file"></i></div>
                              </div>
                           </div>
-                          
-                           
+
+
                           <div  class="form-actions form-group"><button  type="submit" name="mod" class="btn btn-primary btn-block">Ajouter</button></div>
                         </form>
                       </div>
@@ -362,7 +351,6 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
                       <tr>
                         <td><?php   echo $i++;  ?></td>
                         <td><?php echo base64_decode($row["nom"]) ; ?></td>
-                        <td><?php  echo $row["annee"] ;   ?></td>
                         <td><?php   echo substr(base64_decode($row["resumer"]),0,30)."..."; ;  ?></td>
                         <td><?php   echo $row["type"] ;  ?></td>
                         <td><?php   echo substr(base64_decode($row["lien"]),0,30)."..." ;  ?></td>
@@ -430,7 +418,7 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
 
       });
   });
-  
+
 });
 
 </script>

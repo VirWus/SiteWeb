@@ -10,12 +10,12 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
      include_once("connect/connection.php");
     	if($connect){
         if (isset($_POST["mod"])) {
-        
+
          $nom=$_POST["nom_module"];
          $niveau=$_POST["niveau"];
-         $discription=$_POST["description"];
+         $discription= $_POST["description"];
          if(!empty($nom) && !empty($niveau) && !empty($discription) ) {
-        $query = mysqli_query($connect,"INSERT INTO module VALUES(NULL,'1','$nom','$niveau','$discription')");}
+        $query = mysqli_query($connect,"INSERT INTO module VALUES('','1','$nom','$niveau','$discription')");}
         header("location:Support.php");
         } else {
 
@@ -24,19 +24,19 @@ if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["p
   $nom = base64_encode($_POST["nom"]);
   $resumer = base64_encode($_POST["resumer"]);
   $module = $_POST["module"];
-  $annee=$_POST['annee'];
+
   $type=$_POST['type'];
   $pathparts = pathinfo($file);
   $link = base64_encode($_POST["lien"]);
-if(!empty($nom) && !empty($resumer) && !empty($annee) && !empty($type) && !empty($module)  ) {
+if(!empty($nom) && !empty($resumer)  && !empty($type) && !empty($module)  ) {
   if(!empty($link)){
-$query = mysqli_query($connect,"INSERT INTO support VALUES(NULL,'$nom','$annee','$resumer','$type','$link','$module')");
+$query = mysqli_query($connect,"INSERT INTO support VALUES(NULL,'$nom','$resumer','$type','$link','$module')");
   }else{
     $ext =  $pathparts["extension"];
 if($ext == "jpg" || $ext == "png" || $ext == "pdf" || $ext == "doc" || $ext == "docx" || $ext == "xls") {
   move_uploaded_file($_FILES["fileto"]["tmp_name"], $file);
 $file = base64_encode($file);
-  $query = mysqli_query($connect,"INSERT INTO support VALUES(NULL,'$nom','$annee','$resumer','$type','$file','$module')");
+  $query = mysqli_query($connect,"INSERT INTO support VALUES(NULL,'$nom','$resumer','$type','$file','$module')");
 }else{
   echo "Your file is not supported";
 }
