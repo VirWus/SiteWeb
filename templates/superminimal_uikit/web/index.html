@@ -1,0 +1,590 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Superminimal Ui Kit Flat Bootstarp Resposive Website Template| Home :: w3layouts</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Superminimal Ui Kit Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!----Calender -------->
+  <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+  <script src="js/underscore-min.js"></script>
+  <script src= "js/moment-2.2.1.js"></script>
+  <script src="js/clndr.js"></script>
+  <script src="js/site.js"></script>
+<!----End Calender -------->
+ <!-- start equalizer -->		  
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery-ui.min.js"></script>
+<script>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</script>
+<script>
+$(function() {
+	 
+	    $( "#eq > span" ).each(function() {	   
+	      var value = parseInt( $( this ).text(), 10 );
+	      $( this ).empty().slider({
+	        value: value,
+	        range: "min",
+	        animate: true,
+	        orientation: "vertical"
+	      });
+	    });
+	  });
+</script>
+<script>
+(function($){
+	$.fn.percentPie = function(options){
+
+		var settings = $.extend({
+			width: 100,
+			trackColor: "EEEEEE",
+			barColor: "777777",
+			barWeight: 30,
+			startPercent: 0,
+			endPercent: 1,
+			fps: 60
+		}, options);
+
+		this.css({
+			width: settings.width,
+			height: settings.width
+		});
+
+		var	that = this,
+			hoverPolice = false,
+			canvasWidth = settings.width,
+			canvasHeight = canvasWidth,
+			id = $('canvas').length,
+			canvasElement = $('<canvas id="'+ id +'" width="' + canvasWidth + '" height="' + canvasHeight + '"></canvas>'),
+			canvas = canvasElement.get(0).getContext("2d"),
+			centerX = canvasWidth/2,
+			centerY = canvasHeight/2,
+			radius = settings.width/2 - settings.barWeight/2;
+			counterClockwise = false,
+			fps = 1000 / settings.fps,
+			update = .01;
+			this.angle = settings.startPercent;
+
+		this.drawArc = function(startAngle, percentFilled, color){
+			var drawingArc = true;
+			canvas.beginPath();
+			canvas.arc(centerX, centerY, radius, (Math.PI/180)*(startAngle * 360 - 90), (Math.PI/180)*(percentFilled * 360 - 90), counterClockwise);
+			canvas.strokeStyle = color;
+			canvas.lineWidth = settings.barWeight;
+			canvas.stroke();
+			drawingArc = false;
+		}
+
+		this.fillChart = function(stop){
+			var loop = setInterval(function(){
+				hoverPolice = true;
+				canvas.clearRect(0, 0, canvasWidth, canvasHeight);
+
+				that.drawArc(0, 360, settings.trackColor);
+				that.angle += update;
+				that.drawArc(settings.startPercent, that.angle, settings.barColor);
+
+				if(that.angle > stop){
+					clearInterval(loop);
+					hoverPolice = false;
+				}
+			}, fps);
+		}
+
+		this.mouseover(function(){
+			if(hoverPolice == false){
+				that.angle = settings.startPercent;
+				that.fillChart(settings.endPercent);
+			}
+		});
+
+		this.fillChart(settings.endPercent);
+		this.append(canvasElement);
+		return this;
+	}
+}(jQuery));
+
+$(document).ready(function() {
+
+	$('.google').percentPie({
+		width: 100,
+		trackColor: "444444",
+		barColor: "71CF97",
+		barWeight: 20,
+		endPercent: .9,
+		fps: 60
+	});
+  
+  $('.moz').percentPie({
+		width: 100,
+		trackColor: "444444",
+		barColor: "2EB0E2",
+		barWeight: 20,
+		endPercent: .75,
+		fps: 60
+	});
+  
+  $('.safari').percentPie({
+		width: 100,
+		trackColor: "444444",
+		barColor: "#e51937",
+		barWeight: 20,
+		endPercent: .5,
+		fps: 60
+	});
+    
+});
+</script>
+<link type="text/css" rel="stylesheet" href="css/easy-responsive-tabs.css" />
+<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion           
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+<script src="js/highcharts.js"></script>
+<script src="js/chart.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header text-center">
+			<h1><a href="#">SUPERMINIMAL</a></h1>
+			<p>FLAT DESIGNED UI KIT</p>
+		</div>
+		<div class="main-content">
+			<div class="content-top">
+				<div class="col-md-6 span_1_of_1">
+					<div class="calender">
+					<div class="column_right_grid calender">
+                      <div class="cal1"><div class="clndr"><div class="clndr-controls"><div class="clndr-control-button"><p class="clndr-previous-button">previous</p></div>
+                      <div class="month">March 2014</div><div class="clndr-control-button rightalign"><p class="clndr-next-button">next</p></div></div>
+                      <table class="clndr-table" border="0" cellspacing="0" cellpadding="0"><thead><tr class="header-days">
+                      	<td class="header-day">Sun</td><td class="header-day">Mon</td><td class="header-day">Tu</td><td class="header-day">We</td><td class="header-day">T</td>
+                      	<td class="header-day">Fr</td><td class="header-day">Su</td></tr></thead><tbody><tr><td class="day past adjacent-month last-month calendar-day-2014-02-23">
+                      	<div class="day-contents">23</div></td><td class="day past adjacent-month last-month calendar-day-2014-02-24"><div class="day-contents">24</div></td>
+                      	<td class="day past adjacent-month last-month calendar-day-2014-02-25"><div class="day-contents">25</div></td>
+                      	<td class="day past adjacent-month last-month calendar-day-2014-02-26"><div class="day-contents">26</div></td>
+                      	<td class="day past adjacent-month last-month calendar-day-2014-02-27"><div class="day-contents">27</div></td><td class="day past adjacent-month last-month calendar-day-2014-02-28"><div class="day-contents">28</div></td><td class="day past calendar-day-2014-03-01"><div class="day-contents">1</div></td></tr><tr><td class="day past calendar-day-2014-03-02"><div class="day-contents">2</div></td><td class="day past calendar-day-2014-03-03"><div class="day-contents">3</div></td><td class="day past calendar-day-2014-03-04"><div class="day-contents">4</div></td><td class="day past calendar-day-2014-03-05"><div class="day-contents">5</div></td><td class="day past calendar-day-2014-03-06"><div class="day-contents">6</div></td><td class="day past calendar-day-2014-03-07"><div class="day-contents">7</div></td><td class="day past calendar-day-2014-03-08"><div class="day-contents">8</div></td></tr><tr><td class="day past calendar-day-2014-03-09"><div class="day-contents">9</div></td><td class="day past event calendar-day-2014-03-10"><div class="day-contents">10</div></td><td class="day past event calendar-day-2014-03-11"><div class="day-contents">11</div></td><td class="day past event calendar-day-2014-03-12"><div class="day-contents">12</div></td><td class="day past event calendar-day-2014-03-13"><div class="day-contents">13</div></td><td class="day past event calendar-day-2014-03-14"><div class="day-contents">14</div></td><td class="day past calendar-day-2014-03-15"><div class="day-contents">15</div></td></tr><tr><td class="day past calendar-day-2014-03-16"><div class="day-contents">16</div></td><td class="day past calendar-day-2014-03-17"><div class="day-contents">17</div></td><td class="day past calendar-day-2014-03-18"><div class="day-contents">18</div></td><td class="day past calendar-day-2014-03-19"><div class="day-contents">19</div></td><td class="day past calendar-day-2014-03-20"><div class="day-contents">20</div></td><td class="day past event calendar-day-2014-03-21"><div class="day-contents">21</div></td><td class="day past event calendar-day-2014-03-22"><div class="day-contents">22</div></td></tr><tr><td class="day past event calendar-day-2014-03-23"><div class="day-contents">23</div></td><td class="day past calendar-day-2014-03-24"><div class="day-contents">24</div></td><td class="day today calendar-day-2014-03-25"><div class="day-contents">25</div></td><td class="day calendar-day-2014-03-26"><div class="day-contents">26</div></td><td class="day calendar-day-2014-03-27"><div class="day-contents">27</div></td><td class="day calendar-day-2014-03-28"><div class="day-contents">28</div></td><td class="day calendar-day-2014-03-29"><div class="day-contents">29</div></td></tr><tr><td class="day calendar-day-2014-03-30"><div class="day-contents">30</div></td><td class="day calendar-day-2014-03-31"><div class="day-contents">31</div></td><td class="day adjacent-month next-month calendar-day-2014-04-01"><div class="day-contents">1</div></td><td class="day adjacent-month next-month calendar-day-2014-04-02"><div class="day-contents">2</div></td><td class="day adjacent-month next-month calendar-day-2014-04-03"><div class="day-contents">3</div></td><td class="day adjacent-month next-month calendar-day-2014-04-04"><div class="day-contents">4</div></td><td class="day adjacent-month next-month calendar-day-2014-04-05"><div class="day-contents">5</div></td></tr></tbody></table></div></div>
+				     </div>
+				</div>
+				<div class="circles-grid">
+					<div class="circle-left">
+						<div class="skill-grid">
+							<div id="circles-1"></div>	
+						</div>	
+					</div>
+					<div class="circle-right">
+						<div class="skill-grid">
+							<div id="circles-2"></div>	
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<!---->
+				 <script type="text/javascript" src="js/circles.js"></script>
+					         <script>
+								var colors = [
+										['#ebebeb', '#000000'], ['#ebebeb', '#000000']
+									];
+								for (var i = 1; i <= 5; i++) {
+									var child = document.getElementById('circles-' + i),
+										percentage = 50 + (i * 10);
+										
+									Circles.create({
+										id:         child.id,
+										percentage: percentage,
+										radius:     115,
+										width:      7,
+										number:   	percentage / 10,
+										text:       '%',
+										colors:     colors[i - 1]
+									});
+								}
+						
+				</script>
+				<!--/-->
+
+				</div>
+				<div class="tabs-play-list">
+					<!--Horizontal Tab-->
+					<div id="horizontalTab">
+						<ul class="resp-tabs-list">
+							<li>Now Playing</li>
+							<li>Playlist</li>
+							<li>Favorites</li>
+							<div class="clearfix"></div>
+						</ul>
+						<div class="resp-tabs-container">						
+						<link rel="stylesheet" type="text/css" media="all" href="css/audio.css">
+						<script type="text/javascript" src="js/mediaelement-and-player.min.js"></script>
+							<div>
+								<!---->
+								<div class="play-song">
+									<h3>BLACK ROOM BOY</h3>
+									<p>Above and Beyond</p>
+								</div>
+								<div class="audio-player">
+									<audio id="audio-player"  controls="controls">
+									<source src="media/Blue Browne.ogg" type="audio/ogg"></source>
+									        <source src="media/Blue Browne.mp3" type="audio/mpeg"></source>
+									        <source src="media/Georgia.ogg" type="audio/ogg"></source>
+									        <source src="media/Georgia.mp3" type="audio/mpeg"></source></audio>
+								</div>
+								<!---->
+									<script type="text/javascript">
+										$(function(){
+										  $('#audio-player').mediaelementplayer({
+											alwaysShowControls: true,
+											features: ['playpause','progress','volume'],
+											audioVolume: 'horizontal',
+											iPadUseNativeControls: true,
+											iPhoneUseNativeControls: true,
+											AndroidUseNativeControls: true
+										  });
+										});
+									</script>
+								<!--//-->
+								<ul class="next-top">
+									<li><a href="#"><i> </i></a></li>
+									<li><a href="#"><i class="next"> </i></a></li>
+									
+								</ul>
+							</div>
+							<div>
+								<div class="play-lists">
+									<div class="play-list">
+										<img src="images/p3.jpg" alt="" />
+										<a href="#">Zindagi Aa Raha Hoor</a>
+										<div class="clearfix"></div>
+										<img src="images/p2.jpg" alt="" />
+										<a href="#">College Time</a>
+										<div class="clearfix"></div>
+										<img src="images/p1.jpg" alt="" />
+										<a href="#">pyar ki baate</a>
+										<div class="clearfix"></div>
+									</div>			
+								</div>
+							</div>
+							<div>
+								
+								<div class="play-lists">
+									<div class="play-list">
+										<img src="images/p1.jpg" alt="" />
+										<a href="#">pyar ki baate</a>
+										<div class="clearfix"></div>
+										<img src="images/p2.jpg" alt="" />
+										<a href="#">College Time</a>
+										<div class="clearfix"></div>
+										<img src="images/p3.jpg" alt="" />
+										<a href="#">Zindagi Aa Raha Hoor</a>
+										<div class="clearfix"></div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-md-6 span_1_of_2">
+					<div class="temp">
+						<div class="temp-head text-center">
+							<h4>TODAY</h4>
+							<p>15 AUGUST 2015</p>
+						</div>
+						<div class="temp-in">
+							<div class="temp-in-left">
+								<h2>25°</h2>
+							</div>
+							<div class="temp-in-right">
+								<img src="images/temp.png" alt="" />
+							</div>
+							<div class="clearfix"></div>
+							<p>The perfect day for a walk in the park and some delicious brunch. Cheers!</p>
+						</div>
+					</div>
+					<div class="login-form">
+						<div class="left-form">
+							<div class="skills">
+								<div class="skill1" style="width:41%"></div>							
+							</div>
+							<div class="percentage"><h4>41%</h4></div>
+							<div class="clearfix"></div>
+							<div class="form">
+								<form>
+									<input type="text" placeholder="Username" required="">
+									<input type="password" placeholder="Password" required="">
+									<div class="check">
+										<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i class="left"> </i>Remember My Password</label>
+									</div>
+									<input type="submit" value="Sign In">
+									<a href="#">Forgot your password?</a>
+								</form>
+							</div>
+						</div>
+						<div class="vertical-scroll">
+							<!-- start equalizer -->
+							<div class="wrapper">
+								<div class="wrp-eq cf">
+									<div id="eq">				
+										<span>67</span>			
+									</div>
+								</div>
+							</div>	
+							<!-- end equalizer -->
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="span_3_of_3">
+						<canvas id="canvas" height="300" width="300"></canvas>
+					</div>
+				<script>
+
+					var doughnutData = [
+							{
+								value: 30,
+								color:"#575757"
+							},
+							{
+								value : 40,
+								color : "#3f3f3f"
+							},
+							{
+								value :30,
+								color : "#000000"
+							}
+						
+						];
+
+				var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+				
+				</script>
+	            </div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="col-md-12">
+				<div class="content-middle">
+					<div class="content-middle-top">
+						<div id="dd1" class="wrapper-dropdown-1" tabindex="1"><span><img src="images/nav.png"/></span>
+							<ul class="dropdown">
+							
+									<li><a href="#">Aticle post1 </a></li>
+									<li><a href="#">Aticle post2</a></li>
+									<li><a href="#">Aticle post3</a></li>
+									<li><a href="#">Aticle post4</a></li>
+							</ul>
+					</div>
+					<a class="posts" href="#"><img src="images/posts.png" alt="" /></a>
+					<div class="clearfix"></div>
+			<!-----end-wrapper-dropdown-2---->
+			<!-----start-script---->
+			<script type="text/javascript">
+							function DropDown(el) {
+								this.dd1 = el;
+								this.initEvents();
+							}
+							DropDown.prototype = {
+								initEvents : function() {
+									var obj = this;
+				
+									obj.dd.on('click', function(event){
+										$(this).toggleClass('active');
+										event.stopPropagation();
+									});	
+								}
+							}
+							$(function() {
+				
+								var dd = new DropDown( $('#dd1') );
+				
+								$(document).click(function() {
+									// all dropdowns
+									$('.wrapper-dropdown-1').removeClass('active');
+								});
+				
+							});
+			</script>
+					</div>
+					<div class="content-middle-info text-center">
+						<h3>COOL ARTICLE FROM THE WEB</h3>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt 
+							ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitat
+							ion ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure 
+							dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilit...</p>
+						<a href="#"><img src="images/downarrow.png" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="content-bottom">
+				<div class="col-md-8 graph">
+					<div class="graph-head">
+						<h3>DOWNLOADS</h3>
+						<div id="dd" class="wrapper-dropdown-2" tabindex="1"><span><img src="images/settings.png"/></span>
+							<ul class="dropdown">
+							
+									<li><a href="#">View Profile </a></li>
+									<li><a href="#">Lists</a></li>
+									<li><a href="#">Help</a></li>
+									<li><a href="#">Activity log</a></li>
+									<li><a href="#">Report a problem</a></li>
+									<li><a href="#">Log out</a></li>
+							</ul>
+					</div>
+					<div class="clearfix"></div>
+			<!-----end-wrapper-dropdown-2---->
+			<!-----start-script---->
+			<script type="text/javascript">
+							function DropDown(el) {
+								this.dd = el;
+								this.initEvents();
+							}
+							DropDown.prototype = {
+								initEvents : function() {
+									var obj = this;
+				
+									obj.dd.on('click', function(event){
+										$(this).toggleClass('active');
+										event.stopPropagation();
+									});	
+								}
+							}
+							$(function() {
+				
+								var dd = new DropDown( $('#dd') );
+				
+								$(document).click(function() {
+									// all dropdowns
+									$('.wrapper-dropdown-2').removeClass('active');
+								});
+				
+							});
+			</script>
+
+						</div>
+						<div class="graph">
+							<div id="recipes" style="100%; height:320px; margin: 0 auto; padding:3em;   border: 1px solid #eaeaea;background:#FFFFFF"></div>
+						 <script>
+						 $(function () {
+					        $('#recipes').highcharts({
+					            
+					            title: {
+					                text: 'latest week 13,250',
+					                style: {
+						                color: '#222222',
+						                fontWeight: '100'
+						               
+						            }
+					            },
+					           
+					           xAxis: {
+						            categories: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
+						        },
+					            
+					            yAxis: {
+						             labels: {
+					                    formatter: function() {
+					                        return this.value +'k'
+					                    }
+					                },
+							         title: {
+						                    enabled: false
+						                }
+					            },
+					             plotOptions: {
+						            series: {
+						            	 cursor: 'pointer',
+						                color: '#222222'
+						            }
+						        },
+					             
+					            legend: {
+						            enabled: false
+						        },
+					            
+					            tooltip: {
+					               shared: true,
+               					   pointFormat: '{point.x} k',
+               					    backgroundColor: '#FFFFFF'
+					            },
+					            
+					            series: [{            
+					                data: [1, 4.5, 4, 6.7, 1],
+					                pointStart: 1
+					            }]
+					        });
+					    });
+
+						 </script>
+						</div>
+				</div>
+				<div class="col-md-4 content-bottom-right">
+					<div class="search-box">
+						<form> 
+							<input type="text" class="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+							<input type="submit" class ="go" value>
+						</form> 
+					</div>
+					<div class="to-do">
+						<h3>To-Do</h3>
+						<div class="checkbox-form">
+							<div class="check">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Do the dishes.</label>
+							</div>
+							<div class="check">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Hit the gym.</label>
+							</div>
+							<div class="check">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Walk the dog.</label>
+							</div>
+							<div class="check">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Get wireframing!</label>
+							</div>
+							<div class="check">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Talk to the cat.</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="copy-rights text-center">
+				<p> Copyright &copy;2015  All rights  Reserved | Template by<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
