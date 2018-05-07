@@ -319,7 +319,8 @@ textarea.input {
 
 .header-logo .logo > img {
 	width: 100%;
-	max-height: 90px;
+    
+	height: 100%;
 	padding: 10px;
 }
 
