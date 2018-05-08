@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="a/image/png" sizes="16x16" href="a/images/favicon.png">
-    <title>Actualité| Faculté Actualité</title>
+    <title>Admin| Enseignants Informatique</title>
     <!-- Bootstrap Core CSS -->
     <link href="a/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -285,11 +285,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Actualité</h3> </div>
+                    <h3 class="text-primary">Enseignants</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Actualité</li>
+                        <li class="breadcrumb-item active">Enseignants</li>
                     </ol>
                 </div>
             </div>
@@ -297,51 +297,120 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-6">
-                        <div class="card card-outline-primary">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">Modifier Actualité</h4>
-                            </div>
+                        <div class="card">
                             <div class="card-body">
-                            <form class="form p-t-20">
-                                    <div class="form-group ti-user">
-                                        <label for="exampleInputuname2">Titre D'Actualité</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputuname2" placeholder="Titre D'Actualité">
-                                            <div class="input-group-addon"><i ></i></div>
+                                <div class="form-validation">
+                                    <form class="form-valide" action="#" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Username <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-username" name="val-username" placeholder="Enter a username..">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group ti-email">
-                                        <label for="exampleInputEmail2">Date D'Actualité</label>
-                                        <div class="input-group">
-                                            <input type="date" class="form-control" id="exampleInputEmail2" placeholder="">
-                                            <div class="input-group-addon"><i ></i></div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-email" name="val-email" placeholder="Your valid email..">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group ti-lock">
-                                        <label for="exampleInputpwd2" >Contenu D'Actualité</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputpwd2" placeholder="Contenu D'Actualité">
-                                            <div class="input-group-addon"><i ></i></div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-password">Password <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="password" class="form-control" id="val-password" name="val-password" placeholder="Choose a safe one..">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group ti-lock">
-                                        <label for="exampleInputpwd3" >Lien D'Actualité </label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputpwd3" placeholder="Lien D'Actualité">
-                                            <div class="input-group-addon"><i ></i></div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">Confirm Password <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="..and confirm it!">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="text-left">
-                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
-                                        <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
-                                    </div>
-                                </form>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-suggestions">Suggestions <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="5" placeholder="What would you like to see?"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Best Skill <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="val-skill" name="val-skill">
+                                                    <option value="">Please select</option>
+                                                    <option value="html">HTML</option>
+                                                    <option value="css">CSS</option>
+                                                    <option value="javascript">JavaScript</option>
+                                                    <option value="angular">Angular</option>
+                                                    <option value="angular">React</option>
+                                                    <option value="vuejs">Vue.js</option>
+                                                    <option value="ruby">Ruby</option>
+                                                    <option value="php">PHP</option>
+                                                    <option value="asp">ASP.NET</option>
+                                                    <option value="python">Python</option>
+                                                    <option value="mysql">MySQL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-currency">Currency <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder="$21.60">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-website">Website <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-website" name="val-website" placeholder="http://example.com">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-phoneus">Phone (US) <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-phoneus" name="val-phoneus" placeholder="212-999-0000">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-digits">Digits <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-digits" name="val-digits" placeholder="5">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-number">Number <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-number" name="val-number" placeholder="5.0">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-range">Range [1, 5] <span class="text-danger">*</span></label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-range" name="val-range" placeholder="4">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"><a data-toggle="modal" data-target="#modal-terms" href="#">Terms &amp; Conditions</a> <span class="text-danger">*</span></label>
+                                            <div class="col-lg-8">
+                                                <label class="css-control css-control-primary css-checkbox" for="val-terms">
+                                                                                        <input type="checkbox" class="css-control-input" id="val-terms" name="val-terms" value="1">
+                                                                                        <span class="css-control-indicator"></span> I agree to the terms
+                                                                                    </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                <div class="col-12">
+                <!-- End PAge Content -->
+            </div>
+            <div class="col-12">
                     <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data Export</h4>
@@ -376,8 +445,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- End PAge Content -->
-            </div>
             <!-- End Container fluid  -->
        
         </div>
@@ -397,8 +464,8 @@
     <script src="a/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="a/js/custom.min.js"></script>
-     <!-- data table -->
-     <script src="a/js/lib/datatables/datatables.min.js"></script>
+    <!-- data table -->
+    <script src="a/js/lib/datatables/datatables.min.js"></script>
     <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
     <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
     <script src="a/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>

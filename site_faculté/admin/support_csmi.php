@@ -285,11 +285,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Actualité</h3> </div>
+                    <h3 class="text-primary">Support</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Actualité</li>
+                        <li class="breadcrumb-item active">Support</li>
                     </ol>
                 </div>
             </div>
@@ -301,7 +301,7 @@
                 <div class="col-lg-6">
                         <div class="card card-outline-primary">
                             <div class="card-header">
-                                <h4 class="m-b-0 text-white">Modifier Actualité</h4>
+                                <h4 class="m-b-0 text-white">Modifier Support</h4>
                             </div>
                             <div class="card-body">
                             <form class="form p-t-20">

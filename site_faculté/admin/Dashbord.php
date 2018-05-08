@@ -258,27 +258,23 @@
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Actualité</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="Actualité_faculté.php">Actualité Faculté</a></li>
-                                <li><a href="chart-morris.html">Actualité CSMI</a></li>
+                                <li><a href="Actualité_csmi.php">Actualité CSMI</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">Enseignants</li>
                            
                         
-						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Enseignants Faculté</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="uc-calender.html">Enseignants Mathématique</a></li>
-                                <li><a href="uc-datamap.html">Enseignants Informatique</a></li>
-                        
-                            </ul>
-                        </li>
+                        <li> <a class=" " href="enseignants.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Enseignants</span></a>
+                           
+                           </li>
                         <li class="nav-label">Support</li>
 						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support Faculté</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="uc-calender.html">Support Mathématique</a></li>
-                                <li><a href="uc-datamap.html">Support Informatique</a></li>
+                                <li><a href="support_mathématique.php">Support Mathématique</a></li>
+                                <li><a href="support_informatique.php">Support Informatique</a></li>
                         
                             </ul>
-                            <li> <a class=" " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support CSMI</span></a>
+                            <li> <a class=" " href="support_csmi.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support CSMI</span></a>
                         </li>
                       
                        

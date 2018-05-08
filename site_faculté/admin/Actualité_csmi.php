@@ -259,9 +259,9 @@
                         <li class="nav-label">Enseignants</li>
                            
                         
-                        <li> <a class=" " href="enseignants.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Enseignants</span></a>
+						<li> <a class=" " href="enseignants.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Enseignants</span></a>
                            
-                           </li>
+                        </li>
                         <li class="nav-label">Support</li>
 						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support Faculté</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -285,7 +285,7 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Actualité</h3> </div>
+                    <h3 class="text-primary">Admin</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -341,7 +341,7 @@
                             </div>
                         </div>
                     </div>
-                <div class="col-12">
+                    <div class="col-12">
                     <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Data Export</h4>

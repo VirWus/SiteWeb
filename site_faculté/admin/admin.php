@@ -253,27 +253,23 @@
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Actualité</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="Actualité_faculté.php">Actualité Faculté</a></li>
-                                <li><a href="chart-morris.html">Actualité CSMI</a></li>
+                                <li><a href="Actualité_csmi.php">Actualité CSMI</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">Enseignants</li>
                            
                         
-						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Enseignants Faculté</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="uc-calender.html">Enseignants Mathématique</a></li>
-                                <li><a href="uc-datamap.html">Enseignants Informatique</a></li>
-                        
-                            </ul>
+						<li> <a class=" " href="enseignants.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Enseignants</span></a>
+                           
                         </li>
                         <li class="nav-label">Support</li>
 						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support Faculté</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="uc-calender.html">Support Mathématique</a></li>
-                                <li><a href="uc-datamap.html">Support Informatique</a></li>
+                                <li><a href="support_mathématique.php">Support Mathématique</a></li>
+                                <li><a href="support_informatique.php">Support Informatique</a></li>
                         
                             </ul>
-                            <li> <a class=" " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support CSMI</span></a>
+                            <li> <a class=" " href="support_csmi.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Support CSMI</span></a>
                         </li>
                       
                        
@@ -407,6 +403,16 @@
     <script src="a/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="a/js/custom.min.js"></script>
+     <!-- data table -->
+     <script src="a/js/lib/datatables/datatables.min.js"></script>
+    <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="a/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="a/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="a/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="a/js/lib/datatables/datatables-init.js"></script>
 
 </body>
 
