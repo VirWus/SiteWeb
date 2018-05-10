@@ -1,3 +1,11 @@
+<!-- <?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
+  
+}else {
+  header("Location:../admin/index.php");
+}
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +19,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="a/image/png" sizes="16x16" href="a/images/favicon.png">
     <title>Admin</title>
+    <link href="a/css/lib/dropzone/dropzone.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="a/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -25,6 +34,11 @@
 </head>
 
 <body class="fix-header fix-sidebar">
+<?php
+   $db = mysqli_connect("localhost","root","","univedu");
+    $resultat = mysqli_query($db,"SELECT * FROM admin");
+    $l = mysqli_fetch_assoc($resultat);
+    ?>
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -75,35 +89,17 @@
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
                                         <h4 class="m-b-20">List style</h4>
                                         <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                        </ul>
+                                      
                                     </li>
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
                                         <h4 class="m-b-20">List style</h4>
                                         <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                        </ul>
+                                       
                                     </li>
                                     <li class="col-lg-3 col-xlg-3 m-b-30">
                                         <h4 class="m-b-20">List style</h4>
                                         <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                        </ul>
+                                       
                                     </li>
                                 </ul>
                             </div>
@@ -123,109 +119,20 @@
                             <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
 								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
 							</a>
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Notifications</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
-                                                <div class="mail-contnet">
-                                                    <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
+                           
                         </li>
                         <!-- End Comment -->
                         <!-- Messages -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">You have 4 new messages</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="a/images/users/5.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="a/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="a/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
-                                                </div>
-                                            </a>
-                                            <!-- Message -->
-                                            <a href="#">
-                                                <div class="user-img"> <img src="a/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                                <div class="mail-contnet">
-                                                    <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- End Messages -->
+                                      <!-- End Messages -->
                         <!-- Profile -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="a/images/users/5.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
                                     <li><a href="#"><i class="ti-user"></i> Profile</a></li>
-                                    <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
-                                    <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+
                                     <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="../engine/logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -304,43 +211,49 @@
                                 <h4 class="m-b-0 text-white">Modifier Admin</h4>
                             </div>
                             <div class="card-body">
-                            <form class="form p-t-20">
+                            <form class="form p-t-20" method="POST" action="update-admin.php?id=<?php echo$l['id']?>">
                                     <div class="form-group ti-user">
                                         <label for="exampleInputuname2">User Name</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputuname2" placeholder="Username">
+                                            <input type="text" class="form-control" id="exampleInputuname2" placeholder="Username" name="username" value="<?php echo$l['username']?>">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group ti-email">
                                         <label for="exampleInputEmail2">Email address</label>
                                         <div class="input-group">
-                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                                            <input type="email" class="form-control"  name="email"  value="<?php echo$l['email']?>"  id="exampleInputEmail2" placeholder="Enter email">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group ti-lock">
                                         <label for="exampleInputpwd2" >Password</label>
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="exampleInputpwd2" placeholder="Enter pwd">
+                                            <input type="password" class="form-control" id="exampleInputpwd2" name="mdp" placeholder="Enter pwd">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group ti-lock">
                                         <label for="exampleInputpwd3" >Confirm Password</label>
                                         <div class="input-group">
-                                            <input type="password" class="form-control" id="exampleInputpwd3" placeholder="Enter pwd">
+                                            <input type="password" class="form-control" id="exampleInputpwd3" name="mdp" placeholder="Enter pwd">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="checkbox checkbox-success">
-                                            <input id="checkbox2" type="checkbox">
-                                            <label for="checkbox2"> Remember me </label>
-                                        </div>
-                                    </div>
-                                    <div class="text-left">
-                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
+                                    
+                                    <h4>Photo de Profil :</h4>
+            <div class="input-group">
+                <label style="margin: 0;" class="input-group-btn">
+                    <span class="btn btn-primary">
+                        <input  name="fileto" class="form-control-file" type="file" style="display: none;" multiple>
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly>
+            </div>
+            
+                               
+                                    <div class="text-left form-actions form-group">
+                                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Modifier</button>
                                         <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
                                     </div>
                                 </form>
@@ -403,6 +316,10 @@
     <script src="a/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="a/js/custom.min.js"></script>
+    <!--                         -->
+    <script src="js/lib/toastr/toastr.min.js"></script>
+    <!-- scripit init-->
+    <script src="js/lib/toastr/toastr.init.js"></script>
      <!-- data table -->
      <script src="a/js/lib/datatables/datatables.min.js"></script>
     <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
@@ -413,7 +330,7 @@
     <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
     <script src="a/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
     <script src="a/js/lib/datatables/datatables-init.js"></script>
-
+    <script src="a/js/lib/dropzone/dropzone.js"></script>
 </body>
 
 </html>
