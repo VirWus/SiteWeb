@@ -15,35 +15,33 @@ $id = $_GET['id'];
 			}
 			$directory = "../img/";
 
-$file = $directory.basename($_FILES["fileto"]["name"]);
+// $file = $directory.basename($_FILES["file"]["name"]);
 
 
 $email=$_POST['email'];
 $username=$_POST['username'];
-$pathparts = pathinfo($file);
+// $pathparts = pathinfo($file);
 $mdp=$_POST['mdp'];
  $epass = hash("sha512",$mdp).md5("univ_bba");
 
-$ext =  $pathparts["extension"];
-if($ext == "jpg" || $ext == "png") {
-	move_uploaded_file($_FILES["fileto"]["tmp_name"], $file);
-	$file = base64_encode($file);
-		include_once("../engine/connect/connection.php");
-		$sql1="SELECT * FROM admin WHERE id='$id'";
-		$i=mysqli_query($connect, $sql1);
-		if($row=mysqli_fetch_assoc($i)){
-			$imgh=base64_decode($row["image"]);
-			if(!unlink($imgh)){
-				echo "false";
-			}
-			 ;
-		}
-		$sql = "UPDATE admin set email='$email',username='$username',mdp='$epass',image='$file' where id='$id'";	
+// $ext =  $pathparts["extension"];
+// if($ext === "jpg" || $ext === "png") {
+// 	move_uploaded_file($_FILES["fileto"]["tmp_name"], $file);
+// 	$file = base64_encode($file);
+// 		include_once("../engine/connect/connection.php");
+// 		$sql1="SELECT * FROM admin WHERE id='$id'";
+// 		$i=mysqli_query($connect, $sql1);
+// 		if($row=mysqli_fetch_assoc($i)){
+// 			$imgh=base64_decode($row["image"]);
+// 			if(!unlink($imgh)){
+// 				echo "false";
+// 			}
+// 			 ;
+// 		}
+		$sql = "UPDATE admin set email='$email',username='$username',mdp='$epass' where id='$id'";	
 		$r=mysqli_query($connect, $sql);
 		
-			header("location:Accueil.php");
-		 }else{
-		 	echo "Your file is not supported";
-		   }
+			header("location:admin.php");
+		
 		
 			?>
