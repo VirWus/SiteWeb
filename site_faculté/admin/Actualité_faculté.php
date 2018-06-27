@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION["email"]) && !empty($_SESSION["email"]) && isset($_SESSION["pass"]) && !empty($_SESSION["pass"]) ){
+  
+}else {
+  header("Location:../admin/Actualité_faculté.php");
+}
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +33,11 @@
 </head>
 
 <body class="fix-header fix-sidebar">
+    <?php
+   $db = mysqli_connect("localhost","root","","univedu");
+    $resultat = mysqli_query($db,"SELECT * FROM actuallite");
+    $l = mysqli_fetch_assoc($resultat);
+    ?>
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -39,10 +52,10 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="dashbord.php">
                         <!-- Logo icon -->
-                        <b><img src="a/images/logo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="../img/hichem_logo.png" alt="homepage" class="dark-logo" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="a/images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        <span><img src="../img/hichem_logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -302,32 +315,33 @@
                                 <h4 class="m-b-0 text-white">Modifier Actualité</h4>
                             </div>
                             <div class="card-body">
-                            <form class="form p-t-20">
+                            <form class="form p-t-20" method="POST" action="update-actualité.php?id=<?php echo$l['id']?>">
                                     <div class="form-group ti-user">
                                         <label for="exampleInputuname2">Titre D'Actualité</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputuname2" placeholder="Titre D'Actualité">
+                                            <input type="text" class="form-control" id="exampleInputuname2" placeholder="Titre D'Actualité" value="<?php echo$l['titre']?>">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group ti-email">
                                         <label for="exampleInputEmail2">Date D'Actualité</label>
                                         <div class="input-group">
-                                            <input type="date" class="form-control" id="exampleInputEmail2" placeholder="">
+                                            <input type="date" class="form-control" id="exampleInputEmail2" placeholder="" value="<?php echo$l['date']?>">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group ti-lock">
                                         <label for="exampleInputpwd2" >Contenu D'Actualité</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputpwd2" placeholder="Contenu D'Actualité">
+                                            <input type="text" class="form-control" id="exampleInputpwd2" placeholder="Contenu D'Actualité" value="<?php echo$l['contenu']?>">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group ti-lock">
                                         <label for="exampleInputpwd3" >Lien D'Actualité </label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="exampleInputpwd3" placeholder="Lien D'Actualité">
+                                            <input type="text" class="form-control" id="exampleInputpwd3" placeholder="Lien D'Actualité"
+                                            value="<?php echo$l['lien']?>">
                                             <div class="input-group-addon"><i ></i></div>
                                         </div>
                                     </div>

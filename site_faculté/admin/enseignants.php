@@ -325,12 +325,7 @@
                                                 <input type="password" class="form-control" id="val-confirm-password" name="val-confirm-password" placeholder="..and confirm it!">
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-suggestions">Suggestions <span class="text-danger">*</span></label>
-                                            <div class="col-lg-6">
-                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="5" placeholder="What would you like to see?"></textarea>
-                                            </div>
-                                        </div>
+                                      
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-skill">Best Skill <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
@@ -350,12 +345,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-currency">Currency <span class="text-danger">*</span></label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-currency" name="val-currency" placeholder="$21.60">
-                                            </div>
-                                        </div>
+                                     
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-website">Website <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
@@ -363,29 +353,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-phoneus">Phone (US) <span class="text-danger">*</span></label>
+                                            <label class="col-lg-4 col-form-label" for="val-phoneus">Phone (Alg) <span class="text-danger">*</span></label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-phoneus" name="val-phoneus" placeholder="212-999-0000">
+                                                <input type="text" class="form-control" id="val-phoneus" name="val-phoneus" placeholder="+213">
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-digits">Digits <span class="text-danger">*</span></label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-digits" name="val-digits" placeholder="5">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-number">Number <span class="text-danger">*</span></label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-number" name="val-number" placeholder="5.0">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-range">Range [1, 5] <span class="text-danger">*</span></label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-range" name="val-range" placeholder="4">
-                                            </div>
-                                        </div>
+                                      
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label"><a data-toggle="modal" data-target="#modal-terms" href="#">Terms &amp; Conditions</a> <span class="text-danger">*</span></label>
                                             <div class="col-lg-8">
